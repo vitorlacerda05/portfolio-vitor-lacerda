@@ -15,6 +15,8 @@
     display: flex;
     align-items: center;
     position: relative;
+    border: 2px dashed transparent;
+    transition: all 0.15s ease;
   }
   
   .navbar-content {
@@ -39,6 +41,10 @@
     justify-content: center;
     padding-left: 8px;
   }
+
+  .navbar-menu .title-frame {
+    transition: color 0.15s ease;
+  }
   
   .navbar-title {
     display: flex;
@@ -46,12 +52,16 @@
     justify-content: flex-start;
     min-width: 73px;
     height: 40px;
+    transition: all 0.15s ease;
   }
   
   .navbar-logo {
     width: 73px;
     height: 40px;
     object-fit: contain;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    transition: all 0.15s ease;
   }
   
   .navbar-options {
@@ -64,8 +74,7 @@
   }
   
   .navbar-gradient:hover {
-    outline: 2px dashed var(--blue-500);
-    box-sizing: border-box;
+    border-color: var(--blue-500);
   }
 
   .navbar-gradient:hover .title-frame {
@@ -76,16 +85,15 @@
     position: relative;
     padding: 4px 8px;
     border-radius: 2px;
+    border: 2px solid transparent;
+    transition: all 0.15s ease;
   }
   
   .navbar-options a:hover {
-    outline: 2px solid var(--blue-500);
-    box-sizing: border-box;
+    border-color: var(--blue-500);
   }
   
   .navbar-title:hover .navbar-logo {
-    outline: 2px solid var(--blue-500);
-    border-radius: 2px;
-    box-sizing: border-box;
+    border-color: var(--blue-500);
   }
   
