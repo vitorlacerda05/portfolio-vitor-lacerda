@@ -13,6 +13,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  max-width: 240px;
 }
 .button-primary:hover {
   background: var(--blue-700);

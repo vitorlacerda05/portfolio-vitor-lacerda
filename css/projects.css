@@ -1,4 +1,15 @@
 /* Projects Section */
+.projects-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
 .work-wrapper {
   background-color: var(--white);
   box-sizing: border-box;
