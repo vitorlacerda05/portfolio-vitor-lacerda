@@ -75,6 +75,12 @@
   flex-shrink: 0;
   width: 100%;
   border: 2px solid var(--blue-200);
+  transition: all 0.15s ease;
+}
+
+.hero-section__title:hover {
+  background-color: #fdfdfd;
+  border-color: var(--blue-400);
 }
 
 /* Comment label */
@@ -91,6 +97,11 @@
   white-space: nowrap;
   top: -30px;
   transform: translateX(-50%);
+  transition: color 0.15s ease;
+}
+
+.hero-section__title:hover .hero-section__comment-label {
+  color: var(--blue-500);
 }
 
 .hero-section__comment-label p {
@@ -101,16 +112,9 @@
 
 /* Main title text */
 .hero-section__title-text {
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  line-height: 0;
   min-width: 100%;
   position: relative;
   flex-shrink: 0;
-  color: var(--blue-800);
-  font-size: 40px;
-  text-align: center;
-  width: min-content;
 }
 
 .hero-section__title-text p {
@@ -156,6 +160,11 @@
   border: 2px solid var(--blue-200);
   inset: 0;
   pointer-events: none;
+  transition: border-color 0.15s ease;
+}
+
+.hero-section__title:hover .hero-section__corner::before {
+  border-color: var(--blue-500);
 }
 
 /* Profile comment */
