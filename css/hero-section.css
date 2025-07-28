@@ -1,0 +1,190 @@
+/* Hero Section Component */
+.hero-section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Vector elements */
+.hero-section__vector-2 {
+  position: absolute;
+  height: 122px;
+  left: -67px;
+  top: 45px;
+  width: 121px;
+}
+
+.hero-section__vector-2 img {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-section__vector-1 {
+  position: absolute;
+  bottom: -106px;
+  height: 239px;
+  right: -82px;
+  width: 231px;
+}
+
+.hero-section__vector-1 .vector-container {
+  position: absolute;
+  bottom: -4.671%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -18.182%;
+  right: -5.907%;
+  top: -15.447%;
+}
+
+.hero-section__vector-1 .vector-rotated {
+  flex: none;
+  height: 181.046px;
+  transform: rotate(314.593deg);
+  width: 224.65px;
+}
+
+.hero-section__vector-1 .vector-rotated img {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Title container */
+.hero-section__title {
+  background-color: var(--white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 40px 32px;
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  border: 2px solid var(--blue-200);
+}
+
+/* Comment label */
+.hero-section__comment-label {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 0;
+  left: 69.5px;
+  font-style: normal;
+  color: var(--blue-200);
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  top: -30px;
+  transform: translateX(-50%);
+}
+
+.hero-section__comment-label p {
+  display: block;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+/* Main title text */
+.hero-section__title-text {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  line-height: 0;
+  min-width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  color: var(--blue-800);
+  font-size: 40px;
+  text-align: center;
+  width: min-content;
+}
+
+.hero-section__title-text p {
+  line-height: normal;
+}
+
+.hero-section__title-text .dash {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+
+/* Corner decorations */
+.hero-section__corner {
+  position: absolute;
+  background-color: #fdfdfd;
+  width: 12px;
+  height: 12px;
+}
+
+.hero-section__corner--bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.hero-section__corner--bottom-right {
+  bottom: -6px;
+  right: -6px;
+}
+
+.hero-section__corner--top-right {
+  right: -6px;
+  top: -6px;
+}
+
+.hero-section__corner--top-left {
+  left: -6px;
+  top: -6px;
+}
+
+.hero-section__corner::before {
+  content: '';
+  position: absolute;
+  border: 2px solid var(--blue-200);
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Profile comment */
+.hero-section__profile-comment {
+  position: absolute;
+  background-color: var(--white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+  left: 24px;
+  padding: 8px;
+  border-radius: 99px 99px 99px 0;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+  top: -136px;
+}
+
+.hero-section__profile-image {
+  position: relative;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+}
+
+.hero-section__profile-image img {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+} 

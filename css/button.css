@@ -11,12 +11,12 @@
   font-weight: 500;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, filter 0.2s;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 .button-primary:hover {
   background: linear-gradient(90deg, var(--blue-700) 0%, var(--blue-800) 100%);
-  filter: brightness(1.05);
+  transform: scale(1.02);
 }
 
 .button-secondary {
@@ -32,10 +32,11 @@
   font-weight: 500;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 .button-secondary:hover {
   background: var(--blue-100);
   color: var(--blue-800);
+  transform: scale(1.02);
 } 
