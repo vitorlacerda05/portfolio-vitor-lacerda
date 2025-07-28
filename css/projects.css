@@ -1,0 +1,77 @@
+/* Projects Section */
+.work-wrapper {
+  background-color: var(--white);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px;
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.work-wrapper::before {
+  content: '';
+  position: absolute;
+  border: 2px dashed #9747ff;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.works {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.works::before {
+  content: '❖ project-gallery';
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 0;
+  color: #aa69ff;
+  left: 42px;
+  font-style: normal;
+  font-size: 16px;
+  text-align: center;
+  white-space: nowrap;
+  top: -62px;
+  transform: translateX(-50%);
+}
+
+.works::before {
+  display: block;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.projects {
+  flex-basis: 0;
+  background-color: var(--blue-300);
+  flex-grow: 1;
+  border: 4px solid transparent;
+  height: 346px;
+  min-height: 1px;
+  min-width: 320px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.projects:hover {
+  border: 4px solid #aa69ff;
+} 
