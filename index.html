@@ -17,6 +17,15 @@
   </head>
   <body>
     <div class="page-white-container">
+      <!-- Reset Button -->
+      <div id="reset-button" class="reset-button" style="display: none;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Reset</span>
+      </div>
+      
       <!-- Header do Portfólio -->
       <header class="navbar-wrapper">
         <div class="navbar-gradient">
@@ -63,21 +72,21 @@
       <!-- Main section -->
       <main class="main-top">
         <div class="hero-section">
-          <div class="vector-2">
+          <div class="vector-2 draggable">
             <img
               src="assets/images/homepage/vector/vector-2.svg"
               alt="Vector 2"
             />
           </div>
 
-          <div class="vector-1">
+          <div class="vector-1 draggable">
             <img
               src="assets/images/homepage/vector/vector-1.svg"
               alt="Vector 1"
             />
           </div>
 
-          <div class="profile-comment">
+          <div class="profile-comment draggable">
             <!-- Closed state (default) -->
             <div class="comment-closed">
               <div class="profile-image">
@@ -113,7 +122,7 @@
             </div>
           </div>
 
-          <div class="title">
+          <div class="title draggable">
             <div class="comment-label">
               <p>⌗ hero-section</p>
             </div>
@@ -404,5 +413,77 @@
          </div>
        </div>
     </footer>
+    
+    <!-- Interact.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    
+    <!-- Custom drag functionality -->
+    <script>
+      // Configuração inicial do Interact.js
+      interact('.draggable')
+        .draggable({
+          inertia: true,
+          modifiers: [
+            interact.modifiers.restrictRect({
+              restriction: '.page-white-container',
+              endOnly: true
+            })
+          ],
+          autoScroll: true,
+          listeners: {
+            start: function (event) {
+              event.target.style.zIndex = 1000;
+            },
+            move: dragMoveListener,
+            end: function (event) {
+              event.target.style.zIndex = '';
+              showResetButton();
+            }
+          }
+        });
+
+      // Função para mover o elemento
+      function dragMoveListener(event) {
+        const target = event.target;
+        const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+        const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+        target.style.transform = `translate(${x}px, ${y}px)`;
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+      }
+
+      // Função para mostrar o botão de reset
+      function showResetButton() {
+        const resetBtn = document.getElementById('reset-button');
+        if (resetBtn) {
+          resetBtn.style.display = 'flex';
+        }
+      }
+
+      // Função para resetar as posições
+      function resetPositions() {
+        const draggableElements = document.querySelectorAll('.draggable');
+        draggableElements.forEach(element => {
+          element.style.transform = 'translate(0px, 0px)';
+          element.setAttribute('data-x', 0);
+          element.setAttribute('data-y', 0);
+        });
+        
+        // Esconder o botão de reset
+        const resetBtn = document.getElementById('reset-button');
+        if (resetBtn) {
+          resetBtn.style.display = 'none';
+        }
+      }
+
+      // Adicionar evento de clique ao botão de reset
+      document.addEventListener('DOMContentLoaded', function() {
+        const resetBtn = document.getElementById('reset-button');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', resetPositions);
+        }
+      });
+    </script>
   </body>
 </html>
