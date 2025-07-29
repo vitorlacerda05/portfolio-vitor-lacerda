@@ -8,6 +8,11 @@ body {
     padding: 8px;
     min-height: 100vh;
     background: linear-gradient(180deg, #FDFDFD 0%, #F7FCFE 100%);
+    background-image: url('../assets/images/homepage/background.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: auto;
+    background-attachment: initial;
     overflow: visible;
 }
 
