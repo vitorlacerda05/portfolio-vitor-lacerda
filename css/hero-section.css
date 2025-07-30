@@ -59,31 +59,20 @@
   position: relative;
   flex-shrink: 0;
   width: 100%;
-  border: 2px solid var(--blue-200);
-  transition: all 0.15s ease;
+  outline: 2px solid var(--blue-gray-100);
   z-index: 2;
 }
-
-.title:hover {
-  background-color: #fdfdfd;
-  border-color: var(--blue-400);
-}
-
 /* Comment label */
 .comment-label {
   position: absolute;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  line-height: 0;
   left: 72px;
   font-style: normal;
-  color: var(--blue-200);
+  color: var(--blue-gray-300);
   font-size: 16px;
   text-align: center;
   white-space: nowrap;
   top: -30px;
   transform: translateX(-50%);
-  transition: color 0.15s ease;
 }
 
 .title:hover .comment-label {
@@ -112,7 +101,7 @@
   font-weight: 400;
 }
 
-/* Corner decorations */
+/* Corner decorations 
 .corner {
   position: absolute;
   background-color: #fdfdfd;
@@ -153,9 +142,12 @@
   border-color: var(--blue-500);
 }
 
+*/
+
 /* Profile comment component */
 .profile-comment {
   position: absolute;
+  outline: 2px solid transparent !important;
   left: 24px;
   top: -136px;
   cursor: pointer;

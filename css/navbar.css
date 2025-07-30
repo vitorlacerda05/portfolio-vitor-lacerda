@@ -15,8 +15,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    border: 2px dashed transparent;
-    transition: all 0.15s ease;
+    outline: 2px solid transparent;
   }
   
   .navbar-content {
@@ -41,10 +40,6 @@
     justify-content: center;
     padding-left: 8px;
   }
-
-  .navbar-menu .title-frame {
-    transition: color 0.15s ease;
-  }
   
   .navbar-title {
     display: flex;
@@ -52,16 +47,44 @@
     justify-content: flex-start;
     min-width: 73px;
     height: 40px;
-    transition: all 0.15s ease;
   }
   
+  .frame-switch-icon {
+    width: 32px;
+    height: auto;
+    margin: auto;
+    text-align: center;
+
+  }
+
+  .navbar-gradient:hover .title-frame {
+    color: var(--blue-500) !important;
+  }
+
+  .navbar-gradient .frame-switch-icon span{
+    color: var(--blue-gray-300);
+  }
+
+  .navbar-gradient:hover .frame-switch-icon span{
+    display: none;
+  }
+
+  .navbar-gradient .frame-switch-icon i{
+    display: none;
+    color: var(--blue-500);
+    font-size: 14px;
+  }
+
+  .navbar-gradient:hover .frame-switch-icon i{
+    display: block;
+  }
+
   .navbar-logo {
-    width: 73px;
+    width: 72px;
     height: 40px;
     object-fit: contain;
     border: 2px solid transparent;
     border-radius: 2px;
-    transition: all 0.15s ease;
   }
   
   .navbar-options {
@@ -74,11 +97,12 @@
   }
   
   .navbar-gradient:hover {
-    border-color: var(--blue-500);
+    outline-color: var(--blue-500);
   }
 
-  .navbar-gradient:hover .title-frame {
-    color: var(--blue-500) !important;
+  .title-frame {
+    color: var(--blue-gray-300); 
+    text-align: center
   }
   
   .navbar-options a {
@@ -86,7 +110,6 @@
     padding: 4px 8px;
     border-radius: 2px;
     border: 2px solid transparent;
-    transition: all 0.15s ease;
   }
   
   .navbar-options a:hover {

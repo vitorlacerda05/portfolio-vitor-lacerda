@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio - Vitor Lacerda</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/tokens/fonts.css" />
     <link rel="stylesheet" href="assets/tokens/colors.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -14,16 +16,18 @@
     <link rel="stylesheet" href="css/projects.css" />
     <link rel="stylesheet" href="css/main-bottom.css" />
     <link rel="stylesheet" href="css/footer.css" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
   </head>
   <body>
     <div class="page-white-container">
+
       <!-- Reset Button -->
       <div id="reset-button" class="reset-button" style="display: none;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span>Reset</span>
+        <i class="fas fa-rotate-left"></i>
+        <span>Desfazer mudanças</span>
       </div>
       
       <!-- Header do Portfólio -->
@@ -31,11 +35,13 @@
         <div class="navbar-gradient">
           <div class="navbar-content">
             <div class="navbar-menu">
-              <span
-                class="regular-base title-frame"
-                style="color: var(--blue-gray-300); text-align: center"
-                >⌗ portfolio-navbar</span
-              >
+              <div class="frame-switch-icon regular-base">
+                <span>⌗</span>
+                <i class="fas fa-lock regular-base"></i>
+              </div>
+              <span class="regular-base title-frame">
+                portfolio-navbar
+              </span>
             </div>
             <div class="navbar-title">
               <img
@@ -123,32 +129,34 @@
           </div>
 
           <div class="title draggable">
-            <div class="comment-label">
+            <div class="regular-base comment-label">
               <p>⌗ hero-section</p>
             </div>
 
             <div class="title-text">
               <p class="title_karla">
                 <span class="dash">— </span>
-                <span
-                  >Product Designer & Manager, pesquisador em User Experience na
-                  USP e, nas horas vagas, transformo protótipos em códigos
-                  :)</span
-                >
+                <span>
+                  Product Designer & Manager, pesquisador em User Experience na
+                  USP e, nas horas vagas, transformo protótipos em códigos.
+                </span>
               </p>
             </div>
-
-            <!-- Corner Decorations -->
-            <div class="corner corner--bottom-left"></div>
-            <div class="corner corner--bottom-right"></div>
-            <div class="corner corner--top-right"></div>
-            <div class="corner corner--top-left"></div>
           </div>
         </div>
 
         <!-- Projects Section -->
         <div class="projects-section">
           <div class="work-wrapper">
+            <div class="project-frame-container">
+              <div class="project-frame-switch-icon regular-base">
+                <span>❖</span>
+                <i class="fas fa-lock regular-base"></i>
+              </div>
+              <span class="regular-base project-title-frame">
+                project-gallery
+              </span>
+            </div>
             <div class="works">
               <a href="#" class="projects"></a>
               <a href="#" class="projects"></a>
