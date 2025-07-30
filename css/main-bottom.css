@@ -1,3 +1,17 @@
+.wave-separator {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    margin-top: -1px; 
+}
+
+.wave-separator svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 .main-bottom {
     background: linear-gradient(180deg, var(--blue-600) 0%, var(--blue-700) 100%);
     padding: 160px 24px 0 24px;
@@ -284,4 +298,16 @@
     text-align: left;
     min-width: 100%;
     word-break: break-all;
+}
+
+@media (max-width: 768px) {
+    .wave-separator {
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wave-separator {
+        height: 40px;
+    }
 }

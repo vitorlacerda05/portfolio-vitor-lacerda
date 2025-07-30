@@ -13,7 +13,7 @@ body {
     background-position: center top;
     background-size: auto;
     background-attachment: initial;
-    overflow: visible;
+    overflow: hidden;
     position: relative;
 }
 
