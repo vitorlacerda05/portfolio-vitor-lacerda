@@ -23,6 +23,9 @@
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+    <!-- Animate.css CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   </head>
   <body>
     <div class="page-white-container">
@@ -34,7 +37,7 @@
       </div>
       
       <!-- Portfolio Header -->
-      <header class="navbar-wrapper">
+      <header class="navbar-wrapper animate__animated animate__fadeInDown animate__delay-1s">
         <!-- Mobile Logo (visible only on mobile) -->
         <div class="mobile-logo">
           <img
@@ -45,11 +48,11 @@
         </div>
         
         <!-- Mobile Menu Button -->
-        <button class="mobile-menu-btn" id="mobile-menu-btn">
+        <button class="mobile-menu-btn animate__animated animate__fadeInDown animate__delay-1s" id="mobile-menu-btn">
           <i class="fas fa-bars"></i>
         </button>
         
-        <div class="navbar-gradient">
+        <div class="navbar-gradient animate__animated animate__fadeInDown animate__delay-1s">
           <div class="navbar-content">
             <div class="navbar-menu">
               <div class="frame-switch-icon regular-base">
@@ -111,7 +114,9 @@
 
       <!-- Main section -->
       <main class="main-top">
-        <div class="hero-section">
+
+        <!-- Hero Section -->
+        <div class="hero-section animate__animated animate__fadeInUp animate__delay">
           <div class="vector-2 draggable">
             <img
               src="assets/images/homepage/vector/vector-2.svg"
@@ -126,7 +131,7 @@
             />
           </div>
 
-          <div class="profile-comment draggable">
+          <div class="profile-comment draggable animate__animated animate__fadeIn animate__delay-2s">
             <!-- Closed state (default) -->
             <div class="comment-closed">
               <div class="profile-image">
@@ -180,7 +185,7 @@
         </div>
 
         <!-- Projects Section -->
-        <div id="projects-section" class="projects-section">
+        <div id="projects-section" class="projects-section animate__animated animate__fadeInUp animate__delay-1s">
           <div class="work-wrapper">
             <div class="project-frame-container">
               <div class="project-frame-switch-icon regular-base">
@@ -222,7 +227,7 @@
     <div id="main-bottom" class="main-bottom">
       <div class="section">
         <!-- Quote Section -->
-        <div class="quote-section">
+        <div class="quote-section" data-animate="animate__fadeIn" data-delay="animate__delay">
           <div class="quote-title title_karla">
             <span
               >"UX vai além do design: envolve código, pesquisa e decisões de
@@ -291,7 +296,7 @@
 
         <!-- About Section -->
         <div id="about-section" class="about-section">
-          <div class="about-top">
+          <div class="about-top" data-animate="animate__fadeIn" data-delay="animate__delay">
             <div class="about-title-section">
               <div class="about-title title_karla">
                 <span>Quem é Vitor Lacerda?</span>
@@ -314,7 +319,7 @@
           </div>
   
           <!-- Highlight Section -->
-          <div class="highlight">
+          <div class="highlight" data-animate="animate__fadeIn" data-delay="animate__delay">
             <div class="highlight-content">
               <div class="highlight-item">
                 <div class="highlight-number bold-h2">
@@ -353,7 +358,7 @@
         </div>
   
         <!-- Contact Section -->
-        <div id="contact-section" class="contact-section">
+        <div id="contact-section" class="contact-section" data-animate="animate__fadeIn" data-delay="animate__delay">
           <div class="contact-title title_karla">
             <span>— Como posso te ajudar?</span>
           </div>
@@ -446,5 +451,8 @@
     
     <!-- Mobile menu functionality -->
     <script src="js/mobile-menu.js"></script>
+    
+    <!-- Scroll animations -->
+    <script src="js/scroll-animations.js"></script>
   </body>
 </html>
