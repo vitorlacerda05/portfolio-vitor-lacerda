@@ -27,10 +27,10 @@
       <!-- Reset Button -->
       <div id="reset-button" class="reset-button" style="display: none;">
         <i class="fas fa-rotate-left"></i>
-        <span>Desfazer mudanças</span>
+        <span class="regular-sm">Desfazer mudanças</span>
       </div>
       
-      <!-- Header do Portfólio -->
+      <!-- Portfolio Header -->
       <header class="navbar-wrapper">
         <div class="navbar-gradient">
           <div class="navbar-content">
@@ -52,25 +52,25 @@
             </div>
             <nav class="navbar-options">
               <a
-                href="#projetos"
+                href="#projects-section"
                 class="regular-base"
                 style="color: var(--blue-gray-700)"
                 >Projetos</a
               >
               <a
-                href="#sobre"
+                href="#main-bottom"
+                class="regular-base"
+                style="color: var(--blue-gray-700)"
+                >Códigos e artigos</a
+              >
+              <a
+                href="#about-section"
                 class="regular-base"
                 style="color: var(--blue-gray-700)"
                 >Sobre</a
               >
-              <a
-                href="#contato"
-                class="regular-base"
-                style="color: var(--blue-gray-700)"
-                >Contato</a
-              >
             </nav>
-            <a href="#contato" class="button-primary">Entrar em contato</a>
+            <a href="#contact-section" class="button-primary">Entrar em contato</a>
           </div>
         </div>
       </header>
@@ -146,7 +146,7 @@
         </div>
 
         <!-- Projects Section -->
-        <div class="projects-section">
+        <div id="projects-section" class="projects-section">
           <div class="work-wrapper">
             <div class="project-frame-container">
               <div class="project-frame-switch-icon regular-base">
@@ -166,13 +166,13 @@
               <a href="#" class="projects"></a>
             </div>
           </div>
-          <a href="#contato" class="button-primary">Como posso te ajudar?</a>
+          <a href="#contact-section" class="button-primary">Como posso te ajudar?</a>
         </div>
       </main>
     </div>
 
     <!-- Main Bottom Section -->
-    <div class="main-bottom">
+    <div id="main-bottom" class="main-bottom">
       <div class="section">
         <!-- Quote Section -->
         <div class="quote-section">
@@ -207,7 +207,7 @@
                     "
                   ></div>
                 </div>
-                <a href="#contato" class="button-secondary"
+                <a href="https://github.com/vitorlacerda05" target="_blank" rel="noopener noreferrer" class="button-secondary"
                   >Acessar códigos ↗</a
                 >
               </div>
@@ -234,7 +234,7 @@
                     "
                   ></div>
                 </div>
-                <a href="#contato" class="button-secondary"
+                <a href="http://lattes.cnpq.br/8815889895192997" target="_blank" rel="noopener noreferrer" class="button-secondary"
                   >Acessar publicações ↗</a
                 >
               </div>
@@ -243,7 +243,7 @@
         </div>
 
         <!-- About Section -->
-        <div class="about-section">
+        <div id="about-section" class="about-section">
           <div class="about-top">
             <div class="about-title-section">
               <div class="about-title title_karla">
@@ -306,7 +306,7 @@
         </div>
   
         <!-- Contact Section -->
-        <div class="contact-section">
+        <div id="contact-section" class="contact-section">
           <div class="contact-title title_karla">
             <span>— Como posso te ajudar?</span>
           </div>
@@ -331,7 +331,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="#contato" class="button-secondary">Enviar WhatsApp ↗</a>
+                <a href="https://wa.me/5519981783254" target="_blank" rel="noopener noreferrer" class="button-secondary">Enviar WhatsApp ↗</a>
               </div>
             </div>
     
@@ -354,11 +354,11 @@
                     </div>
                   </div>
                 </div>
-                <a href="#contato" class="button-secondary">Acessar LinkedIn ↗</a>
+                <a href="https://www.linkedin.com/in/vitorlacerda05/" target="_blank" rel="noopener noreferrer" class="button-secondary">Acessar LinkedIn ↗</a>
               </div>
             </div>
     
-            <!-- LinkedIn Card -->
+            <!-- Email Card -->
             <div class="contact-ctt">
               <div class="contact-ctt-content">
                 <div class="contact-ctt-header">
@@ -377,7 +377,7 @@
                     </div>
                   </div>
                 </div>
-                <a href="#contato" class="button-secondary">Enviar Email ↗</a>
+                <a href="mailto:vitorlacerda05@gmail.com" class="button-secondary">Enviar Email ↗</a>
               </div>
             </div>
           </div>
@@ -388,46 +388,15 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="footer-copyright">
-        <div class="footer-copyright-text">
-          <p class="regular-base">© Vitor Lacerda, 2025</p>
-        </div>
-      </div>
-             <div class="footer-navigation">
-         <div class="footer-nav-item">
-           <a href="#home" class="footer-nav-link regular-base">
-             <p class="regular-base">Página inicial</p>
-           </a>
-         </div>
-         <div class="footer-nav-item">
-           <a href="#projects" class="footer-nav-link regular-base">
-             <p class="regular-base">Projetos</p>
-           </a>
-         </div>
-         <div class="footer-nav-item">
-           <a href="#articles" class="footer-nav-link regular-base">
-             <p class="regular-base">Códigos e artigos</p>
-           </a>
-         </div>
-         <div class="footer-nav-item">
-           <a href="#about" class="footer-nav-link regular-base">
-             <p class="regular-base">Sobre</p>
-           </a>
-         </div>
-         <div class="footer-nav-item">
-           <a href="#contact" class="footer-nav-link regular-base">
-             <p class="regular-base">Contatos</p>
-           </a>
-         </div>
-       </div>
-    </footer>
+      <p class="regular-base">&copy 2025 Vitor Lacerda. Todos os direitos reservados.</p>
+    </footer> 
     
     <!-- Interact.js library -->
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     
     <!-- Custom drag functionality -->
     <script>
-      // Configuração inicial do Interact.js
+      // Initial Interact.js configuration
       interact('.draggable')
         .draggable({
           inertia: true,
@@ -450,7 +419,7 @@
           }
         });
 
-      // Função para mover o elemento
+      // Function to move the element
       function dragMoveListener(event) {
         const target = event.target;
         const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
@@ -461,7 +430,7 @@
         target.setAttribute('data-y', y);
       }
 
-      // Função para mostrar o botão de reset
+      // Function to show the reset button
       function showResetButton() {
         const resetBtn = document.getElementById('reset-button');
         if (resetBtn) {
@@ -469,7 +438,7 @@
         }
       }
 
-      // Função para resetar as posições
+      // Function to reset positions
       function resetPositions() {
         const draggableElements = document.querySelectorAll('.draggable');
         draggableElements.forEach(element => {
@@ -478,19 +447,36 @@
           element.setAttribute('data-y', 0);
         });
         
-        // Esconder o botão de reset
+        // Hide the reset button
         const resetBtn = document.getElementById('reset-button');
         if (resetBtn) {
           resetBtn.style.display = 'none';
         }
       }
 
-      // Adicionar evento de clique ao botão de reset
+      // Add click event to the reset button
       document.addEventListener('DOMContentLoaded', function() {
         const resetBtn = document.getElementById('reset-button');
         if (resetBtn) {
           resetBtn.addEventListener('click', resetPositions);
         }
+        
+      // Smooth navigation for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            const elementPosition = targetElement.offsetTop - 80;
+            window.scrollTo({
+              top: elementPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
       });
     </script>
   </body>

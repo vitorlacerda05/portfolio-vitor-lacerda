@@ -28,7 +28,6 @@ body {
     align-self: stretch;
 }
 
-/* Reset Button Styles */
 .reset-button {
     position: fixed;
     bottom: 20px;
@@ -59,7 +58,6 @@ body {
     font-size: 16px;
 }
 
-/* Draggable elements styles */
 .draggable {
     cursor: grab !important;
     user-select: none;
@@ -75,7 +73,6 @@ body {
     cursor: grab !important;
 }
 
-/* Ensure draggable elements maintain their original positioning */
 .vector-1.draggable,
 .vector-2.draggable,
 .profile-comment.draggable {
