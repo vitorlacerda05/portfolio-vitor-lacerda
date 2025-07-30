@@ -21,10 +21,10 @@ body {
     display: flex;
     margin: 0 auto;
     max-width: 976px;
-    padding: 240px 24px 136px 24px;
+    padding: 26vh 24px 14vh 24px;
     flex-direction: column;
     align-items: center;
-    gap: 240px;
+    gap: 26vh;
     align-self: stretch;
 }
 

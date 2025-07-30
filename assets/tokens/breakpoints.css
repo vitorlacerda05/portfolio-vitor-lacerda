@@ -1,0 +1,17 @@
+/* Use example:
+
+@media screen and (max-width: var(--mobile-small)) {
+  .class {
+  }
+}
+
+*/
+
+/* Breakpoints tokens */
+:root {
+  --mobile-small: 375px;
+  --mobile-medium: 481px;
+  --mobile-large: 601px;
+  --tablet: 1026px;
+  --desktop-small: 1281px;
+}

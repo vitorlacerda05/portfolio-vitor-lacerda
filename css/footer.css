@@ -11,4 +11,5 @@
   box-sizing: border-box;
   height: 120px;
   color: var(--white);
+  text-align: center;
 }

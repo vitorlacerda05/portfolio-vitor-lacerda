@@ -14,12 +14,12 @@
 
 .main-bottom {
     background: linear-gradient(180deg, var(--blue-600) 0%, var(--blue-700) 100%);
-    padding: 160px 24px 0 24px;
+    padding: 18vh 24px 18vh 24px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 240px;
+    gap: 26px;
 }
 
 .section {
@@ -28,8 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 200px;
-    padding: 0 0 160px 0;
+    gap: 22vh;
 }
 
 .quote-section {
@@ -140,6 +139,18 @@
     gap: 72px;
     align-items: flex-start;
     width: 100%;
+}
+
+/* Responsive adjustments for about-top */
+@media screen and (max-width: 601px) {
+    .about-top {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .about-title-section {

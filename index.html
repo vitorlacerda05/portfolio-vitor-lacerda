@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio - Vitor Lacerda</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/tokens/fonts.css" />
+    <!-- Tokens -->
+    <link rel="stylesheet" href="assets/tokens/breakpoints.css" />
     <link rel="stylesheet" href="assets/tokens/colors.css" />
+    <link rel="stylesheet" href="assets/tokens/fonts.css" />
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/button.css" />
     <link rel="stylesheet" href="css/cursor.css" />
@@ -32,6 +35,20 @@
       
       <!-- Portfolio Header -->
       <header class="navbar-wrapper">
+        <!-- Mobile Logo (visible only on mobile) -->
+        <div class="mobile-logo">
+          <img
+            src="assets/images/homepage/logo.svg"
+            alt="Logo"
+            class="navbar-logo"
+          />
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
         <div class="navbar-gradient">
           <div class="navbar-content">
             <div class="navbar-menu">
@@ -71,6 +88,23 @@
               >
             </nav>
             <a href="#contact-section" class="button-primary">Entrar em contato</a>
+          </div>
+        </div>
+        
+        <!-- Mobile Dropdown Overlay -->
+        <div class="mobile-overlay" id="mobile-overlay">
+          <div class="mobile-dropdown">
+            <div class="mobile-dropdown-header">
+              <button class="mobile-close-btn" id="mobile-close-btn">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <nav class="mobile-nav">
+              <a href="#projects-section" class="mobile-nav-link">Projetos</a>
+              <a href="#main-bottom" class="mobile-nav-link">Códigos e artigos</a>
+              <a href="#about-section" class="mobile-nav-link">Sobre</a>
+              <a href="#contact-section" class="button-primary">Entrar em contato</a>
+            </nav>
           </div>
         </div>
       </header>
@@ -409,5 +443,8 @@
     
     <!-- Custom drag functionality -->
     <script src="js/drag.js"></script>
+    
+    <!-- Mobile menu functionality -->
+    <script src="js/mobile-menu.js"></script>
   </body>
 </html>

@@ -19,6 +19,19 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: normal;
 }
 
+/* Responsive adjustments for title_karla */
+@media screen and (max-width: 1026px) {
+  .title_karla {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .title_karla {
+    font-size: 32px;
+  }
+}
+
 .regular-xs{
   font-size: 12px;
   font-family: 'Inter', sans-serif;
@@ -37,42 +50,158 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 150%;
 }
+
+/* Responsive adjustments for regular-base */
+@media screen and (max-width: 1026px) {
+  .regular-base {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .regular-base {
+    font-size: 14px;
+  }
+}
+
 .regular-lg{
   font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 150%;
 }
+
+/* Responsive adjustments for regular-lg */
+@media screen and (max-width: 1026px) {
+  .regular-lg {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .regular-lg {
+    font-size: 14px;
+  }
+}
+
 .regular-h5{
   font-size: 20px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 150%;
 }
+
+/* Responsive adjustments for regular-h5 */
+@media screen and (max-width: 1026px) {
+  .regular-h5 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .regular-h5 {
+    font-size: 16px;
+  }
+}
+
 .regular-h4{
   font-size: 24px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 150%;
 }
+
+/* Responsive adjustments for regular-h4 */
+@media screen and (max-width: 1026px) {
+  .regular-h4 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .regular-h4 {
+    font-size: 20px;
+  }
+}
+
 .regular-h3{
   font-size: 32px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 125%;
 }
+
+/* Responsive adjustments for regular-h3 */
+@media screen and (max-width: 1281px) {
+  .regular-h3 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .regular-h3 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .regular-h3 {
+    font-size: 26px;
+  }
+}
+
 .regular-h2{
   font-size: 40px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 125%;
 }
+
+/* Responsive adjustments for regular-h2 */
+@media screen and (max-width: 1281px) {
+  .regular-h2 {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .regular-h2 {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .regular-h2 {
+    font-size: 32px;
+  }
+}
+
 .regular-h1{
   font-size: 48px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   line-height: 100%;
 }
+
+/* Responsive adjustments for regular-h1 */
+@media screen and (max-width: 1281px) {
+  .regular-h1 {
+    font-size: 46px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .regular-h1 {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .regular-h1 {
+    font-size: 38px;
+  }
+}
+
 .medium-xs{
   font-size: 12px;
   font-family: 'Inter', sans-serif;
@@ -91,42 +220,158 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   line-height: 150%;
 }
+
+/* Responsive adjustments for medium-base */
+@media screen and (max-width: 1026px) {
+  .medium-base {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium-base {
+    font-size: 14px;
+  }
+}
+
 .medium-lg{
   font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 150%;
 }
+
+/* Responsive adjustments for medium-lg */
+@media screen and (max-width: 1026px) {
+  .medium-lg {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium-lg {
+    font-size: 14px;
+  }
+}
+
 .medium-h5{
   font-size: 20px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 150%;
 }
+
+/* Responsive adjustments for medium-h5 */
+@media screen and (max-width: 1026px) {
+  .medium-h5 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium-h5 {
+    font-size: 16px;
+  }
+}
+
 .medium-h4{
   font-size: 24px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 150%;
 }
+
+/* Responsive adjustments for medium-h4 */
+@media screen and (max-width: 1026px) {
+  .medium-h4 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium-h4 {
+    font-size: 20px;
+  }
+}
+
 .medium-h3{
   font-size: 32px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 125%;
 }
+
+/* Responsive adjustments for medium-h3 */
+@media screen and (max-width: 1281px) {
+  .medium-h3 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .medium-h3 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium-h3 {
+    font-size: 26px;
+  }
+}
+
 .medium-h2{
   font-size: 40px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 125%;
 }
+
+/* Responsive adjustments for medium-h2 */
+@media screen and (max-width: 1281px) {
+  .medium-h2 {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .medium-h2 {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium-h2 {
+    font-size: 32px;
+  }
+}
+
 .medium-h1{
   font-size: 48px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   line-height: 100%;
 }
+
+/* Responsive adjustments for medium-h1 */
+@media screen and (max-width: 1281px) {
+  .medium-h1 {
+    font-size: 46px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .medium-h1 {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .medium-h1 {
+    font-size: 38px;
+  }
+}
+
 .bold-xs{
   font-size: 12px;
   font-family: 'Inter', sans-serif;
@@ -145,39 +390,154 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 125%;
 }
+
+/* Responsive adjustments for bold-base */
+@media screen and (max-width: 1026px) {
+  .bold-base {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .bold-base {
+    font-size: 14px;
+  }
+}
+
 .bold-lg{
   font-size: 18px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 150%;
 }
+
+/* Responsive adjustments for bold-lg */
+@media screen and (max-width: 1026px) {
+  .bold-lg {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .bold-lg {
+    font-size: 14px;
+  }
+}
+
 .bold-h5{
   font-size: 20px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 150%;
 }
+
+/* Responsive adjustments for bold-h5 */
+@media screen and (max-width: 1026px) {
+  .bold-h5 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .bold-h5 {
+    font-size: 16px;
+  }
+}
+
 .bold-h4{
   font-size: 24px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 150%;
 }
+
+/* Responsive adjustments for bold-h4 */
+@media screen and (max-width: 1026px) {
+  .bold-h4 {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .bold-h4 {
+    font-size: 20px;
+  }
+}
+
 .bold-h3{
   font-size: 32px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 125%;
 }
+
+/* Responsive adjustments for bold-h3 */
+@media screen and (max-width: 1281px) {
+  .bold-h3 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .bold-h3 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .bold-h3 {
+    font-size: 26px;
+  }
+}
+
 .bold-h2{
   font-size: 40px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 125%;
 }
+
+/* Responsive adjustments for bold-h2 */
+@media screen and (max-width: 1281px) {
+  .bold-h2 {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .bold-h2 {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .bold-h2 {
+    font-size: 32px;
+  }
+}
+
 .bold-h1{
   font-size: 48px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 100%;
+}
+
+/* Responsive adjustments for bold-h1 */
+@media screen and (max-width: 1281px) {
+  .bold-h1 {
+    font-size: 46px;
+  }
+}
+
+@media screen and (max-width: 1026px) {
+  .bold-h1 {
+    font-size: 42px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .bold-h1 {
+    font-size: 38px;
+  }
 } 

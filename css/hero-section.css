@@ -247,3 +247,15 @@
   opacity: 1;
   transform: translateY(0);
 } 
+
+@media screen and (max-width: 1026px) {
+  .title {
+    padding: 36px 28px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .title {
+    padding: 28px 20px;
+  }
+}
