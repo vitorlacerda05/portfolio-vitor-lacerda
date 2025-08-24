@@ -69,6 +69,35 @@
   white-space: nowrap;
   top: -30px;
   transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.comment-label-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: auto;
+  text-align: center;
+}
+
+.comment-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 1;
+}
+
+.comment-lock-icon {
+  opacity: 0;
+  font-size: 14px;
+  color: var(--blue-gray-300);
+  position: absolute;
+  left: 10px;
+  top: 5px;
 }
 
 .title:hover .comment-label {
@@ -263,6 +292,16 @@
   outline: 2px solid var(--blue-500);
 }
 
+.title.draggable {
+  position: relative;
+}
+
+.vector-1.draggable,
+.vector-2.draggable,
+.profile-comment.draggable {
+  position: absolute;
+}
+
 .title.draggable:not(.draggable-disabled):hover:not(:active) {
   outline: 2px solid var(--blue-500) !important;
 }
@@ -288,20 +327,33 @@
   cursor: default !important;
 }
 
-/* Allow title:hover to work normally when draggable is disabled */
 .title.draggable.draggable-disabled:hover:not(:active) {
   outline: 2px solid var(--blue-gray-100) !important;
 }
 
-.vector-1.draggable,
-.vector-2.draggable,
-.profile-comment.draggable {
-  position: absolute;
+.title.draggable.draggable-disabled:hover .comment-label {
+  color: var(--blue-gray-300) !important;
 }
 
-.title.draggable {
-  position: relative;
+/* Show lock icon only on hover when draggable is disabled */
+.title.draggable.draggable-disabled:hover .comment-lock-icon {
+  opacity: 1;
 }
+
+.title.draggable.draggable-disabled:hover .comment-symbol {
+  opacity: 0;
+}
+
+/* Hide lock icon when draggable is enabled */
+.title.draggable:not(.draggable-disabled) .comment-lock-icon {
+  opacity: 0;
+}
+
+/* Keep symbol visible in all states */
+.comment-symbol {
+  opacity: 1;
+}
+
 
 @media screen and (max-width: 1026px) {
   .title {

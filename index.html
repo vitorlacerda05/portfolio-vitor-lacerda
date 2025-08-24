@@ -40,11 +40,11 @@
       <nav class="navbar animate__animated animate__fadeInDown animate__delay-1s">
         <div class="navbar-options">
           <div class="navbar-divider"></div>
-          <button class="option-pencil active" data-option="pencil">
-            <div class="option-icon pencil-icon"></div>
-          </button>
-          <button class="option-hand" data-option="hand">
+          <button class="option-hand active" data-option="hand">
             <div class="option-icon cursor-icon"></div>
+          </button>
+          <button class="option-pencil" data-option="pencil">
+            <div class="option-icon pencil-icon"></div>
           </button>
         </div>
         
@@ -118,7 +118,11 @@
 
           <div class="title draggable">
             <div class="regular-base comment-label">
-              <p>⌗ hero-section</p>
+              <div class="comment-label-content">
+                <span class="comment-symbol">⌗</span>
+                <i class="fa fa-lock comment-lock-icon"></i>
+              </div>
+              <span class="comment-text">hero-section</span>
             </div>
 
             <div class="title-text">

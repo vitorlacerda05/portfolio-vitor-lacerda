@@ -31,6 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setActiveOption(optionHand);
   });
 
-  // Initialize with pencil as active (default state)
-  setActiveOption(optionPencil);
+  // Initialize with hand as active (default state - draggable disabled)
+  setActiveOption(optionHand);
 });
