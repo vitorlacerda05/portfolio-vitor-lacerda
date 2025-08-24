@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="assets/tokens/fonts.css" />
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/navbar-homepage.css" />
     <link rel="stylesheet" href="css/button.css" />
     <link rel="stylesheet" href="css/cursor.css" />
     <link rel="stylesheet" href="css/homepage.css" />
@@ -39,77 +39,31 @@
       <!-- Portfolio Header -->
       <header class="navbar-wrapper animate__animated animate__fadeInDown animate__delay-1s">
         <!-- Mobile Logo (visible only on mobile) -->
-        <div class="mobile-logo">
-          <img
-            src="assets/images/homepage/logo.svg"
-            alt="Logo"
-            class="navbar-logo"
-          />
-        </div>
         
-        <!-- Mobile Menu Button -->
-        <button class="mobile-menu-btn animate__animated animate__fadeInDown animate__delay-1s" id="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </button>
-        
-        <div class="navbar-gradient animate__animated animate__fadeInDown animate__delay-1s">
-          <div class="navbar-content">
-            <div class="navbar-menu">
-              <div class="frame-switch-icon regular-base">
-                <span>⌗</span>
-                <i class="fas fa-lock regular-base"></i>
-              </div>
-              <span class="regular-base title-frame">
-                portfolio-navbar
-              </span>
-            </div>
-            <div class="navbar-title">
-              <img
-                src="assets/images/homepage/logo.svg"
-                alt="Logo"
-                class="navbar-logo"
-              />
-            </div>
-            <nav class="navbar-options">
-              <a
-                href="#projects-section"
-                class="regular-base"
-                style="color: var(--blue-gray-700)"
-                >Projetos</a
-              >
-              <a
-                href="#main-bottom"
-                class="regular-base"
-                style="color: var(--blue-gray-700)"
-                >Códigos e artigos</a
-              >
-              <a
-                href="#about-section"
-                class="regular-base"
-                style="color: var(--blue-gray-700)"
-                >Sobre</a
-              >
-            </nav>
-            <a href="#contact-section" class="button-primary">Entrar em contato</a>
+        <nav class="navbar">
+          <div class="navbar-options">
+            <div class="navbar-divider"></div>
+            <button class="option-pencil active" data-option="pencil">
+              <div class="option-icon pencil-icon"></div>
+            </button>
+            <button class="option-hand" data-option="hand">
+              <div class="option-icon cursor-icon"></div>
+            </button>
           </div>
-        </div>
-        
-        <!-- Mobile Dropdown Overlay -->
-        <div class="mobile-overlay" id="mobile-overlay">
-          <div class="mobile-dropdown">
-            <div class="mobile-dropdown-header">
-              <button class="mobile-close-btn" id="mobile-close-btn">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-            <nav class="mobile-nav">
-              <a href="#projects-section" class="mobile-nav-link">Projetos</a>
-              <a href="#main-bottom" class="mobile-nav-link">Códigos e artigos</a>
-              <a href="#about-section" class="mobile-nav-link">Sobre</a>
-              <a href="#contact-section" class="button-primary">Entrar em contato</a>
-            </nav>
+          
+          <div class="navbar-links">
+            <a href="#projects-section" class="navbar-link">
+              <span class="regular-base">Projetos</span>
+            </a>
+            <a href="#about-section" class="navbar-link">
+              <span class="regular-base">Sobre</span>
+            </a>
+            <a href="#contact-section" class="navbar-link">
+              <span class="regular-base">Contatos</span>
+            </a>
           </div>
-        </div>
+        </nav>
+        
       </header>
 
       <!-- Main section -->
@@ -448,6 +402,9 @@
     
     <!-- Custom drag functionality -->
     <script src="js/drag.js"></script>
+    
+    <!-- Navbar functionality -->
+    <script src="js/navbar.js"></script>
     
     <!-- Mobile menu functionality -->
     <script src="js/mobile-menu.js"></script>
