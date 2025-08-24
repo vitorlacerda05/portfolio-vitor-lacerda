@@ -4,7 +4,16 @@ let isDraggableEnabled = true;
 function toggleDraggable(enabled) {
   isDraggableEnabled = enabled;
   
+  // Get all draggable elements
+  const draggableElements = document.querySelectorAll('.draggable');
+  
   if (enabled) {
+    // Remove disabled class from all draggable elements
+    draggableElements.forEach(element => {
+      element.classList.remove('draggable-disabled');
+    });
+    
+    // Re-enable draggable for all elements
     interact('.draggable').draggable({
       inertia: true,
       modifiers: [
@@ -26,6 +35,12 @@ function toggleDraggable(enabled) {
       }
     });
   } else {
+    // Add disabled class to all draggable elements
+    draggableElements.forEach(element => {
+      element.classList.add('draggable-disabled');
+    });
+    
+    // Disable draggable for all elements
     interact('.draggable').unset();
   }
 }

@@ -56,7 +56,6 @@
   position: relative;
   flex-shrink: 0;
   width: 100%;
-  outline: 2px solid var(--blue-gray-100);
   z-index: 2;
 }
 
@@ -247,6 +246,62 @@
   opacity: 1;
   transform: translateY(0);
 } 
+
+
+/* Draggable hover and active states */
+
+.draggable {
+  cursor: grab !important;
+  user-select: none;
+}
+
+.title {
+  outline: 2px solid var(--blue-gray-100);
+}
+
+.title:hover{
+  outline: 2px solid var(--blue-500);
+}
+
+.title.draggable:not(.draggable-disabled):hover:not(:active) {
+  outline: 2px solid var(--blue-500) !important;
+}
+
+.draggable.draggable-disabled:hover:not(:active) {
+  outline: none;
+  cursor: default !important;
+}
+
+.draggable:active {
+  outline: 2px solid var(--blue-500);
+  cursor: grabbing !important;
+}
+
+.draggable:hover:not(:active) {
+  outline: 2px solid var(--blue-500);
+  cursor: grab !important;
+}
+
+
+.draggable.draggable-disabled:active {
+  outline: none;
+  cursor: default !important;
+}
+
+/* Allow title:hover to work normally when draggable is disabled */
+.title.draggable.draggable-disabled:hover:not(:active) {
+  outline: 2px solid var(--blue-gray-100) !important;
+}
+
+.vector-1.draggable,
+.vector-2.draggable,
+.profile-comment.draggable {
+  position: absolute;
+}
+
+.title.draggable {
+  position: relative;
+}
 
 @media screen and (max-width: 1026px) {
   .title {
