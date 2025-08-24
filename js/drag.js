@@ -26,6 +26,11 @@ function toggleDraggable(enabled) {
       listeners: {
         start: function (event) {
           event.target.style.zIndex = 1000;
+          
+          // Pausar animações do Animate.css quando começar a arrastar
+          if (event.target.classList.contains('animate__animated')) {
+            event.target.style.animationPlayState = 'paused';
+          }
         },
         move: dragMoveListener,
         end: function (event) {
@@ -51,7 +56,7 @@ interact('.draggable')
     inertia: true,
     modifiers: [
       interact.modifiers.restrictRect({
-        restriction: '.page-white-container',
+        restriction: 'body',
         endOnly: true
       })
     ],
@@ -60,6 +65,11 @@ interact('.draggable')
       start: function (event) {
         if (!isDraggableEnabled) return false;
         event.target.style.zIndex = 1000;
+        
+        // Pausar animações do Animate.css quando começar a arrastar
+        if (event.target.classList.contains('animate__animated')) {
+          event.target.style.animationPlayState = 'paused';
+        }
       },
       move: dragMoveListener,
       end: function (event) {
@@ -75,9 +85,15 @@ function dragMoveListener(event) {
   const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
   const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
+  // Garantir que as transformações do drag tenham prioridade sobre as animações
   target.style.transform = `translate(${x}px, ${y}px)`;
   target.setAttribute('data-x', x);
   target.setAttribute('data-y', y);
+  
+  // Pausar animações durante o movimento
+  if (target.classList.contains('animate__animated')) {
+    target.style.animationPlayState = 'paused';
+  }
 }
 
 // Function to show the reset button
@@ -95,6 +111,11 @@ function resetPositions() {
     element.style.transform = 'translate(0px, 0px)';
     element.setAttribute('data-x', 0);
     element.setAttribute('data-y', 0);
+    
+    // Retomar animações quando resetar posições
+    if (element.classList.contains('animate__animated')) {
+      element.style.animationPlayState = 'running';
+    }
   });
   
   // Hide the reset button

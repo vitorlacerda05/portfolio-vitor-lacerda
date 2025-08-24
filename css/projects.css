@@ -7,6 +7,50 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-section.draggable {
+  cursor: grab;
+  user-select: none;
+  outline: 2px solid transparent;
+  transform: translate(0px, 0px);
+  will-change: transform;
+}
+
+.projects-section.draggable.animate__animated {
+  animation-fill-mode: both;
+}
+
+.projects-section.draggable.animate__animated[data-x],
+.projects-section.draggable.animate__animated[data-y] {
+  animation: none !important;
+}
+
+.projects-section.draggable[style*="transform"] {
+  animation: none !important;
+  animation-play-state: paused !important;
+}
+
+.projects-section.draggable:hover {
+  outline: 2px solid #9747ff;
+  cursor: grab;
+}
+
+.projects-section.draggable:active {
+  outline: 2px solid #9747ff;
+  cursor: grabbing;
+}
+
+.projects-section.draggable.draggable-disabled {
+  cursor: default;
+  outline: none;
+}
+
+.projects-section.draggable.draggable-disabled:hover {
+  outline: none;
+  cursor: default;
 }
 
 .work-wrapper {
@@ -22,6 +66,7 @@
   border-radius: 8px;
   width: 100%;
   height: 100%;
+  pointer-events: auto;
 }
 
 .work-wrapper::before {
