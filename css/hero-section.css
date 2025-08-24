@@ -78,9 +78,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: auto;
-  text-align: center;
 }
 
 .comment-symbol {
@@ -91,14 +88,7 @@
   opacity: 1;
 }
 
-.comment-lock-icon {
-  opacity: 0;
-  font-size: 14px;
-  color: var(--blue-gray-300);
-  position: absolute;
-  left: 10px;
-  top: 5px;
-}
+
 
 .title:hover .comment-label {
   color: var(--blue-500);
@@ -333,20 +323,6 @@
 
 .title.draggable.draggable-disabled:hover .comment-label {
   color: var(--blue-gray-300) !important;
-}
-
-/* Show lock icon only on hover when draggable is disabled */
-.title.draggable.draggable-disabled:hover .comment-lock-icon {
-  opacity: 1;
-}
-
-.title.draggable.draggable-disabled:hover .comment-symbol {
-  opacity: 0;
-}
-
-/* Hide lock icon when draggable is enabled */
-.title.draggable:not(.draggable-disabled) .comment-lock-icon {
-  opacity: 0;
 }
 
 /* Keep symbol visible in all states */

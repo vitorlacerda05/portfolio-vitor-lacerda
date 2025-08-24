@@ -126,39 +126,7 @@
   opacity: 1;
 }
 
-.work-wrapper .project-frame-switch-icon i {
-  opacity: 0;
-  color: #aa69ff;
-  font-size: 14px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 14px;
-  height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-/* Show lock icon only when draggable is disabled and on hover */
-.projects-section.draggable.draggable-disabled:hover .project-frame-switch-icon span {
-  opacity: 0;
-}
-
-.projects-section.draggable.draggable-disabled:hover .project-frame-switch-icon i {
-  opacity: 1;
-}
-
-/* Hide lock icon when draggable is enabled */
-.projects-section.draggable:not(.draggable-disabled) .project-frame-switch-icon i {
-  opacity: 0;
-}
-
-/* Keep symbol visible in all states when draggable is enabled */
-.projects-section.draggable:not(.draggable-disabled) .project-frame-switch-icon span {
-  opacity: 1;
-}
 
 .project-title-frame {
   color: #aa69ff;
