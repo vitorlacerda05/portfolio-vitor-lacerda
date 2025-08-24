@@ -1,3 +1,35 @@
+let isDraggableEnabled = true;
+
+// Function to enable/disable draggable functionality
+function toggleDraggable(enabled) {
+  isDraggableEnabled = enabled;
+  
+  if (enabled) {
+    interact('.draggable').draggable({
+      inertia: true,
+      modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: '.page-white-container',
+          endOnly: true
+        })
+      ],
+      autoScroll: true,
+      listeners: {
+        start: function (event) {
+          event.target.style.zIndex = 1000;
+        },
+        move: dragMoveListener,
+        end: function (event) {
+          event.target.style.zIndex = '';
+          showResetButton();
+        }
+      }
+    });
+  } else {
+    interact('.draggable').unset();
+  }
+}
+
 // Initial Interact.js configuration
 interact('.draggable')
   .draggable({
@@ -11,6 +43,7 @@ interact('.draggable')
     autoScroll: true,
     listeners: {
       start: function (event) {
+        if (!isDraggableEnabled) return false;
         event.target.style.zIndex = 1000;
       },
       move: dragMoveListener,
