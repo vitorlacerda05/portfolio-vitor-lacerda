@@ -14,21 +14,21 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 0;
   color: var(--blue-800);
-  font-size: 40px;
-  text-align: center;
+  font-size: 36px;
+  text-align: left;
   line-height: normal;
 }
 
 /* Responsive adjustments for title_karla */
 @media screen and (max-width: 1026px) {
   .title_karla {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
 @media screen and (max-width: 601px) {
   .title_karla {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 
