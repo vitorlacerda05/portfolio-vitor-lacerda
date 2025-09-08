@@ -3,7 +3,8 @@
     width: 100%;
     height: 80px;
     overflow: hidden;
-    margin-top: -1px; 
+    margin-top: -1px;
+    background-color: #F0FAFF;
 }
 
 .wave-separator svg {
@@ -28,102 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 22vh;
-}
-
-.quote-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 72px;
-}
-
-.quote-title {
-    color: var(--white);
-    text-align: left;
-    width: 100%;
-}
-
-.quote-title .regular {
-    font-weight: 400;
-}
-
-.github-lattes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 32px;
-    width: 100%;
-    height: auto;
-}
-
-.ctt {
-    display: flex;
-    background: linear-gradient(90deg, rgba(230, 230, 230, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
-    border-radius: 8px;
-    position: relative;
-    min-width: 320px;
-    flex: 1;
-    border: 2px solid rgba(255, 255, 255, 0.05);
-}
-
-.ctt-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 24px 32px;
-    height: auto;
-    width: 100%;
-}
-
-.ctt-header {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    align-items: flex-start;
-    width: 100%;
-    height: 100%;
-}
-
-.ctt-text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    color: var(--white);
-}
-
-.ctt-title {
-    text-align: left;
-    white-space: nowrap;
-}
-
-.ctt-description {
-    text-align: left;
-    min-width: 100%;
-}
-
-.ctt-image {
-    width: 88px;
-    height: 88px;
-    flex-shrink: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.ctt-button {
-    background: var(--blue-50);
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    height: 48px;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 32px;
-    border-radius: 100px;
-    flex-shrink: 0;
-    width: 100%;
+    gap: 16vh;
 }
 
 .about-section {

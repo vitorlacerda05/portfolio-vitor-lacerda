@@ -3,6 +3,7 @@ class ScrollAnimations {
   constructor() {
     this.animatedElements = [];
     this.animatedSet = new Set();
+    this.countersAnimated = new Set();
     this.init();
   }
 
@@ -10,6 +11,7 @@ class ScrollAnimations {
     this.animatedElements = document.querySelectorAll('[data-animate]');
     this.initializeElements();
     this.setupIntersectionObserver();
+    this.setupCounterObserver();
     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
@@ -78,6 +80,56 @@ class ScrollAnimations {
       rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
       rect.bottom >= 0
     );
+  }
+
+  // Counter animation methods
+  setupCounterObserver() {
+    const counterElements = document.querySelectorAll('.highlight-number p');
+    
+    const options = {
+      threshold: 0.5, // 50% of element visible
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !this.countersAnimated.has(entry.target)) {
+          this.animateCounter(entry.target);
+          this.countersAnimated.add(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    counterElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+
+  animateCounter(element) {
+    const text = element.textContent;
+    const hasPlus = text.includes('+');
+    const targetNumber = parseInt(text.replace('+', ''));
+    
+    if (isNaN(targetNumber)) return;
+
+    let currentNumber = 0;
+    // Duração mais equilibrada: números menores são mais rápidos, mas não tanto
+    const duration = Math.max(800, (targetNumber / 15) * 1500); // Mínimo 800ms, máximo proporcional
+    const increment = targetNumber / 60; // 60 frames for smooth animation
+    const stepTime = duration / 60;
+
+    const timer = setInterval(() => {
+      currentNumber += increment;
+      
+      if (currentNumber >= targetNumber) {
+        currentNumber = targetNumber;
+        clearInterval(timer);
+      }
+      
+      // Mantém o + se estava presente no HTML original
+      element.textContent = hasPlus ? '+' + Math.floor(currentNumber) : Math.floor(currentNumber);
+    }, stepTime);
   }
 }
 
