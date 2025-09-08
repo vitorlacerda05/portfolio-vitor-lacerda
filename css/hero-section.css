@@ -104,6 +104,10 @@
   flex-shrink: 0;
 }
 
+.title-text span {
+  color: var(--blue-gray-900);
+}
+
 .hero-content {
   display: flex;
   flex-direction: row;
