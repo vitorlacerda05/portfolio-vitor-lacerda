@@ -116,6 +116,36 @@ function isOverDraggableElement(event) {
       return true;
     }
   }
+  
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    const rect = navbar.getBoundingClientRect();
+    if (event.clientX >= rect.left && event.clientX <= rect.right &&
+        event.clientY >= rect.top && event.clientY <= rect.bottom) {
+      return true;
+    }
+  }
+  
+  const resetBtn = document.getElementById('reset-button');
+  if (resetBtn && resetBtn.style.display !== 'none') {
+    const rect = resetBtn.getBoundingClientRect();
+    if (event.clientX >= rect.left && event.clientX <= rect.right &&
+        event.clientY >= rect.top && event.clientY <= rect.bottom) {
+      return true;
+    }
+  }
+  
+  const toasters = document.querySelectorAll('.toaster');
+  for (let toaster of toasters) {
+    if (toaster.classList.contains('show')) {
+      const rect = toaster.getBoundingClientRect();
+      if (event.clientX >= rect.left && event.clientX <= rect.right &&
+          event.clientY >= rect.top && event.clientY <= rect.bottom) {
+        return true;
+      }
+    }
+  }
+  
   return false;
 }
 
