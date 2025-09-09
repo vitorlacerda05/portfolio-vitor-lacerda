@@ -237,7 +237,7 @@
   flex-direction: row;
   gap: 24px;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0;
   position: relative;
   flex-shrink: 0;
@@ -287,7 +287,7 @@
   min-height: 80px;
   border-radius: 12px;
   cursor: pointer;
-  padding: 16px;
+  padding: 24px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -295,6 +295,8 @@
   text-decoration: none;
   color: inherit;
   width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .others-project-item:hover {
@@ -307,6 +309,8 @@
   align-items: center;
   justify-content: flex-start;
   gap: 24px;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .others-project-header {
@@ -316,15 +320,66 @@
   gap: 24px;
   width: 100%;
   position: relative;
+  box-sizing: border-box;
+  min-width: 0;
 }
 
 .others-project-icon {
   width: 64px;
   height: 64px;
   flex-shrink: 0;
+  position: relative;
+}
+
+.icon-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 2px solid var(--blue-200);
+  border-radius: 8px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.icon-image {
+  width: 48px;
+  height: 48px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  transform: rotate(15deg);
+}
+
+.corner-square {
+  box-sizing: border-box;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #FDFDFD;
+  border: 2px solid var(--blue-200);
+}
+
+.corner-square.top-left {
+  top: -5px;
+  left: -5px;
+}
+
+.corner-square.top-right {
+  top: -5px;
+  right: -5px;
+}
+
+.corner-square.bottom-left {
+  bottom: -5px;
+  left: -5px;
+}
+
+.corner-square.bottom-right {
+  bottom: -5px;
+  right: -5px;
 }
 
 .others-project-text {
@@ -372,7 +427,6 @@
 /* Responsive adjustments for others-projects */
 @media screen and (max-width: 1026px) {
   .others-project-item {
-    min-width: 280px;
     padding: 16px;
   }
   
@@ -384,18 +438,26 @@
     width: 56px;
     height: 56px;
   }
+  
+  .icon-image {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .corner-square {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 725px) {  
+  .others-works {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 601px) {
-  .others-works {
-    flex-direction: column;
-    gap: 16px;
-  }
-  
   .others-project-item {
-    min-width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
     gap: 16px;
   }
   
@@ -407,5 +469,15 @@
   .others-project-icon {
     width: 48px;
     height: 48px;
+  }
+  
+  .icon-image {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .corner-square {
+    width: 8px;
+    height: 8px;
   }
 } 
