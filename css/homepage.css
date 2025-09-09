@@ -20,10 +20,10 @@ body {
     display: flex;
     margin: 0 auto;
     max-width: 976px;
-    padding: 20vh 16px 14vh 16px;
+    padding: 22vh 16px 14vh 16px;
     flex-direction: column;
     align-items: center;
-    gap: 22vh;
+    gap: 24vh;
     align-self: stretch;
 }
 
@@ -64,3 +64,10 @@ body {
     color: var(--blue-gray-600);
     font-size: 16px;
 }
+
+@media screen and (max-width: 601px) {
+    .main-top{
+        padding: 10vh 16px 14vh 16px;
+        gap: 16vh;
+    }
+  } 

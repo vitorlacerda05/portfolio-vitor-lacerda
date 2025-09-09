@@ -223,6 +223,13 @@
     }
 }
 
+@media screen and (max-width: 601px) {
+    .main-bottom {
+        padding: 10vh 24px 10vh 24px;
+        gap: 26px;
+    }
+} 
+
 @media (max-width: 480px) {
     .wave-separator {
         height: 40px;

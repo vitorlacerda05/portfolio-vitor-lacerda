@@ -8,20 +8,27 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileOverlay.classList.add('active');
     document.body.classList.add('mobile-menu-open');
     document.body.style.overflow = 'hidden';
-    mobileMenuBtn.style.display = 'none';
+    
+    // Prevent immediate closing
+    setTimeout(() => {
+      mobileOverlay.style.pointerEvents = 'auto';
+    }, 100);
   }
 
   function closeMobileMenu() {
     mobileOverlay.classList.remove('active');
     document.body.classList.remove('mobile-menu-open');
     document.body.style.overflow = ''; // Restore scrolling
-    mobileMenuBtn.style.display = 'flex';
+    mobileOverlay.style.pointerEvents = '';
   }
 
   // Event listeners
   if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', openMobileMenu);
-    mobileMenuBtn.addEventListener('touchstart', openMobileMenu);
+    mobileMenuBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openMobileMenu();
+    });
   }
 
   if (mobileCloseBtn) {
@@ -31,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Close menu when clicking on overlay (outside dropdown)
   if (mobileOverlay) {
     mobileOverlay.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
       if (e.target === mobileOverlay) {
         closeMobileMenu();
       }
