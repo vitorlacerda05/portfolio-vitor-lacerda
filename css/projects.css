@@ -149,6 +149,40 @@
   outline: 4px solid #aa69ff;
 }
 
+/* Draggable states for project-card - when parent is draggable */
+.projects-section.draggable .project-card {
+  cursor: grab !important;
+  user-select: none;
+}
+
+/* Normal cursor when draggable is disabled */
+.projects-section.draggable-disabled .project-card {
+  cursor: pointer !important;
+  user-select: auto;
+}
+
+/* Remove hover effect when draggable is active */
+.projects-section.draggable .project-card:hover:not(:active) {
+  outline: 4px solid transparent !important;
+  cursor: grab !important;
+}
+
+/* Normal hover when draggable is disabled */
+.projects-section.draggable-disabled .project-card:hover:not(:active) {
+  outline: 4px solid #aa69ff !important;
+  cursor: pointer !important;
+}
+
+.projects-section.draggable .project-card:active {
+  outline: 4px solid transparent;
+  cursor: grabbing !important;
+}
+
+.projects-section.draggable-disabled .project-card:active {
+  outline: 4px solid #aa69ff;
+  cursor: pointer !important;
+}
+
 /* Project Card Background Colors */
 .project-card.bg-green {
   background-color: #e8f5e9;
@@ -432,6 +466,40 @@
 
 .others-project-item:hover {
   border: 4px solid #aa69ff;
+}
+
+/* Draggable states for others-project-item - when parent is draggable */
+.others-projects-section.draggable .others-project-item {
+  cursor: grab !important;
+  user-select: none;
+}
+
+/* Normal cursor when draggable is disabled */
+.others-projects-section.draggable-disabled .others-project-item {
+  cursor: pointer !important;
+  user-select: auto;
+}
+
+/* Remove hover effect when draggable is active */
+.others-projects-section.draggable .others-project-item:hover:not(:active) {
+  border: 4px solid transparent !important;
+  cursor: grab !important;
+}
+
+/* Normal hover when draggable is disabled */
+.others-projects-section.draggable-disabled .others-project-item:hover:not(:active) {
+  border: 4px solid #aa69ff !important;
+  cursor: pointer !important;
+}
+
+.others-projects-section.draggable .others-project-item:active {
+  border: 4px solid transparent;
+  cursor: grabbing !important;
+}
+
+.others-projects-section.draggable-disabled .others-project-item:active {
+  border: 4px solid #aa69ff;
+  cursor: pointer !important;
 }
 
 .others-project-content {

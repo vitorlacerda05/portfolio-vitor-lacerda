@@ -170,6 +170,11 @@
   outline: 2px solid var(--blue-500) !important;
 }
 
+.draggable.draggable-disabled {
+  cursor: default !important;
+  user-select: auto;
+}
+
 .draggable.draggable-disabled:hover:not(:active) {
   outline: none;
   cursor: default !important;

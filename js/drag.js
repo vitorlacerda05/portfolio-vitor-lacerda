@@ -1,5 +1,38 @@
 let isDraggableEnabled = true;
 
+// Function to disable all links inside draggable elements
+function disableLinksInDraggable() {
+  const draggableElements = document.querySelectorAll('.draggable');
+  draggableElements.forEach(element => {
+    const links = element.querySelectorAll('a');
+    links.forEach(link => {
+      link.classList.add('link-disabled');
+      link.addEventListener('click', preventLinkClick, true);
+    });
+  });
+}
+
+// Function to enable all links inside draggable elements
+function enableLinksInDraggable() {
+  const draggableElements = document.querySelectorAll('.draggable');
+  draggableElements.forEach(element => {
+    const links = element.querySelectorAll('a');
+    links.forEach(link => {
+      link.classList.remove('link-disabled');
+      link.removeEventListener('click', preventLinkClick, true);
+    });
+  });
+}
+
+// Function to prevent link clicks when drag is enabled
+function preventLinkClick(event) {
+  if (isDraggableEnabled) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  }
+}
+
 // Function to enable/disable draggable functionality
 function toggleDraggable(enabled) {
   isDraggableEnabled = enabled;
@@ -12,6 +45,9 @@ function toggleDraggable(enabled) {
     draggableElements.forEach(element => {
       element.classList.remove('draggable-disabled');
     });
+    
+    // Disable all links inside draggable elements
+    disableLinksInDraggable();
     
     // Re-enable draggable for all elements
     interact('.draggable').draggable({
@@ -44,6 +80,9 @@ function toggleDraggable(enabled) {
     draggableElements.forEach(element => {
       element.classList.add('draggable-disabled');
     });
+    
+    // Re-enable all links inside draggable elements
+    enableLinksInDraggable();
     
     // Disable draggable for all elements
     interact('.draggable').unset();
@@ -78,6 +117,11 @@ interact('.draggable')
       }
     }
   });
+
+// Initialize links as disabled since draggable is enabled by default
+document.addEventListener('DOMContentLoaded', function() {
+  disableLinksInDraggable();
+});
 
 // Function to move the element
 function dragMoveListener(event) {
