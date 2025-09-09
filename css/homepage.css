@@ -104,8 +104,9 @@ body {
 }
 
 .toaster-icon {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1;
+    color: var(--blue-gray-600);
 }
 
 .toaster-content span {
