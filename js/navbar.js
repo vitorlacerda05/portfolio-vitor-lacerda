@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle draggable functionality based on active option
     if (activeOption === optionPencil) {
       // Pencil active = Enable draggable
-      toggleDraggable(true);
+      window.toggleDraggable(true);
     } else if (activeOption === optionHand) {
       // Hand active = Disable draggable
-      toggleDraggable(false);
+      window.toggleDraggable(false);
     }
   }
 
@@ -40,5 +40,5 @@ document.addEventListener('DOMContentLoaded', function() {
   optionHand.classList.add('active');
   
   // Set draggable disabled without showing toaster
-  toggleDraggable(false, false);
+  window.toggleDraggable(false, false);
 });
