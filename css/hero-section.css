@@ -140,10 +140,7 @@
   font-weight: 400;
 }
 
-
-
 /* Draggable hover and active states */
-
 .draggable {
   cursor: grab !important;
   user-select: none;
@@ -190,7 +187,6 @@
   cursor: grab !important;
 }
 
-
 .draggable.draggable-disabled:active {
   outline: none;
   cursor: default !important;
@@ -204,12 +200,11 @@
   color: var(--blue-gray-300) !important;
 }
 
-/* Keep symbol visible in all states */
 .comment-symbol {
   opacity: 1;
 }
 
-
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .title {
     padding: 36px 28px;

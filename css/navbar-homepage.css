@@ -123,7 +123,6 @@
   line-height: 1.5;
 }
 
-/* Mobile Menu Button */
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -145,7 +144,6 @@
   border-color: var(--blue-500);
 }
 
-/* Mobile Overlay */
 .mobile-overlay {
   display: none;
   position: fixed;
@@ -164,7 +162,6 @@
   opacity: 1;
 }
 
-/* Mobile Dropdown */
 .mobile-dropdown {
   position: absolute;
   top: 0;
@@ -183,7 +180,6 @@
   transform: translateX(0);
 }
 
-/* Mobile Dropdown Header */
 .mobile-dropdown-header {
   display: flex;
   justify-content: flex-end;
@@ -224,7 +220,6 @@
   border-color: var(--blue-500);
 }
 
-/* Mobile Navigation */
 .mobile-nav {
   display: flex;
   flex-direction: column;
@@ -262,7 +257,8 @@
   background-color: var(--blue-50);
 }
 
-/* Responsive Design */
+/* Responsive */
+
 @media screen and (max-width: 601px) {
   .navbar {
     margin: 16px 16px 0 auto;

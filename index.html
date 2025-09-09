@@ -28,12 +28,6 @@
   </head>
   <body>
     <div class="page-white-container">
-
-      <!-- Reset Button -->
-      <div id="reset-button" class="reset-button" style="display: none;">
-        <i class="fas fa-rotate-left"></i>
-        <span class="regular-sm">Desfazer mudanças</span>
-      </div>
       
       <!-- Navbar -->
       <nav class="navbar animate__animated animate__fadeInDown animate__delay-1s">
@@ -503,5 +497,26 @@
     
     <!-- Scroll animations -->
     <script src="js/scroll-animations.js"></script>
+    
+    <!-- Reset Button -->
+    <div id="reset-button" class="reset-button" style="display: none;">
+      <i class="fas fa-rotate-left"></i>
+      <span class="regular-base">Desfazer mudanças</span>
+    </div>
+
+    <!-- Toaster -->
+    <div id="toaster-enabled" class="toaster toaster-enabled">
+      <div class="toaster-content ">
+        <i class="toaster-icon">✏️</i>
+        <span class="regular-base">Modo edição ativado, divirta-se!</span>
+      </div>
+    </div>
+    
+    <div id="toaster-disabled" class="toaster toaster-disabled">
+      <div class="toaster-content">
+        <i class="toaster-icon">🔒</i>
+        <span class="regular-base">Modo edição desativado</span>
+      </div>
+    </div>
   </body>
 </html>

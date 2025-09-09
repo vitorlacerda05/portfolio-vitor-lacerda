@@ -32,5 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Initialize with hand as active (default state - draggable disabled)
-  setActiveOption(optionHand);
+  // Remove active class from all options first
+  optionPencil.classList.remove('active');
+  optionHand.classList.remove('active');
+  
+  // Add active class to hand option
+  optionHand.classList.add('active');
+  
+  // Set draggable disabled without showing toaster
+  toggleDraggable(false, false);
 });

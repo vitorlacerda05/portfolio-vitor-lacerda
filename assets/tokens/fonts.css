@@ -26,7 +26,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   padding-right: 24px;
 }
 
-/* Responsive adjustments for paragraph */
+/* Responsive  */
 @media screen and (max-width: 1026px) {
   .paragraph {
     font-size: 15px;
@@ -56,7 +56,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   padding-right: 24px;
 }
 
-/* Responsive adjustments for project-h1 */
+/* Responsive  */
 @media screen and (max-width: 1026px) {
   .project-h1 {
     font-size: 30px;
@@ -83,7 +83,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   padding-right: 24px;
 }
 
-/* Responsive adjustments for project-h2 */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .project-h2 {
     font-size: 22px;
@@ -110,7 +110,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   padding-right: 24px;
 }
 
-/* Responsive adjustments for project-h3 */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .project-h3 {
     font-size: 18px;
@@ -135,7 +135,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: normal;
 }
 
-/* Responsive adjustments for title-sm */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .title-sm {
     font-size: 20px;
@@ -157,7 +157,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: normal;
 }
 
-/* Responsive adjustments for title-md */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .title-md {
     font-size: 28px;
@@ -179,7 +179,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: normal;
 }
 
-/* Responsive adjustments for title-lg */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .title-lg {
     font-size: 36px;
@@ -214,7 +214,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: 150%;
 }
 
-/* Responsive adjustments for regular-base */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .regular-base {
     font-size: 15px;
@@ -234,7 +234,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: 150%;
 }
 
-/* Responsive adjustments for regular-lg */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .regular-lg {
     font-size: 16px;
@@ -269,7 +269,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: 150%;
 }
 
-/* Responsive adjustments for medium-base */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .medium-base {
     font-size: 15px;
@@ -289,7 +289,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: 150%;
 }
 
-/* Responsive adjustments for medium-lg */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .medium-lg {
     font-size: 16px;
@@ -324,7 +324,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: 125%;
 }
 
-/* Responsive adjustments for bold-base */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .bold-base {
     font-size: 15px;
@@ -344,7 +344,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   line-height: 150%;
 }
 
-/* Responsive adjustments for bold-lg */
+/* Responsive */
 @media screen and (max-width: 1026px) {
   .bold-lg {
     font-size: 16px;

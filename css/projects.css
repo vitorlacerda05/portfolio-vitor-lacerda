@@ -1,3 +1,4 @@
+/* Projects Section */
 .projects-section {
   width: 100%;
   height: auto;
@@ -9,48 +10,6 @@
   justify-content: center;
   position: relative;
   z-index: 1;
-}
-
-.projects-section.draggable {
-  cursor: grab;
-  user-select: none;
-  outline: 4px solid transparent;
-  transform: translate(0px, 0px);
-  will-change: transform;
-}
-
-.projects-section.draggable.animate__animated {
-  animation-fill-mode: both;
-}
-
-.projects-section.draggable.animate__animated[data-x],
-.projects-section.draggable.animate__animated[data-y] {
-  animation: none !important;
-}
-
-.projects-section.draggable[style*="transform"] {
-  animation: none !important;
-  animation-play-state: paused !important;
-}
-
-.projects-section.draggable:hover {
-  outline: 4px solid #9747ff;
-  cursor: grab;
-}
-
-.projects-section.draggable:active {
-  outline: 4px solid #9747ff;
-  cursor: grabbing;
-}
-
-.projects-section.draggable.draggable-disabled {
-  cursor: default;
-  outline: none;
-}
-
-.projects-section.draggable.draggable-disabled:hover {
-  outline: none;
-  cursor: default;
 }
 
 .work-wrapper {
@@ -108,30 +67,22 @@
 }
 
 .work-wrapper:hover .project-title-frame {
-  color: #aa69ff !important;
+  color: var(--purple) !important;
 }
 
 .work-wrapper .project-frame-switch-icon span {
-  color: #aa69ff;
-  font-size: 18px;
-}
-
-/* Control lock icon visibility based on draggable state */
-.work-wrapper .project-frame-switch-icon span {
-  color: #aa69ff;
+  color: var(--purple);
   font-size: 18px;
   opacity: 1;
 }
 
-
-
 .project-title-frame {
-  color: #aa69ff;
+  color: var(--purple);
   font-size: 16px;
   white-space: nowrap;
 }
 
-/* Project Card Base Styles */
+/* Project Card */
 .project-card {
   border-radius: 12px;
   cursor: pointer;
@@ -146,44 +97,9 @@
 }
 
 .project-card:hover {
-  outline: 4px solid #aa69ff;
+  outline: 4px solid var(--purple);
 }
 
-/* Draggable states for project-card - when parent is draggable */
-.projects-section.draggable .project-card {
-  cursor: grab !important;
-  user-select: none;
-}
-
-/* Normal cursor when draggable is disabled */
-.projects-section.draggable-disabled .project-card {
-  cursor: pointer !important;
-  user-select: auto;
-}
-
-/* Remove hover effect when draggable is active */
-.projects-section.draggable .project-card:hover:not(:active) {
-  outline: 4px solid transparent !important;
-  cursor: grab !important;
-}
-
-/* Normal hover when draggable is disabled */
-.projects-section.draggable-disabled .project-card:hover:not(:active) {
-  outline: 4px solid #aa69ff !important;
-  cursor: pointer !important;
-}
-
-.projects-section.draggable .project-card:active {
-  outline: 4px solid transparent;
-  cursor: grabbing !important;
-}
-
-.projects-section.draggable-disabled .project-card:active {
-  outline: 4px solid #aa69ff;
-  cursor: pointer !important;
-}
-
-/* Project Card Background Colors */
 .project-card.bg-green {
   background-color: #e8f5e9;
 }
@@ -200,7 +116,6 @@
   background-color: #e0f2f1;
 }
 
-/* Project Image Container */
 .project-image-container {
   position: relative;
   width: auto;
@@ -212,7 +127,6 @@
   justify-content: flex-start;
 }
 
-/* Single Image Layout */
 .project-image-single {
   position: relative;
   width: auto;
@@ -238,7 +152,6 @@
   z-index: 1;
 }
 
-/* Double Image Layout */
 .project-images-double {
   display: flex;
   gap: 24px;
@@ -271,7 +184,6 @@
   z-index: 1;
 }
 
-/* Project Content */
 .project-content {
   display: flex;
   flex-direction: column;
@@ -313,7 +225,141 @@
 }
 
 .projects:hover {
-  border: 4px solid #aa69ff;
+  border: 4px solid var(--purple);
+}
+
+/* Corner Squares for Project Images */
+.corner-square {
+  box-sizing: border-box;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #FDFDFD;
+  border: 2px solid var(--blue-200);
+  z-index: 2;
+}
+
+.corner-square.top-left {
+  top: -6px;
+  left: -6px;
+}
+
+.corner-square.top-right {
+  top: -6px;
+  right: -6px;
+}
+
+.corner-square.bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.corner-square.bottom-right {
+  bottom: -6px;
+  right: -6px;
+}
+
+.project-image-container .corner-square.top-left {
+  top: -6px;
+  left: -6px;
+}
+
+.project-image-container .corner-square.bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.project-image-double .corner-square.top-left {
+  top: -6px;
+  left: -4px;
+}
+
+.project-image-double .corner-square.top-right {
+  top: -6px;
+  right: -5px;
+}
+
+.project-image-double .corner-square.bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.project-image-double .corner-square.bottom-right {
+  bottom: -6px;
+  right: -6px;
+}
+
+/* Project Draggable States */
+.projects-section.draggable {
+  cursor: grab;
+  user-select: none;
+  outline: 4px solid transparent;
+  transform: translate(0px, 0px);
+  will-change: transform;
+}
+
+.projects-section.draggable.animate__animated {
+  animation-fill-mode: both;
+}
+
+.projects-section.draggable.animate__animated[data-x],
+.projects-section.draggable.animate__animated[data-y] {
+  animation: none !important;
+}
+
+.projects-section.draggable[style*="transform"] {
+  animation: none !important;
+  animation-play-state: paused !important;
+}
+
+.projects-section.draggable:hover {
+  outline: 4px solid #9747ff;
+  cursor: grab;
+}
+
+.projects-section.draggable:active {
+  outline: 4px solid #9747ff;
+  cursor: grabbing;
+}
+
+.projects-section.draggable.draggable-disabled {
+  cursor: default;
+  outline: none;
+}
+
+.projects-section.draggable.draggable-disabled:hover {
+  outline: none;
+  cursor: default;
+}
+
+.projects-section.draggable .project-card {
+  cursor: grab !important;
+  user-select: none;
+}
+
+.projects-section.draggable-disabled .project-card {
+  cursor: pointer !important;
+  user-select: auto;
+}
+
+.projects-section.draggable .project-card:hover:not(:active) {
+  outline: 4px solid transparent !important;
+  cursor: grab !important;
+}
+
+.projects-section.draggable-disabled .project-card:hover:not(:active) {
+  outline: 4px solid var(--purple) !important;
+  cursor: pointer !important;
+}
+
+.projects-section.draggable .project-card:active {
+  outline: 4px solid transparent;
+  cursor: grabbing !important;
+}
+
+.projects-section.draggable-disabled .project-card:active {
+  outline: 4px solid var(--purple);
+  cursor: pointer !important;
 }
 
 /* Others Projects Section */
@@ -328,48 +374,6 @@
   justify-content: center;
   position: relative;
   z-index: 1;
-}
-
-.others-projects-section.draggable {
-  cursor: grab;
-  user-select: none;
-  outline: 4px solid transparent;
-  transform: translate(0px, 0px);
-  will-change: transform;
-}
-
-.others-projects-section.draggable.animate__animated {
-  animation-fill-mode: both;
-}
-
-.others-projects-section.draggable.animate__animated[data-x],
-.others-projects-section.draggable.animate__animated[data-y] {
-  animation: none !important;
-}
-
-.others-projects-section.draggable[style*="transform"] {
-  animation: none !important;
-  animation-play-state: paused !important;
-}
-
-.others-projects-section.draggable:hover {
-  outline: 4px solid #9747ff;
-  cursor: grab;
-}
-
-.others-projects-section.draggable:active {
-  outline: 4px solid #9747ff;
-  cursor: grabbing;
-}
-
-.others-projects-section.draggable.draggable-disabled {
-  cursor: default;
-  outline: none;
-}
-
-.others-projects-section.draggable.draggable-disabled:hover {
-  outline: none;
-  cursor: default;
 }
 
 .others-work-wrapper {
@@ -429,17 +433,17 @@
 }
 
 .others-work-wrapper:hover .others-title-frame {
-  color: #aa69ff !important;
+  color: var(--purple) !important;
 }
 
 .others-work-wrapper .others-frame-switch-icon span {
-  color: #aa69ff;
+  color: var(--purple);
   font-size: 18px;
   opacity: 1;
 }
 
 .others-title-frame {
-  color: #aa69ff;
+  color: var(--purple);
   font-size: 16px;
   white-space: nowrap;
 }
@@ -465,41 +469,7 @@
 }
 
 .others-project-item:hover {
-  border: 4px solid #aa69ff;
-}
-
-/* Draggable states for others-project-item - when parent is draggable */
-.others-projects-section.draggable .others-project-item {
-  cursor: grab !important;
-  user-select: none;
-}
-
-/* Normal cursor when draggable is disabled */
-.others-projects-section.draggable-disabled .others-project-item {
-  cursor: pointer !important;
-  user-select: auto;
-}
-
-/* Remove hover effect when draggable is active */
-.others-projects-section.draggable .others-project-item:hover:not(:active) {
-  border: 4px solid transparent !important;
-  cursor: grab !important;
-}
-
-/* Normal hover when draggable is disabled */
-.others-projects-section.draggable-disabled .others-project-item:hover:not(:active) {
-  border: 4px solid #aa69ff !important;
-  cursor: pointer !important;
-}
-
-.others-projects-section.draggable .others-project-item:active {
-  border: 4px solid transparent;
-  cursor: grabbing !important;
-}
-
-.others-projects-section.draggable-disabled .others-project-item:active {
-  border: 4px solid #aa69ff;
-  cursor: pointer !important;
+  border: 4px solid var(--purple);
 }
 
 .others-project-content {
@@ -551,69 +521,6 @@
   transform: rotate(15deg);
 }
 
-/* Corner Squares for Project Images */
-.corner-square {
-  box-sizing: border-box;
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background-color: #FDFDFD;
-  border: 2px solid var(--blue-200);
-  z-index: 2;
-}
-
-.corner-square.top-left {
-  top: -6px;
-  left: -6px;
-}
-
-.corner-square.top-right {
-  top: -6px;
-  right: -6px;
-}
-
-.corner-square.bottom-left {
-  bottom: -6px;
-  left: -6px;
-}
-
-.corner-square.bottom-right {
-  bottom: -6px;
-  right: -6px;
-}
-
-/* Corner squares for single image layout */
-.project-image-container .corner-square.top-left {
-  top: -6px;
-  left: -6px;
-}
-
-.project-image-container .corner-square.bottom-left {
-  bottom: -6px;
-  left: -6px;
-}
-
-/* Corner squares for double image layout */
-.project-image-double .corner-square.top-left {
-  top: -6px;
-  left: -4px;
-}
-
-.project-image-double .corner-square.top-right {
-  top: -6px;
-  right: -5px;
-}
-
-.project-image-double .corner-square.bottom-left {
-  bottom: -6px;
-  left: -6px;
-}
-
-.project-image-double .corner-square.bottom-right {
-  bottom: -6px;
-  right: -6px;
-}
-
 .others-project-text {
   flex: 1;
   display: flex;
@@ -654,6 +561,110 @@
   text-align: left;
   width: 100%;
   word-wrap: break-word;
+}
+
+/* Corner Squares for Others Project Items */
+.others-project-item .corner-square {
+  box-sizing: border-box;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #FDFDFD;
+  border: 2px solid var(--blue-200);
+  z-index: 2;
+}
+
+.others-project-item .corner-square.top-left {
+  top: -6px;
+  left: -6px;
+}
+
+.others-project-item .corner-square.top-right {
+  top: -6px;
+  right: -6px;
+}
+
+.others-project-item .corner-square.bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.others-project-item .corner-square.bottom-right {
+  bottom: -6px;
+  right: -6px;
+}
+
+/* Others Project Draggable States */
+.others-projects-section.draggable {
+  cursor: grab;
+  user-select: none;
+  outline: 4px solid transparent;
+  transform: translate(0px, 0px);
+  will-change: transform;
+}
+
+.others-projects-section.draggable.animate__animated {
+  animation-fill-mode: both;
+}
+
+.others-projects-section.draggable.animate__animated[data-x],
+.others-projects-section.draggable.animate__animated[data-y] {
+  animation: none !important;
+}
+
+.others-projects-section.draggable[style*="transform"] {
+  animation: none !important;
+  animation-play-state: paused !important;
+}
+
+.others-projects-section.draggable:hover {
+  outline: 4px solid #9747ff;
+  cursor: grab;
+}
+
+.others-projects-section.draggable:active {
+  outline: 4px solid #9747ff;
+  cursor: grabbing;
+}
+
+.others-projects-section.draggable.draggable-disabled {
+  cursor: default;
+  outline: none;
+}
+
+.others-projects-section.draggable.draggable-disabled:hover {
+  outline: none;
+  cursor: default;
+}
+
+.others-projects-section.draggable .others-project-item {
+  cursor: grab !important;
+  user-select: none;
+}
+
+.others-projects-section.draggable-disabled .others-project-item {
+  cursor: pointer !important;
+  user-select: auto;
+}
+
+.others-projects-section.draggable .others-project-item:hover:not(:active) {
+  border: 4px solid transparent !important;
+  cursor: grab !important;
+}
+
+.others-projects-section.draggable-disabled .others-project-item:hover:not(:active) {
+  border: 4px solid var(--purple) !important;
+  cursor: pointer !important;
+}
+
+.others-projects-section.draggable .others-project-item:active {
+  border: 4px solid transparent;
+  cursor: grabbing !important;
+}
+
+.others-projects-section.draggable-disabled .others-project-item:active {
+  border: 4px solid var(--purple);
+  cursor: pointer !important;
 }
 
 /* Responsive */
@@ -749,4 +760,4 @@
     width: 8px;
     height: 8px;
   }
-} 
+}

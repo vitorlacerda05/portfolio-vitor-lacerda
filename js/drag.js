@@ -34,7 +34,7 @@ function preventLinkClick(event) {
 }
 
 // Function to enable/disable draggable functionality
-function toggleDraggable(enabled) {
+function toggleDraggable(enabled, showToasterMessage = true) {
   isDraggableEnabled = enabled;
   
   // Get all draggable elements
@@ -48,6 +48,11 @@ function toggleDraggable(enabled) {
     
     // Disable all links inside draggable elements
     disableLinksInDraggable();
+    
+    // Show toaster
+    if (showToasterMessage) {
+      showToaster('enabled');
+    }
     
     // Re-enable draggable for all elements
     interact('.draggable').draggable({
@@ -83,6 +88,11 @@ function toggleDraggable(enabled) {
     
     // Re-enable all links inside draggable elements
     enableLinksInDraggable();
+    
+    // Show toaster
+    if (showToasterMessage) {
+      showToaster('disabled');
+    }
     
     // Disable draggable for all elements
     interact('.draggable').unset();
@@ -145,6 +155,31 @@ function showResetButton() {
   const resetBtn = document.getElementById('reset-button');
   if (resetBtn) {
     resetBtn.style.display = 'flex';
+  }
+}
+
+// Function to show toaster
+function showToaster(type) {
+  const toasterEnabled = document.getElementById('toaster-enabled');
+  const toasterDisabled = document.getElementById('toaster-disabled');
+  
+  // Hide both toasters first
+  if (toasterEnabled) toasterEnabled.classList.remove('show');
+  if (toasterDisabled) toasterDisabled.classList.remove('show');
+  
+  // Show the appropriate toaster
+  if (type === 'enabled' && toasterEnabled) {
+    toasterEnabled.classList.add('show');
+    // Hide toaster after 3 seconds
+    setTimeout(() => {
+      toasterEnabled.classList.remove('show');
+    }, 2500);
+  } else if (type === 'disabled' && toasterDisabled) {
+    toasterDisabled.classList.add('show');
+    // Hide toaster after 3 seconds
+    setTimeout(() => {
+      toasterDisabled.classList.remove('show');
+    }, 2500);
   }
 }
 

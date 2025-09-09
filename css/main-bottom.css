@@ -47,18 +47,6 @@
     width: 100%;
 }
 
-/* Responsive adjustments for about-top */
-@media screen and (max-width: 601px) {
-    .about-top {
-        flex-direction: column;
-    }
-    
-    .about-image {
-        max-width: 100%;
-        width: 100%;
-    }
-}
-
 .about-title-section {
     flex: 1;
     display: flex;
@@ -217,6 +205,8 @@
     word-break: break-all;
 }
 
+/* Responsive */
+
 @media (max-width: 768px) {
     .wave-separator {
         height: 60px;
@@ -227,6 +217,15 @@
     .main-bottom {
         padding: 10vh 24px 10vh 24px;
         gap: 26px;
+    }
+
+    .about-top {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        max-width: 100%;
+        width: 100%;
     }
 } 
 
