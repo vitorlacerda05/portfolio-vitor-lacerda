@@ -218,5 +218,6 @@
 
   .hero-content {
     flex-direction: column;
+    gap: 24px;
   }   
 }

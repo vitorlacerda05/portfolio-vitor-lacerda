@@ -14,7 +14,7 @@
 .projects-section.draggable {
   cursor: grab;
   user-select: none;
-  outline: 2px solid transparent;
+  outline: 4px solid transparent;
   transform: translate(0px, 0px);
   will-change: transform;
 }
@@ -34,12 +34,12 @@
 }
 
 .projects-section.draggable:hover {
-  outline: 2px solid #9747ff;
+  outline: 4px solid #9747ff;
   cursor: grab;
 }
 
 .projects-section.draggable:active {
-  outline: 2px solid #9747ff;
+  outline: 4px solid #9747ff;
   cursor: grabbing;
 }
 
@@ -79,11 +79,9 @@
 
 .works {
   box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  align-items: flex-start;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
   padding: 0;
   position: relative;
   flex-shrink: 0;
@@ -133,6 +131,143 @@
   white-space: nowrap;
 }
 
+/* Project Card Base Styles */
+.project-card {
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  outline: 4px solid transparent;
+  flex-direction: column;
+  gap: 40px;
+  padding: 48px 0 40px 40px;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+}
+
+.project-card:hover {
+  outline: 4px solid #aa69ff;
+}
+
+/* Project Card Background Colors */
+.project-card.bg-green {
+  background-color: #e8f5e9;
+}
+
+.project-card.bg-yellow {
+  background-color: #fffde7;
+}
+
+.project-card.bg-blue {
+  background-color: #e3f2fd;
+}
+
+.project-card.bg-teal {
+  background-color: #e0f2f1;
+}
+
+/* Project Image Container */
+.project-image-container {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Single Image Layout */
+.project-image-single {
+  position: relative;
+  width: auto;
+  max-height: 320px;
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.project-image-single img {
+  width: auto;
+  height: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+}
+
+.project-image-single::before {
+  content: '';
+  position: absolute;
+  border: 2px solid var(--blue-200);
+  inset: -2px;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Double Image Layout */
+.project-images-double {
+  display: flex;
+  gap: 24px;
+  height: 100%;
+  max-height: 320px;
+  width: auto;
+}
+
+.project-image-double {
+  position: relative;
+  max-height: 320px;
+  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.08);
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.project-image-double img {
+  width: auto;
+  height: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  display: block;
+}
+
+.project-image-double::before {
+  content: '';
+  position: absolute;
+  border: 2px solid var(--blue-200);
+  inset: -2px;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Project Content */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 32px;
+  width: auto;
+}
+
+.project-title {
+  color: var(--blue-gray-900);
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: normal;
+  margin: 0;
+}
+
+.project-description {
+  color: var(--blue-gray-500);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.25;
+  margin: 0;
+}
+
 .projects {
   flex-basis: 0;
   background-color: var(--blue-300);
@@ -168,7 +303,7 @@
 .others-projects-section.draggable {
   cursor: grab;
   user-select: none;
-  outline: 2px solid transparent;
+  outline: 4px solid transparent;
   transform: translate(0px, 0px);
   will-change: transform;
 }
@@ -188,12 +323,12 @@
 }
 
 .others-projects-section.draggable:hover {
-  outline: 2px solid #9747ff;
+  outline: 4px solid #9747ff;
   cursor: grab;
 }
 
 .others-projects-section.draggable:active {
-  outline: 2px solid #9747ff;
+  outline: 4px solid #9747ff;
   cursor: grabbing;
 }
 
@@ -353,6 +488,7 @@
   transform: rotate(15deg);
 }
 
+/* Corner Squares for Project Images */
 .corner-square {
   box-sizing: border-box;
   position: absolute;
@@ -360,26 +496,59 @@
   height: 12px;
   background-color: #FDFDFD;
   border: 2px solid var(--blue-200);
+  z-index: 2;
 }
 
 .corner-square.top-left {
-  top: -5px;
-  left: -5px;
+  top: -6px;
+  left: -6px;
 }
 
 .corner-square.top-right {
-  top: -5px;
-  right: -5px;
+  top: -6px;
+  right: -6px;
 }
 
 .corner-square.bottom-left {
-  bottom: -5px;
-  left: -5px;
+  bottom: -6px;
+  left: -6px;
 }
 
 .corner-square.bottom-right {
-  bottom: -5px;
+  bottom: -6px;
+  right: -6px;
+}
+
+/* Corner squares for single image layout */
+.project-image-container .corner-square.top-left {
+  top: -6px;
+  left: -6px;
+}
+
+.project-image-container .corner-square.bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+/* Corner squares for double image layout */
+.project-image-double .corner-square.top-left {
+  top: -6px;
+  left: -4px;
+}
+
+.project-image-double .corner-square.top-right {
+  top: -6px;
   right: -5px;
+}
+
+.project-image-double .corner-square.bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+
+.project-image-double .corner-square.bottom-right {
+  bottom: -6px;
+  right: -6px;
 }
 
 .others-project-text {
@@ -424,8 +593,33 @@
   word-wrap: break-word;
 }
 
-/* Responsive adjustments for others-projects */
+/* Responsive */
 @media screen and (max-width: 1026px) {
+  .project-card {
+    padding: 32px 0 24px 24px;
+    gap: 32px;
+  }
+  
+  .project-image-single img {
+    max-height: 280px;
+  }
+  
+  .project-image-double img {
+    max-height: 280px;
+  }
+  
+  .project-title {
+    font-size: 20px;
+  }
+  
+  .project-description {
+    font-size: 13px;
+  }
+  
+  .project-content {
+    padding-right: 24px;
+  }
+  
   .others-project-item {
     padding: 16px;
   }
@@ -454,9 +648,21 @@
   .others-works {
     flex-direction: column;
   }
+
+  .work-wrapper, .others-work-wrapper {
+    padding: 24px;
+  }
+
+  .works {
+    gap: 24px;
+  }
 }
 
 @media screen and (max-width: 601px) {
+  .works {
+    grid-template-columns: 1fr;
+  }
+  
   .others-project-item {
     gap: 16px;
   }

@@ -114,12 +114,132 @@
               </span>
             </div>
             <div class="works">
-              <a href="#" class="projects"></a>
-              <a href="#" class="projects"></a>
-              <a href="#" class="projects"></a>
-              <a href="#" class="projects"></a>
-              <a href="#" class="projects"></a>
-              <a href="#" class="projects"></a>
+              <!-- 
+                SISTEMA DE PROJETOS REUTILIZÁVEL
+                
+                Para adicionar um novo projeto, use a seguinte estrutura:
+                
+                <a href="#" class="project-card bg-[cor]">
+                  <div class="project-image-container">
+                    
+                Para uma imagem:
+                <div class="project-image-single">
+                  <img src="caminho/para/imagem.jpg" alt="Descrição da imagem">
+                  <div class="corner-square top-left"></div>
+                  <div class="corner-square bottom-left"></div>
+                </div>
+                
+                OU para duas imagens separadas:
+                <div class="project-images-double">
+                  <div class="project-image-double">
+                    <img src="imagem1.jpg" alt="Descrição da imagem 1">
+                    <div class="corner-square top-left"></div>
+                    <div class="corner-square top-right"></div>
+                    <div class="corner-square bottom-left"></div>
+                    <div class="corner-square bottom-right"></div>
+                  </div>
+                  <div class="project-image-double">
+                    <img src="imagem2.jpg" alt="Descrição da imagem 2">
+                    <div class="corner-square top-left"></div>
+                    <div class="corner-square top-right"></div>
+                    <div class="corner-square bottom-left"></div>
+                    <div class="corner-square bottom-right"></div>
+                  </div>
+                </div>
+                  </div>
+                  <div class="project-content">
+                    <h3 class="project-title">Título do Projeto</h3>
+                    <p class="project-description">Descrição do projeto aqui...</p>
+                  </div>
+                </a>
+                
+                Cores disponíveis: bg-green, bg-yellow, bg-blue, bg-teal
+                
+                NOTA: 
+                - project-card: padding apenas à esquerda (pl-10), sem padding à direita (pr-0)
+                - project-image-container: abraça o conteúdo da imagem (width: auto)
+                - project-image-single: altura máxima 320px, largura ajustada automaticamente pelo aspect ratio
+                - project-content: padding à direita (pr-8) para compensar
+                - As imagens redimensionam automaticamente mantendo o aspect ratio
+                - Se a imagem for maior que o card, será cortada à direita pelo overflow: hidden
+              -->
+              
+              <!-- UrbVerde Project -->
+              <a href="#" class="project-card bg-green">
+                <div class="project-image-container">
+                  <div class="project-image-single">
+                    <img src="assets/images/homepage/projects/urbverde.png" alt="UrbVerde Dashboard">
+                    <div class="corner-square top-left"></div>
+                    <div class="corner-square top-right"></div>
+                    <div class="corner-square bottom-left"></div>
+                    <div class="corner-square bottom-right"></div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">UrbVerde</h3>
+                  <p class="project-description">Dashboard com dados sociais e ambientais urbanos que ganhou prêmios da Sociedade Brasileira de Computação e da COP 30</p>
+                </div>
+              </a>
+
+              <!-- Painel Políticas Públicas Project -->
+              <a href="#" class="project-card bg-yellow">
+                <div class="project-image-container">
+                  <div class="project-image-single">
+                    <img src="assets/images/homepage/projects/policies.png" alt="Painel Políticas Públicas">
+                    <div class="corner-square top-left"></div>
+                    <div class="corner-square top-right"></div>
+                    <div class="corner-square bottom-left"></div>
+                    <div class="corner-square bottom-right"></div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Painel políticas públicas</h3>
+                  <p class="project-description">Construção de um novo painel, ainda dentro da UrbVerde, com foco na gestão pública do ABC Paulista</p>
+                </div>
+              </a>
+
+              <!-- PacePro Project -->
+              <a href="#" class="project-card bg-blue">
+                <div class="project-image-container">
+                  <div class="project-images-double">
+                    <div class="project-image-double">
+                      <img src="assets/images/homepage/projects/pacepro_1.png" alt="PacePro Dashboard 1">
+                      <div class="corner-square top-left"></div>
+                      <div class="corner-square top-right"></div>
+                      <div class="corner-square bottom-left"></div>
+                      <div class="corner-square bottom-right"></div>
+                    </div>
+                    <div class="project-image-double">
+                      <img src="assets/images/homepage/projects/pacepro_2.png" alt="PacePro Dashboard 2">
+                      <div class="corner-square top-left"></div>
+                      <div class="corner-square top-right"></div>
+                      <div class="corner-square bottom-left"></div>
+                      <div class="corner-square bottom-right"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">PacePro</h3>
+                  <p class="project-description">Dashboard com dados sociais e ambientais urbanos que ganhou prêmios da Sociedade Brasileira de Computação e da COP 30</p>
+                </div>
+              </a>
+
+              <!-- Outro Teste Project -->
+              <a href="#" class="project-card bg-teal">
+                <div class="project-image-container">
+                  <div class="project-image-single">
+                    <img src="assets/images/homepage/projects/urbverde.png" alt="Outro Projeto">
+                    <div class="corner-square top-left"></div>
+                    <div class="corner-square top-right"></div>
+                    <div class="corner-square bottom-left"></div>
+                    <div class="corner-square bottom-right"></div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Outro teste</h3>
+                  <p class="project-description">Construção de um novo painel, ainda dentro da UrbVerde, com foco na gestão pública do ABC Paulista</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>

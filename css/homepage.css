@@ -20,10 +20,10 @@ body {
     display: flex;
     margin: 0 auto;
     max-width: 976px;
-    padding: 24vh 24px 14vh 24px;
+    padding: 20vh 16px 14vh 16px;
     flex-direction: column;
     align-items: center;
-    gap: 24vh;
+    gap: 22vh;
     align-self: stretch;
 }
 
