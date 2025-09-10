@@ -1,5 +1,5 @@
 :root {
-    --blue-gray-50: #ECFFF1;
+    --blue-gray-50: #ECEFF1;
     --blue-gray-100: #CFD8DC;
     --blue-gray-200: #B0BEC5;
     --blue-gray-300: #90A4AE;
@@ -23,5 +23,5 @@
 
     --purple: #aa69ff;
 
-    --white: #FFFFFF;
+    --white: #FAFBFC;
 } 

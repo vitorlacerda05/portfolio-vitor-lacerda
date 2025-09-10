@@ -4,7 +4,7 @@
     height: 80px;
     overflow: hidden;
     margin-top: -1px;
-    background-color: #F0FAFF;
+    background-color: #F7F9FB;
 }
 
 .wave-separator svg {
@@ -85,36 +85,31 @@
 }
 
 .highlight {
-    background: linear-gradient(90deg, rgba(230, 230, 230, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
-    border-radius: 8px;
+    width: 100%;
     position: relative;
     height: auto;
-    width: 100%;
-    border: 2px solid rgba(255, 255, 255, 0.05);
 }
 
 .highlight-content {
-    display: flex;
-    height: auto;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 24px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 32px 40px;
-    flex-wrap: wrap;
+    width: 100%;
 }
 
-.highlight-item {
+.highlight-square {
+    background: linear-gradient(90deg, rgba(230, 230, 230, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+    border-radius: 8px;
+    padding: 24px 16px 8px 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    height: auto;
+    gap: 12px;
     align-items: center;
-    justify-content: center;
-    color: var(--white);
+    justify-content: start;
     text-align: center;
-    flex: 1;
-    min-width: 108px;
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    min-height: 140px;
 }
 
 .highlight-number {
@@ -122,7 +117,7 @@
 }
 
 .highlight-text {
-    min-width: 100%;
+    max-width: 100%;
 }
 
 .contact-section {
@@ -213,6 +208,26 @@
     }
 }
 
+@media screen and (max-width: 768px) {
+    .highlight-content {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    
+    .highlight-square {
+        padding: 24px 20px;
+        min-height: 120px;
+    }
+    
+    .highlight-number {
+        font-size: 2rem;
+    }
+    
+    .highlight-text {
+        font-size: 0.85rem;
+    }
+}
+
 @media screen and (max-width: 601px) {
     .main-bottom {
         padding: 10vh 24px 10vh 24px;
@@ -226,6 +241,36 @@
     .about-image {
         max-width: 100%;
         width: 100%;
+    }
+    
+    .highlight-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .highlight-square {
+        padding: 20px 16px;
+        min-height: 100px;
+    }
+    
+    .highlight-number {
+        font-size: 1.8rem;
+    }
+    
+    .highlight-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .highlight-content {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .highlight-square {
+        padding: 24px 20px;
+        min-height: 110px;
     }
 } 
 
