@@ -1,0 +1,143 @@
+.social-proof-section {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 976px;
+  margin: 0 auto;
+}
+
+.social-proof-title {
+  color: var(--white);
+  text-align: left;
+  width: 100%;
+}
+
+.comments-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+}
+
+.comment {
+  background-color: var(--blue-700);
+  box-shadow: 0 0 50px 0 rgba(25, 118, 210, 0.75);
+  border-radius: 32px;
+  padding: 40px 40px 32px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.comment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, #1E88E5 0%, #1976D2 100%);
+  border-radius: 32px;
+  padding: 1px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.comment-content {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.comment-quote {
+  font-family: 'Karla', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--white);
+  width: 100%;
+}
+
+.comment-details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.comment-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.comment-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.comment-name {
+  color: var(--blue-50);
+  width: 100%;
+}
+
+.comment-position {
+  color: var(--blue-50);
+  width: 100%;
+  font-weight: 300;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1026px) {
+  .social-proof-section {
+    gap: 56px;
+  }
+  
+  .comment {
+    padding: 32px 32px 24px 32px;
+    gap: 24px;
+  }
+  
+  .comment-quote {
+    font-size: 16px;
+  }
+
+  .comments-wrapper {
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .comments-wrapper {
+      grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 601px) {
+
+  .comment-avatar {
+    width: 48px;
+    height: 48px;
+  }
+}

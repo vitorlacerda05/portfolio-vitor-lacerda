@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16vh;
+    gap: 20vh;
 }
 
 .about-section {
@@ -64,6 +64,7 @@
 .about-description {
     height: auto;
     width: 100%;
+    font-weight: 300;
 }
 
 .about-image {
@@ -98,7 +99,8 @@
 }
 
 .highlight-square {
-    background: linear-gradient(90deg, rgba(230, 230, 230, 0.15) 0%, rgba(255, 255, 255, 0.15) 100%);
+    background-color: var(--blue-700);
+    box-shadow: 0 0 50px 0 rgba(25, 118, 210, 0.75);
     border-radius: 8px;
     padding: 24px 16px 8px 16px;
     display: flex;
@@ -108,8 +110,25 @@
     justify-content: start;
     text-align: center;
     color: var(--white);
-    border: 2px solid rgba(255, 255, 255, 0.05);
     min-height: 140px;
+    position: relative;
+}
+
+.highlight-square::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, #1E88E5 0%, #1976D2 100%);
+    border-radius: 8px;
+    padding: 1px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: xor;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
 }
 
 .highlight-number {
@@ -131,10 +150,6 @@
     color: var(--white);
     text-align: left;
     width: 100%;
-}
-
-.contact-title .regular {
-    font-weight: 400;
 }
 
 .contact-cards {
