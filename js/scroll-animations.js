@@ -16,17 +16,17 @@ class ScrollAnimations {
   }
 
   initializeElements() {
-    // Set opacity 0 for all animated elements
     this.animatedElements.forEach(element => {
       element.style.opacity = '0';
-      element.style.transition = 'opacity 0.3s ease-in-out';
+      element.style.filter = 'blur(5px)';
+      element.style.transition = 'opacity 0.6s ease-out, filter 0.4s ease-out';
     });
   }
 
   setupIntersectionObserver() {
     const options = {
-      threshold: 0.1, // 10% of element visible
-      rootMargin: '0px 0px -50px 0px' // Trigger a bit earlier
+      threshold: 0.1, 
+      rootMargin: '0px 0px -80px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -61,7 +61,9 @@ class ScrollAnimations {
     if (delay) element.classList.add(delay);
     if (speed) element.classList.add(speed);
 
+    // Animate opacity and blur
     element.style.opacity = '1';
+    element.style.filter = 'blur(0px)';
     
   }
 

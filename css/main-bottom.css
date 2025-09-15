@@ -15,7 +15,7 @@
 
 .main-bottom {
     background: linear-gradient(180deg, var(--blue-600) 0%, var(--blue-700) 100%);
-    padding: 18vh 24px 18vh 24px;
+    padding: 22vh 24px 22vh 24px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20vh;
+    gap: 22vh;
 }
 
 .about-section {
@@ -80,9 +80,14 @@
     background: var(--white);
     border-radius: 16px;
     position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
 .highlight {
@@ -217,16 +222,14 @@
 
 /* Responsive */
 
-@media (max-width: 768px) {
-    .wave-separator {
-        height: 60px;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .highlight-content {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 20px;
+    }
+
+    .wave-separator {
+        height: 60px;
     }
     
     .highlight-square {
@@ -245,8 +248,12 @@
 
 @media screen and (max-width: 601px) {
     .main-bottom {
-        padding: 10vh 24px 10vh 24px;
+        padding: 16vh 24px 16vh 24px;
         gap: 26px;
+    }
+    
+    .section {
+        gap: 16vh;
     }
 
     .about-top {
@@ -256,6 +263,14 @@
     .about-image {
         max-width: 100%;
         width: 100%;
+        aspect-ratio: 513/380;
+        min-height: 250px;
+    }
+    
+    .about-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
     
     .highlight-content {
@@ -266,6 +281,7 @@
     .highlight-square {
         padding: 20px 16px;
         min-height: 100px;
+        justify-content: center;
     }
     
     .highlight-number {
@@ -286,11 +302,21 @@
     .highlight-square {
         padding: 24px 20px;
         min-height: 110px;
+        justify-content: center;
     }
-} 
 
-@media (max-width: 480px) {
     .wave-separator {
         height: 40px;
     }
-}
+    
+    .about-image {
+        aspect-ratio: 513/380;
+        min-height: 200px;
+    }
+    
+    .about-image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+} 

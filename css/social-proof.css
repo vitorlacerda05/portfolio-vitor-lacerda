@@ -140,4 +140,8 @@
     width: 48px;
     height: 48px;
   }
+
+  .comment-quote {
+    font-size: 15px;
+  }
 }
