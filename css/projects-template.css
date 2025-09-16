@@ -8,6 +8,33 @@ body {
   background-color: #F7F9FB;
 }
 
+.project-h1-alt {
+  width: 100%;
+  max-width: 976px;
+  font-size: 32px;
+  line-height: 1.25;
+  font-family: 'Karla', sans-serif;
+  color: var(--blue-gray-900);
+  font-weight: 700;
+  margin-top: 4em;       /* 128px */
+  margin-bottom: 0.75em; /* 24px */
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Responsive  */
+@media screen and (max-width: 1026px) {
+  .project-h1-alt {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 601px) {
+  .project-h1-alt {
+    font-size: 28px;
+  }
+}
+
 .project-content {
   display: flex;
   padding: 0 24px;

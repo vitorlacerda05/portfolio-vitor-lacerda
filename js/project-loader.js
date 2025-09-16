@@ -82,6 +82,13 @@ function populatePageElements(projectData) {
   const projectContent = document.getElementById('project-content');
   if (projectContent && projectData.content) {
     projectContent.innerHTML = projectData.content;
+    
+    // Aplica numeração automática após carregar o conteúdo
+    if (window.ProjectNumbering) {
+      setTimeout(() => {
+        window.ProjectNumbering.reapplyNumbering();
+      }, 50);
+    }
   }
 }
 

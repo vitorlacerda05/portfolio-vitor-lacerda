@@ -24,12 +24,13 @@
 
     <!-- Project CSS -->
     <link rel="stylesheet" href="../css/projects-template.css" />
+    <link rel="stylesheet" href="../css/project-numbering.css" />
     <link rel="stylesheet" href="../css/cta-section.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/button.css" />
   </head>
   <body>
-    <div class="project-container">
+    <div class="project-container animate__animated animate__fadeIn animate__delay">
       <!-- Back Button Section -->
       <div class="back-section">
         <a href="../index.html" class="back-button">
@@ -45,7 +46,7 @@
         <!-- Project Info -->
         <div class="project-info">
           <div class="project-header">
-            <h1 class="project-title project-h1" id="project-title">Carregando...</h1>
+            <h1 class="project-title project-h1-alt" id="project-title">Carregando...</h1>
             <div class="badges-wrapper" id="badges-wrapper">
               <!-- Badges serão inseridos aqui via JavaScript -->
             </div>
@@ -72,13 +73,13 @@
     </div>
 
     <!-- Project Content -->
-    <div class="project-content" id="project-content">
+    <div class="project-content animate__animated animate__fadeInUp animate__delay" id="project-content">
       <!-- Conteúdo específico será inserido aqui via JavaScript -->
     </div>
 
     <!-- Contact Section -->
-    <div class="contact-section-project" data-animate="animate__fadeIn" data-delay="animate__delay">
-      <div class="contact-title-project project-h1">
+    <div class="contact-section-project animate__animated animate__fadeIn animate__delay-1s">
+      <div class="contact-title-project project-h1-alt">
         <span>— Como posso te ajudar?</span>
       </div>
       <!-- Contact Cards -->
@@ -131,7 +132,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer animate__animated animate__fadeIn animate__delay-1s">
       <p class="regular-base">&copy 2025 Vitor Lacerda. Todos os direitos reservados.</p>
     </footer> 
 
@@ -142,4 +143,5 @@
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <script src="../js/projects-data.js"></script>
   <script src="../js/project-loader.js"></script>
+  <script src="../js/project-numbering.js"></script>
 </html>

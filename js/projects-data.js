@@ -13,12 +13,53 @@ const projectsData = {
     imageAlt: 'UrbVerde Dashboard - Interface do projeto de cobertura vegetal',
     content: `
       <!-- Conteúdo específico do UrbVerde -->
-      <h1 class="project-h1">Sobre o Projeto Exemplo</h1>
-        <p class="project-paragraph">
-          Este é um exemplo de como estruturar o conteúdo de um novo projeto.
-          Basta adicionar as informações aqui e o sistema automaticamente 
-          populará a página.
-        </p>
+      <h1 class="project-h1">Sobre o Projeto</h1>
+      <p class="project-paragraph">
+        O UrbVerde é uma plataforma inovadora para monitoramento e gestão de cobertura vegetal urbana.
+        Desenvolvido com foco na sustentabilidade e tecnologia, o projeto foi reconhecido pela 
+        Sociedade Brasileira de Computação.
+      </p>
+      
+      <h2 class="project-h2">Principais Funcionalidades</h2>
+      <ul class="features-list">
+        <li class="regular-base">Dashboard interativo para visualização de dados</li>
+        <li class="regular-base">Sistema de monitoramento em tempo real</li>
+        <li class="regular-base">Relatórios automáticos de cobertura vegetal</li>
+        <li class="regular-base">Interface responsiva e acessível</li>
+      </ul>
+      
+      <h2 class="project-h2">Tecnologias Utilizadas</h2>
+      <div class="tech-badges">
+        <span class="tech-badge">React</span>
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">Figma</span>
+        <span class="tech-badge">Node.js</span>
+      </div>
+      
+      <h3 class="project-h3">Frontend</h3>
+      <p class="project-paragraph">
+        Desenvolvido com React e TypeScript para uma experiência robusta.
+      </p>
+      
+      <h3 class="project-h3">Design</h3>
+      <p class="project-paragraph">
+        Interface criada no Figma seguindo princípios de UX/UI.
+      </p>
+      
+      <h1 class="project-h1">Resultados Alcançados</h1>
+      <p class="project-paragraph">
+        O projeto alcançou resultados significativos na área de sustentabilidade urbana.
+      </p>
+      
+      <h2 class="project-h2">Impacto Social</h2>
+      <p class="project-paragraph">
+        Contribuição para o desenvolvimento sustentável das cidades.
+      </p>
+      
+      <h3 class="project-h3">Reconhecimentos</h3>
+      <p class="project-paragraph">
+        Prêmio da Sociedade Brasileira de Computação e COP 30.
+      </p>
     `
   },
   
