@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vitor Lacerda - UrbVerde</title>
+    <title id="page-title">Vitor Lacerda - Projeto</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- Project CSS -->
-    <link rel="stylesheet" href="../css/projects/urbverde.css" />
+    <link rel="stylesheet" href="../css/projects-template.css" />
     <link rel="stylesheet" href="../css/cta-section.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/button.css" />
@@ -45,20 +45,15 @@
         <!-- Project Info -->
         <div class="project-info">
           <div class="project-header">
-            <h1 class="project-title project-h1">UrbVerde</h1>
-            <div class="badges-wrapper">
-              <div class="badge">
-                <span class="badge-text regular-sm">UX/UI Designer</span>
-              </div>
-              <div class="badge">
-                <span class="badge-text regular-sm">Project Lead</span>
-              </div>
+            <h1 class="project-title project-h1" id="project-title">Carregando...</h1>
+            <div class="badges-wrapper" id="badges-wrapper">
+              <!-- Badges serão inseridos aqui via JavaScript -->
             </div>
           </div>
           <div class="project-description">
-            <p class="description-text">Projeto premiado pela Sociedade Brasileira de Computação e organizadores da COP 30</p>
+            <p class="description-text" id="project-description">Carregando...</p>
             <div class="project-date">
-              <span class="date-text regular-sm">mar, 2024 - jun, 2025</span>
+              <span class="date-text regular-sm" id="project-date">Carregando...</span>
             </div>
           </div>
         </div>
@@ -66,7 +61,7 @@
         <!-- Project Image -->
         <div class="project-image-container">
           <div class="image-wrapper">
-            <img src="../assets/images/homepage/projects/urbverde.png" alt="UrbVerde Dashboard - Interface do projeto de cobertura vegetal" class="project-image">
+            <img id="project-image" src="" alt="" class="project-image">
           </div>
           <div class="corner-square corner-top-left"></div>
           <div class="corner-square corner-bottom-left"></div>
@@ -77,7 +72,8 @@
     </div>
 
     <!-- Project Content -->
-    <div class="project-content">
+    <div class="project-content" id="project-content">
+      <!-- Conteúdo específico será inserido aqui via JavaScript -->
     </div>
 
     <!-- Contact Section -->
@@ -144,4 +140,6 @@
   <!-- Scripts -->
   <script src="../js/scroll-animations.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <script src="../js/projects-data.js"></script>
+  <script src="../js/project-loader.js"></script>
 </html>

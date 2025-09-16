@@ -13,34 +13,12 @@ const projectsData = {
     imageAlt: 'UrbVerde Dashboard - Interface do projeto de cobertura vegetal',
     content: `
       <!-- Conteúdo específico do UrbVerde -->
-      <div class="project-details">
-        <h2 class="project-h2">Sobre o Projeto</h2>
-        <p class="regular-base">
-          O UrbVerde é uma plataforma inovadora para monitoramento e gestão de cobertura vegetal urbana.
-          Desenvolvido com foco na sustentabilidade e tecnologia, o projeto foi reconhecido pela 
-          Sociedade Brasileira de Computação.
+      <h1 class="project-h1">Sobre o Projeto Exemplo</h1>
+        <p class="project-paragraph">
+          Este é um exemplo de como estruturar o conteúdo de um novo projeto.
+          Basta adicionar as informações aqui e o sistema automaticamente 
+          populará a página.
         </p>
-        
-        <div class="project-highlights">
-          <h3 class="project-h3">Principais Funcionalidades</h3>
-          <ul class="features-list">
-            <li class="regular-base">Dashboard interativo para visualização de dados</li>
-            <li class="regular-base">Sistema de monitoramento em tempo real</li>
-            <li class="regular-base">Relatórios automáticos de cobertura vegetal</li>
-            <li class="regular-base">Interface responsiva e acessível</li>
-          </ul>
-        </div>
-        
-        <div class="project-technologies">
-          <h3 class="project-h3">Tecnologias Utilizadas</h3>
-          <div class="tech-badges">
-            <span class="tech-badge">React</span>
-            <span class="tech-badge">TypeScript</span>
-            <span class="tech-badge">Figma</span>
-            <span class="tech-badge">Node.js</span>
-          </div>
-        </div>
-      </div>
     `
   },
   
@@ -57,23 +35,12 @@ const projectsData = {
     imageAlt: 'Projeto Exemplo - Interface do projeto',
     content: `
       <!-- Conteúdo específico do projeto exemplo -->
-      <div class="project-details">
         <h2 class="project-h2">Sobre o Projeto Exemplo</h2>
-        <p class="regular-base">
+        <p class="project-paragraph">
           Este é um exemplo de como estruturar o conteúdo de um novo projeto.
           Basta adicionar as informações aqui e o sistema automaticamente 
           populará a página.
         </p>
-        
-        <div class="project-highlights">
-          <h3 class="project-h3">Características</h3>
-          <ul class="features-list">
-            <li class="regular-base">Interface moderna e intuitiva</li>
-            <li class="regular-base">Responsividade total</li>
-            <li class="regular-base">Performance otimizada</li>
-          </ul>
-        </div>
-      </div>
     `
   }
 };

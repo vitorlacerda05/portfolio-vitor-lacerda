@@ -8,6 +8,14 @@ body {
   background-color: #F7F9FB;
 }
 
+.project-content {
+  display: flex;
+  padding: 0 24px;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+}
+
 .project-container {
   display: flex;
   flex-direction: column;
@@ -17,6 +25,7 @@ body {
   padding: 56px 24px 120px 24px;
   height: auto;
   background: linear-gradient(270deg, rgba(227, 242, 253, 0.50) 0%, #E3F2FD 100%);
+  margin: 0 auto;
 }
 
 .back-section {
