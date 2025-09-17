@@ -12,7 +12,7 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
 /* --------------------------------
    PROJECT PARAGRAPH
    -------------------------------- */
-.project-paragraph {
+.project-paragraph, ul {
   width: 100%;
   max-width: 976px;
   font-size: 16px;
@@ -24,6 +24,11 @@ p, a, button, input, textarea, select, option, label, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.125em; /* 2px */
   padding-left: 24px;
   padding-right: 24px;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 40px;
 }
 
 /* Responsive  */

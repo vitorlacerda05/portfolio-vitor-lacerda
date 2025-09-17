@@ -102,19 +102,31 @@
 }
 
 .project-card.bg-green {
-  background-color: #e8f5e9;
+  background-color: var(--off-white-green);
 }
 
 .project-card.bg-yellow {
-  background-color: #FFF3E0;
+  background-color: var(--off-white-yellow);
 }
 
 .project-card.bg-blue {
-  background-color: #e3f2fd;
+  background-color: var(--off-white-blue);
 }
 
-.project-card.bg-teal {
-  background-color: #e0f2f1;
+.project-card.bg-purple {
+  background-color: var(--off-white-purple);
+}
+
+.project-card.bg-red {
+  background-color: var(--off-white-red);
+}
+
+.project-card.bg-pink {
+  background-color: var(--off-white-pink);
+}
+
+.project-card.bg-brown {
+  background-color: var(--off-white-brown);
 }
 
 .project-image-container {

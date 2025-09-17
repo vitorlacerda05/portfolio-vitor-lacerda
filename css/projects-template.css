@@ -8,36 +8,9 @@ body {
   background-color: #F7F9FB;
 }
 
-.project-h1-alt {
-  width: 100%;
-  max-width: 976px;
-  font-size: 32px;
-  line-height: 1.25;
-  font-family: 'Karla', sans-serif;
-  color: var(--blue-gray-900);
-  font-weight: 700;
-  margin-top: 4em;       /* 128px */
-  margin-bottom: 0.75em; /* 24px */
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-/* Responsive  */
-@media screen and (max-width: 1026px) {
-  .project-h1-alt {
-    font-size: 30px;
-  }
-}
-
-@media screen and (max-width: 601px) {
-  .project-h1-alt {
-    font-size: 28px;
-  }
-}
-
 .project-content {
   display: flex;
-  padding: 0 24px;
+  padding: 80px 16px 0 16px;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
@@ -51,7 +24,7 @@ body {
   justify-content: center;
   padding: 56px 24px 120px 24px;
   height: auto;
-  background: linear-gradient(270deg, rgba(227, 242, 253, 0.50) 0%, #E3F2FD 100%);
+  background: linear-gradient(270deg, #E8F2F7 0%, #E3F2FD 100%);
   margin: 0 auto;
 }
 
@@ -61,9 +34,8 @@ body {
   gap: 10px;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-right: 0;
+  padding-left: 40px;
   width: 100%;
-  max-width: 1200px;
 }
 
 .back-button {
@@ -169,7 +141,7 @@ body {
 
 .description-text {
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: var(--blue-gray-700);

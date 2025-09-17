@@ -11,7 +11,7 @@ function addProjectNumbering() {
   // Busca todos os elementos com as classes especificadas
   const projectH1s = document.querySelectorAll('.project-h1');
   const projectH2s = document.querySelectorAll('.project-h2');
-  const projectH3s = document.querySelectorAll('.project-h3');
+  //const projectH3s = document.querySelectorAll('.project-h3');
   
   // Processa os H1s primeiro
   projectH1s.forEach((h1, index) => {
@@ -51,7 +51,7 @@ function addProjectNumbering() {
     }
   });
   
-  // Processa os H3s
+  /* Processa os H3s
   projectH3s.forEach((h3, index) => {
     // Encontra qual seção h2 este h3 pertence
     const parentInfo = findParentH2Index(h3, projectH1s, projectH2s);
@@ -73,6 +73,7 @@ function addProjectNumbering() {
       addNumberToElement(h3, currentNumber);
     }
   });
+  */
 }
 
 // Função para adicionar numeração ao elemento
