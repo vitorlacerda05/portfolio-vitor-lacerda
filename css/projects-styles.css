@@ -1,3 +1,7 @@
+/* --------------------------------
+   IMAGE STYLES
+   -------------------------------- */
+
 .project-img {
     max-width: 100%;
     max-width: 1200px;
@@ -14,57 +18,6 @@
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.10);
 }
 
-.project-img-caption {
-    color: var(--blue-gray-900, #263238);
-    padding: 12px 24px 32px 24px;
-    text-align: center;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    max-width: 1200px;
-}
-
-/* Responsive  */
-@media screen and (max-width: 1026px) {
-    .project-img-caption {
-        font-size: 13px;
-    }
-}
-  
-@media screen and (max-width: 601px) {
-    .project-img-caption {
-        font-size: 12px;
-    }
-}
-
-.project-h1-alt {
-    width: 100%;
-    max-width: 976px;
-    font-size: 32px;
-    line-height: 1.25;
-    font-family: 'Karla', sans-serif;
-    color: var(--blue-gray-900);
-    font-weight: 700;
-    margin-top: 4em;       /* 128px */
-    margin-bottom: 0.75em; /* 24px */
-    padding-left: 24px;
-    padding-right: 24px;
-}
-
-/* Responsive  */
-@media screen and (max-width: 1026px) {
-    .project-h1-alt {
-        font-size: 30px;
-    }
-}
-
-@media screen and (max-width: 601px) {
-    .project-h1-alt {
-        font-size: 28px;
-    }
-}
 
 /* --------------------------------
    QUOTE STYLES
