@@ -65,6 +65,7 @@
 }
 
 .about-description {
+    color: var(--blue-50);
     height: auto;
     width: 100%;
     font-weight: 300;
@@ -78,7 +79,7 @@
     flex: 1 0 0;
     align-self: stretch;
     width: 100%;
-    max-width: 513px;
+    max-width: 400px;
     aspect-ratio: 513/380;
     background: var(--white);
     border-radius: 16px;
@@ -145,6 +146,17 @@
 
 .highlight-text {
     max-width: 100%;
+    color: var(--blue-50);
+}
+
+.text-highlight {
+    position: relative;
+    display: inline;
+    padding: 0px 4px;
+    background: linear-gradient(135deg, var(--blue-800), var(--blue-700));
+    transform: rotate(-5deg);
+    border-radius: 4px;
+    transform-origin: center;
 }
 
 
