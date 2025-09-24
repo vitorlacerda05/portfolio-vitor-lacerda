@@ -75,63 +75,136 @@
     </div>
 
     <!-- Project Content -->
-    <div class="project-content animate__animated animate__fadeInUp animate__delay">
+    <div class="project-content animate__animated animate__fadeInUp animate__delay" data-markdown>
 
-      <img src="../assets/images/homepage/projects/urbverde.png" alt="UrbVerde Dashboard - Interface do projeto de cobertura vegetal" class="project-img">
-      <p class="project-img-caption">Interface do projeto de cobertura vegetal</p>
-      
-      <!-- Conteúdo específico do UrbVerde -->
-      <h1 class="project-h1">Sobre o Projeto</h1>
-      <p class="project-paragraph">
-        O UrbVerde é uma plataforma inovadora para monitoramento e gestão de cobertura vegetal urbana.
-        Desenvolvido com foco na sustentabilidade e tecnologia, o projeto foi reconhecido pela 
-        Sociedade Brasileira de Computação.
-      </p>
+![UrbVerde Dashboard - Interface do projeto de cobertura vegetal](../assets/images/homepage/projects/urbverde.png) *Interface do projeto de cobertura vegetal*
 
-      <p class="project-paragraph callout">
-        O UrbVerde é uma plataforma inovadora para monitoramento e gestão de cobertura vegetal urbana.
-        Desenvolvido com foco na sustentabilidade e tecnologia, o projeto foi reconhecido pela 
-        Sociedade Brasileira de Computaçã
-      </p>
+# Resumo inicial
 
-      <p class="project-paragraph quote">
-        O UrbVerde é uma plataforma inovadora para monitoramento e gestão de cobertura vegetal urbana.
-        Desenvolvido com foco na sustentabilidade e tecnologia, o projeto foi reconhecido pela 
-        Sociedade Brasileira de Computaçã
-      </p>
-      
-      <h2 class="project-h2">Principais Funcionalidades</h2>
-      <ul class="features-list">
-        <li class="regular-base">Dashboard interativo para visualização de dados</li>
-        <li class="regular-base">Sistema de monitoramento em tempo real</li>
-        <li class="regular-base">Relatórios automáticos de cobertura vegetal</li>
-        <li class="regular-base">Interface responsiva e acessível</li>
-      </ul>
-      
-      <h3 class="project-h3">Frontend</h3>
-      <p class="project-paragraph">
-        Desenvolvido com React e TypeScript para uma experiência robusta.
-      </p>
-      
-      <h3 class="project-h3">Design</h3>
-      <p class="project-paragraph">
-        Interface criada no Figma seguindo princípios de UX/UI.
-      </p>
-      
-      <h1 class="project-h1">Resultados Alcançados</h1>
-      <p class="project-paragraph">
-        O projeto alcançou resultados significativos na área de sustentabilidade urbana.
-      </p>
-      
-      <h2 class="project-h2">Impacto Social</h2>
-      <p class="project-paragraph">
-        Contribuição para o desenvolvimento sustentável das cidades.
-      </p>
-      
-      <h3 class="project-h3">Reconhecimentos</h3>
-      <p class="project-paragraph">
-        Prêmio da Sociedade Brasileira de Computação e COP 30.
-      </p>
+A UrbVerde é uma plataforma digital que democratiza dados socioambientais (vegetação, clima, parques e praças) para apoiar decisões públicas. Atuei como **UX Lead e coordenador do time de tecnologia**, conduzindo discovery e delivery para reestruturar arquitetura de informação, design system e front‑end. **Destaques**: menção honrosa e **finalista** na Competição Nacional de Design (SBC/UX), **Prêmio USP de Impacto Social**, reconhecimento do **IAB** (Selo + Prêmio Justiça Climática), **20+ matérias na mídia** (Record News, Estadão, Jornal da USP, etc.), **1,4× mais acessos em 2025 vs 2024** e lançamento nacional com **200 presenciais / 1.000 on‑line**.
+
+---
+
+# Problema identificado
+
+A versão anterior tinha **código frágil** (sem documentação e com alto acoplamento), **banco de dados** pouco preparado para expansão e **chaves sensíveis expostas** no front‑end. No produto, a **arquitetura de informação** confundia leigos e até equipes internas; componentes eram não reutilizáveis e não havia **guia de estilo**.
+
+> “A gente se perde logo no início. Parece bonito, mas é difícil de usar.” — gestor público (teste inicial)
+
+**Espaço para foto** — Reunião de diagnóstico com gestores do ABC Paulista.
+*Legenda:* Identificação das principais dores de navegação e segurança.
+
+As limitações inviabilizavam novos recursos e painéis, gerando retrabalho e risco de regressões.
+
+## Metodologia e por quê
+
+Adotamos **Double Diamond** para organizar o ciclo **Discover → Define → Develop → Deliver**, acoplando **Design Thinking** para empatia, ideação e validação iterativa. Essa combinação reduziu incertezas antes do desenvolvimento e alinhou requisitos técnicos a objetivos sociais.
+
+**Espaço para foto** — Diagrama das metodologias (Design Thinking + Double Diamond).
+*Legenda:* Como as trilhas de pesquisa e prototipação mitigaram riscos.
+
+---
+
+# Ideação
+
+## Objetivo principal
+
+**Fazer uma plataforma escalável, acessível e intuitiva** para gestores e sociedade: organizar camadas com clareza, reduzir tempo de tarefa e **sustentar a expansão nacional**, com **WCAG**, **linguagem simples (ISO 24495‑1)** e componentes reutilizáveis.
+
+## Do simples ao refinado
+
+Realizamos **benchmarking** (GeoNode, Carto, Global Forest Watch) para mapear padrões de filtros, legendas e comparações, adaptando‑os ao contexto brasileiro.
+
+**Espaço para foto** — Benchmarking das plataformas de referência.
+*Legenda:* Boas práticas de navegação em mapas e indicadores.
+
+Em paralelo, desenhamos **arquitetura de informação** e **casos de uso (UML)** para garantir escalabilidade e padronização dos fluxos.
+
+**Espaço para foto** — Arquitetura da informação e casos de uso.
+*Legenda:* Fluxos baseados em escala → município → categoria → camada.
+
+A seguir, criamos **wireframes de baixa fidelidade** (papel → Figma) para validar hierarquia e fluxo principal, evoluindo para **média fidelidade** com microcopy mais claro e posições de CTAs.
+
+**Espaço para foto** — Wireframe inicial em papel.
+*Legenda:* Hipóteses de layout com foco no fluxo principal.
+
+**Espaço para foto** — Protótipo de média fidelidade.
+*Legenda:* Ajuste de rótulos e hierarquia visual antes da alta fidelidade.
+
+### Decisões de UX e conteúdo
+
+Aplicamos **Heurísticas de Nielsen**, **Gestalt** (proximidade/similaridade), **Lei de Hick** (redução de escolhas) e **Lei de Fitts** (alvos e distâncias). Adotamos **linguagem simples** e **humanismo de dados** para evitar fadiga de crise, alternando alertas com ações práticas.
+
+---
+
+# Testes
+
+Conduzimos **dois testes de usabilidade** na Maze.co com **58 participantes** (18–65 anos, maioria sem experiência em SIG).
+
+## Teste 1 (n=31)
+
+Objetivo: validar compreensão inicial do fluxo. **Dificuldade média 1,6/5** para “selecionar município”; **88%** avaliaram a interface como clara; **23%** pediram dicas visuais.
+
+>> “Seria mais intuitivo navegar por botões dentro do mapa.” — participante (Teste 1)
+
+**Espaço para foto** — Gráficos do Teste 1 (dificuldade e cliques).
+*Legenda:* Concentração de cliques e necessidade de dicas iniciais.
+
+## Teste 2 (n=27)
+
+Após ajustes de hierarquia, microcopy e dicas guiadas: **100%** concluíram seleção de município; **dificuldade 1,3/5**. **88,9%** adicionaram nova camada sem dificuldade; **100%** exportaram o mapa como imagem.
+
+> “A interface está amigável, intuitiva e simples de uso.” — participante (Teste 2)
+
+**Espaço para foto** — Heatmap e métricas do Teste 2.
+*Legenda:* Melhora da eficácia após reorganização de CTAs.
+
+**Por que esses testes?** Medir aprendizado do fluxo, validar nomenclaturas e confirmar que um único CTA principal bastaria para download, reduzindo ruído no header.
+
+---
+
+# Desenvolvendo a ideia
+
+Com o protótipo validado, construímos o **protótipo de alta fidelidade** (Figma), incorporando Nielsen, Gestalt, Fitts, Hick e **ISO 24495‑1**.
+
+**Espaço para foto** — Protótipo de alta fidelidade do dashboard.
+*Legenda:* Hierarquia clara e CTAs focados em tarefas reais.
+
+Documentei um **Design System** (tokens de cor/tipo, estados e variações), baseado em **component‑driven development (CDD)** para reutilização e consistência. Os **hand‑offs** detalharam interações e casos de uso, acelerando o desenvolvimento.
+
+No código, **liderei o time de TI** e **contribuí com >900 commits** em front‑end (Vue.js) e integração de APIs geoespaciais. Versionamento colaborativo no GitHub — *adicionar link do repositório aqui*.
+
+**Espaço para foto** — Guia de estilos e biblioteca de componentes.
+*Legenda:* Tokens e padrões que sustentam a expansão nacional.
+
+---
+
+# Impacto
+
+Em 2025, registramos **1,4× mais acessos** que 2024, sustentados por SEO técnico, arquitetura clara e conteúdo acessível. O lançamento nacional reuniu **200 pessoas** e **1.000 on‑line**, impulsionando reconhecimento.
+
+**Prêmios e reconhecimentos**
+• 🏆 **Menção honrosa e finalista** — Competição Nacional de Design (SBC/UX)
+• 🏆 **Prêmio USP de Impacto Social**
+• 🏆 **IAB** — Selo Enfrentamento às Mudanças Climáticas + Prêmio Justiça Climática
+• 🌍 **Habilitação** — Mapeamento de Iniciativas Climáticas rumo à COP30
+
+> “Nunca foi tão simples visualizar esses dados para planejar políticas públicas.” — Rodrigo Romão, vereador de Mogi das Cruzes
+>
+> “Fiquei encantado com as possibilidades que a plataforma abre para o desenvolvimento de planos municipais.” — Mário Reali, ex‑prefeito de Diadema
+
+**Espaço para foto** — Lançamento na USP e recortes de imprensa.
+*Legenda:* Picos de tráfego e prova social após o lançamento.
+
+## Cobertura de mídia (seleção)
+
+Record News — 23/07/2025; Estadão (matérias e especiais); Jornal da USP; Correio Braziliense; CBN Campinas; entre outras **20+ reportagens**.
+
+## Por que funcionou
+
+**Método certo + decisões justificadas + engenharia escalável**. O mix de Double Diamond e Design Thinking, somado a princípios de UX e linguagem simples, gerou um produto **claro para leigos** e **confiável para especialistas**, viabilizando expansão nacional sem poluir o fluxo principal.
+
+
     </div>
 
     <!-- Contact Section -->
@@ -199,4 +272,5 @@
   <script src="../js/scroll-animations.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <script src="../js/project-numbering.js"></script>
+  <script src="../js/markdown-to-html.js"></script>
 </html>

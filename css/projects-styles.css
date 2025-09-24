@@ -41,3 +41,15 @@
     margin: 2em 0 1em 0;
 }
 
+/* --------------------------------
+   HORIZONTAL RULE STYLES
+   -------------------------------- */
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--blue-gray-100);
+    margin: 2em 0;
+    width: 100%;
+    max-width: 928px;
+}
+

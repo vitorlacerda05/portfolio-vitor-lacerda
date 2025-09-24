@@ -15,6 +15,7 @@ Portfólio pessoal desenvolvido em HTML, CSS e JavaScript com design baseado no 
 - **Animações Suaves**: Transições e efeitos visuais com Animate.css
 - **Sistema de Projetos**: Estrutura reutilizável para adicionar novos projetos
 - **Páginas de Projeto**: Templates padronizados para detalhamento de projetos
+- **Sistema Markdown**: Conversão automática de markdown para HTML com classes CSS
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -68,7 +69,8 @@ portfolio-vitor-lacerda/
 │   ├── mobile-menu.js
 │   ├── navbar.js
 │   ├── project-numbering.js
-│   └── scroll-animations.js
+│   ├── scroll-animations.js
+│   └── markdown-to-html.js
 ├── project/
 │   └── template.html
 │   └── urbverde.html
@@ -160,28 +162,102 @@ Use o template base fornecido em `project/template.html` como referência. A est
 - **Seção de Contato**: Cards com links para LinkedIn e Email
 - **Rodapé**: Informações de copyright
 
-### 3. Estilos de Texto para Páginas de Projeto
+**Importante**: Para usar o sistema markdown, certifique-se de incluir o script `markdown-to-html.js` e adicionar o atributo `data-markdown` ao elemento que contém o conteúdo.
 
-O sistema utiliza classes CSS padronizadas para formatação de texto:
+### 3. Sistema de Markdown para Páginas de Projeto
 
-#### Títulos
-- `.project-h1`: Título principal (32px, Karla, 700)
-- `.project-h1-alt`: Título principal alternativo, que não possui contagem automática (mesmo estilo do h1)
-- `.project-h2`: Subtítulo (24px, Karla, 600)
-- `.project-h3`: Subtítulo menor (20px, Karla, 600)
+O projeto inclui um sistema de markdown customizado que converte automaticamente texto markdown para HTML com as classes CSS corretas. Use o atributo `data-markdown` em qualquer elemento para ativar a conversão.
 
-#### Parágrafos e Listas
-- `.project-paragraph`: Texto padrão (16px, Inter, 400)
-- `ul`: Listas com marcadores (herda estilos do parágrafo)
+#### Como Usar
 
-#### Elementos Especiais
-- `.quote`: Citação com borda lateral
-- `.callout`: Destaque com fundo colorido
-- `.project-img-caption`: Legenda de imagens
+```html
+<div data-markdown>
+# Título Principal
+## Subtítulo
+### Subtítulo Menor
 
-#### Imagens
-- `.project-img`: Imagem do conteúdo
-- `.project-shadow`: Sombra para imagens
+Este é um parágrafo normal com **texto em negrito** e *texto em itálico*.
+
+> Este é um callout importante.
+
+>> Esta é uma citação.
+
+---
+
+## Lista de Funcionalidades
+- Item da lista 1
+- Item da lista 2
+- Item da lista 3
+
+![Imagem](caminho/para/imagem.jpg) *Legenda da imagem*
+
+[Link para GitHub](https://github.com/usuario/repositorio)
+</div>
+```
+
+#### Sintaxe Markdown Suportada
+
+**Títulos:**
+- `# Título Principal` → `<h1 class="project-h1">`
+- `## Subtítulo` → `<h2 class="project-h2">`
+- `### Subtítulo Menor` → `<h3 class="project-h3">`
+
+**Formatação de Texto:**
+- `**texto**` → `<strong>texto</strong>` (negrito)
+- `*texto*` → `<em>texto</em>` (itálico)
+- `[texto](url)` → `<a href="url" target="_blank" rel="noopener noreferrer">texto</a>` (link)
+
+**Elementos Especiais:**
+- `> texto` → `<p class="project-paragraph callout">texto</p>` (callout)
+- `>> texto` → `<p class="project-paragraph quote">texto</p>` (citação)
+- `---` → `<hr>` (linha horizontal)
+
+**Listas:**
+- `- item` → `<li class="regular-base">item</li>` (lista não ordenada)
+
+**Imagens com Legenda:**
+- `![alt](src) *legenda*` → `<img src="src" alt="alt" class="project-img"><p class="project-img-caption">legenda</p>`
+
+**Parágrafos:**
+- Texto normal → `<p class="project-paragraph">texto</p>`
+
+#### Classes CSS Aplicadas Automaticamente
+
+O sistema markdown aplica automaticamente as seguintes classes:
+- `.project-h1`, `.project-h2`, `.project-h3`: Títulos
+- `.project-paragraph`: Parágrafos normais
+- `.project-paragraph.callout`: Callouts
+- `.project-paragraph.quote`: Citações
+- `.project-img`: Imagens
+- `.project-img-caption`: Legendas
+- `.features-list`: Listas
+- `.regular-base`: Itens de lista
+
+#### Exemplo Prático de Uso
+
+```html
+<!-- Em uma página de projeto -->
+<div class="project-content" data-markdown>
+# Resumo do Projeto
+
+Este é um **projeto incrível** que resolve problemas reais com *soluções inovadoras*.
+
+> "A melhor ferramenta que já usei!" — Cliente satisfeito
+
+## Principais Funcionalidades
+- Interface intuitiva
+- Performance otimizada
+- Código limpo e documentado
+
+![Screenshot do projeto](images/projeto.png) *Interface principal do sistema*
+
+Acesse o [repositório no GitHub](https://github.com/usuario/projeto) para ver o código.
+
+---
+</div>
+```
+
+**Resultado**: O sistema converterá automaticamente todo o markdown para HTML com as classes CSS corretas, mantendo a consistência visual do projeto.
 
 ## 🚀 Deploy
 
