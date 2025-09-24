@@ -37,6 +37,9 @@ class MarkdownToHTML {
     // Converter imagens com legenda
     html = this.convertImagesWithCaption(html);
     
+    // Converter imagens simples (sem legenda)
+    html = this.convertSimpleImages(html);
+    
     // Converter headers
     html = this.convertHeaders(html);
     
@@ -64,7 +67,17 @@ class MarkdownToHTML {
   convertImagesWithCaption(html) {
     const imageCaptionRegex = /!\[([^\]]*)\]\(([^)]+)\)\s*\*([^*]+)\*/g;
     return html.replace(imageCaptionRegex, (match, alt, src, caption) => {
-      return `<img src="${src}" alt="${alt}" class="project-img">\n<p class="project-img-caption">${caption}</p>`;
+      return `<div class="project-img-wrapper"><img src="${src}" alt="${alt}"></div>\n<p class="project-img-caption">${caption}</p>`;
+    });
+  }
+
+  /**
+   * Converte imagens simples (formato: ![alt](src))
+   */
+  convertSimpleImages(html) {
+    const imageRegex = /!\[([^\]]*)\]\(([^)]+)\)(?!\s*\*)/g;
+    return html.replace(imageRegex, (match, alt, src) => {
+      return `<div class="project-img-wrapper"><img src="${src}" alt="${alt}"></div>`;
     });
   }
 
@@ -160,7 +173,8 @@ class MarkdownToHTML {
       if (line.startsWith('<p class="project-paragraph">') || 
           line.startsWith('<h1') || line.startsWith('<h2') || line.startsWith('<h3') ||
           line.startsWith('<ul') || line.startsWith('<li') || line.startsWith('<hr>') ||
-          line.startsWith('<img') || line.startsWith('<p class="project-img-caption">')) {
+          line.startsWith('<img') || line.startsWith('<p class="project-img-caption">') ||
+          line.startsWith('<div class="project-img-wrapper">')) {
         result.push(line);
         continue;
       }

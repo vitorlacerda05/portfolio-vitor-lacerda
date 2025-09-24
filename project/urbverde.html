@@ -49,8 +49,9 @@
           <div class="project-header">
             <h1 class="project-title project-h1-alt">UrbVerde</h1>
             <div class="badges-wrapper">
-              <span class="badge regular-sm">UX/UI Designer</span>
-              <span class="badge regular-sm">Project Lead</span>
+              <span class="badge regular-sm">Cofounder</span>
+              <span class="badge regular-sm">UX Lead</span>
+              <span class="badge regular-sm">Tech Coordinator</span>
             </div>
           </div>
           <div class="project-description">
@@ -77,91 +78,88 @@
     <!-- Project Content -->
     <div class="project-content animate__animated animate__fadeInUp animate__delay" data-markdown>
 
-![UrbVerde Dashboard - Interface do projeto de cobertura vegetal](../assets/images/homepage/projects/urbverde.png) *Interface do projeto de cobertura vegetal*
+![Interface do projeto UrbVerde, que mostra a cidade de São Paulo com temperatura de superfície terrestre](../assets/images/projects/urbverde/urbverde-inicio.png) *Interface do dashboard da UrbVerde, que mostra a temperatura da cidade de São Paulo.*
+![Interface do projeto UrbVerde, que mostra a gráficos da cidade de São Paulo com temperatura de superfície terrestre](../assets/images/projects/urbverde/urbverde-inicio-dashboard.png) *Gráficos de temperatura da cidade de São Paulo.*
 
-# Resumo inicial
+# Contextualização
 
-A UrbVerde é uma plataforma digital que democratiza dados socioambientais (vegetação, clima, parques e praças) para apoiar decisões públicas. Atuei como **UX Lead e coordenador do time de tecnologia**, conduzindo discovery e delivery para reestruturar arquitetura de informação, design system e front‑end. **Destaques**: menção honrosa e **finalista** na Competição Nacional de Design (SBC/UX), **Prêmio USP de Impacto Social**, reconhecimento do **IAB** (Selo + Prêmio Justiça Climática), **20+ matérias na mídia** (Record News, Estadão, Jornal da USP, etc.), **1,4× mais acessos em 2025 vs 2024** e lançamento nacional com **200 presenciais / 1.000 on‑line**.
+A UrbVerde é uma plataforma digital que democratiza e **mapeia dados socioambientais** (vegetação, clima, parques e praças) para apoiar decisões públicas e empoderar a sociedade. Como um dos **cofundadores**, tive como principal foco ser **UX Lead e coordenador do time de tecnologia**, conduzindo discovery e delivery para reestruturar arquitetura de informação, design system e front‑end.
+Fiz parte de um time com pessoas maravilhosas, inteligentes e engajadas. Com a ajuda de todos, transformamos a plataforma de um **MVP para um produto consolidado**, com diversos reconhecimentos:
+- Menção honrosa e finalista na **Competição Nacional de Design** pela Sociedade Brasileira de Computação
+- Reconhecida pela **Conferência das Nações Unidas** sobre Mudança do Clima (COP) no Mapeamento de Iniciativas Climáticas Locais
+- Mais de 20+ matérias em jornais como **Record News, Estadão, Jornal da USP, etc.**
+- Diversos outros impactos que vão ser mostrados ao longo do texto.
 
----
+# Identificação do problema
 
-# Problema identificado
+O primeiro MVP da UrbVerde apresentava **arquitetura de informação confusa, além de componentes não reutilizáveis e sem guia de estilo da marca**. Isso dificultava a navegação, confundia usuários leigos e até mesmo as próprias equipes internas, além de inviabilizar a escalabilidade de novos painéis e funcionalidades.
+Para dificultar ainda mais, a versão anterior tinha código frágil e desorganizado, sendo necessário uma **refatoração completa**.
 
-A versão anterior tinha **código frágil** (sem documentação e com alto acoplamento), **banco de dados** pouco preparado para expansão e **chaves sensíveis expostas** no front‑end. No produto, a **arquitetura de informação** confundia leigos e até equipes internas; componentes eram não reutilizáveis e não havia **guia de estilo**.
+>> “A gente se perde logo no início. Parece bonito, mas é confuso de usar.” — gestor público
 
-> “A gente se perde logo no início. Parece bonito, mas é difícil de usar.” — gestor público (teste inicial)
+![Conversa da UrbVerde com José Renato Nalini](../assets/images/projects/urbverde/nalini.jfif) *Conversa com Nalini, ex-secretário de São Paulo, sobre pontos de melhoria da plataforma.*
 
-**Espaço para foto** — Reunião de diagnóstico com gestores do ABC Paulista.
-*Legenda:* Identificação das principais dores de navegação e segurança.
+# Metodologia utilizada
 
-As limitações inviabilizavam novos recursos e painéis, gerando retrabalho e risco de regressões.
+Adotamos **Double Diamond** para organizar o ciclo que vai do dicovery ao delivery e incorporando o design e o desenvolvimento do produto. Acoplamos o **Design Thinking** nas etapas iniciais do Double Diamond, pelos processos de empatia, ideação e validação iterativa. Essa combinação foi essencial para alinhar necessidades técnicas dos designers, desenvolvedores e stakeholders em um projeto robusto e centrado no usuário.
 
-## Metodologia e por quê
+![Metodologia Double Diamond utilizada no desenvolvimento da plataforma UrbVerde](../assets/images/projects/urbverde/double-diamond.png) *Metodologia Double Diamond. Na etapa de Discovery foi acoplado o Design Thinking.*
 
-Adotamos **Double Diamond** para organizar o ciclo **Discover → Define → Develop → Deliver**, acoplando **Design Thinking** para empatia, ideação e validação iterativa. Essa combinação reduziu incertezas antes do desenvolvimento e alinhou requisitos técnicos a objetivos sociais.
+# Construção da ideia
 
-**Espaço para foto** — Diagrama das metodologias (Design Thinking + Double Diamond).
-*Legenda:* Como as trilhas de pesquisa e prototipação mitigaram riscos.
+## Características dos usuários
+- **Gestores públicos municipais (usuário final):** Pouca experiência com Sistemas de Informação Geográfica (SIG) e dashboards, com alto interesse em indicadores socioambientais para embasar diagnósticos, PLACs e políticas locais.
+- **Sociedade civil (usuário secundário):** Pessoas leigas em SIG e ferramentas analíticas, motivadas por entender o território onde vivem e se empoderar em debates públicos.
 
----
-
-# Ideação
+> Um estudo realizado pela UrbVerde mostrou que mais de **60% dos gestores municipais** do Estado de São Paulo não possuem conhecimento aprofundado de temas ambientais e ferramentas analíticas.
 
 ## Objetivo principal
 
-**Fazer uma plataforma escalável, acessível e intuitiva** para gestores e sociedade: organizar camadas com clareza, reduzir tempo de tarefa e **sustentar a expansão nacional**, com **WCAG**, **linguagem simples (ISO 24495‑1)** e componentes reutilizáveis.
+> Construir uma plataforma **escalável, acessível e intuitiva** que auxilie **gestores públicos e a sociedade** a compreender e enfrentar a crise climática, democratizando dados socioambientais em todo o Brasil.
 
-## Do simples ao refinado
+## Benchmarking
 
-Realizamos **benchmarking** (GeoNode, Carto, Global Forest Watch) para mapear padrões de filtros, legendas e comparações, adaptando‑os ao contexto brasileiro.
+Realizamos **benchmarking** em concorrentes diretos e indiretos como o GeoNode, Carto, Global Forest Watch e Google Maps para mapear padrões de uso de mapas, legendas, comparações de dados e padrões de uso.
 
-**Espaço para foto** — Benchmarking das plataformas de referência.
-*Legenda:* Boas práticas de navegação em mapas e indicadores.
+![Benchmarking das plataformas de referência](../assets/images/projects/urbverde/benchmarking.png) *Benchmarking de concorrentes diretos e indiretos*
 
-Em paralelo, desenhamos **arquitetura de informação** e **casos de uso (UML)** para garantir escalabilidade e padronização dos fluxos.
+## Arquitetura das informações
+Realizamos um **Diagrama de Casos de Uso (da UML)** a fim de compreender os possíveis casos de uso da futura plataforma, e, principalmente, **para auxiliar na criação de uma arquitetura da informação eficiente**, que garanta escalabilidade e padronização dos fluxos principais.
+![Arquitetura das informações da plataforma UrbVerde](../assets/images/projects/urbverde/fluxos.png) *Arquitetura das informações da plataforma UrbVerde (simplificada).*
 
-**Espaço para foto** — Arquitetura da informação e casos de uso.
-*Legenda:* Fluxos baseados em escala → município → categoria → camada.
+## Wireframes
+Com base nesses insumos, desenvolvemos **wireframes de baixa fidelidade** em papel, depois no Figma, focando na hierarquia da informação e navegação. Esses protótipos iniciais foram **validados em reuniões com gestores e membros da equipe**, passando por mais de sete iterações, sendo extremamente importantes para validação rápida e de baixo custo das ideias, em uma etapa ainda inicial.
+![Wireframe inicial em papel, utilizado para validação rápida do layout principal](../assets/images/projects/urbverde/wireframe-1.png) *Wireframe em papel, utilizado para validação rápida do layout principal.*
+![Wireframe no Figma, utilizado para validar principais componentes em reuniões com gestores](../assets/images/projects/urbverde/wireframe-2.png) *Wireframe no Figma, utilizado para validar principais usos da plataforma em reuniões com gestores.*
 
-A seguir, criamos **wireframes de baixa fidelidade** (papel → Figma) para validar hierarquia e fluxo principal, evoluindo para **média fidelidade** com microcopy mais claro e posições de CTAs.
+# Testes de usabilidade
+Agora com um avanço maior na arquitetura das informações e nos wireframes, realizamos um protótipo de média fidelidade para conduzir testes de usabilidade, a fim de identificar as **principais dificuldades dos usuários** antes mesmo de desenvolver o produto final, de forma **rápida e de baixo custo**.
 
-**Espaço para foto** — Wireframe inicial em papel.
-*Legenda:* Hipóteses de layout com foco no fluxo principal.
+Foram conduzidos **dois testes de usabilidade** na plataforma Maze.co, totalizando **58 participantes entre 18 e 65 anos**, com pouca ou nenhuma experiência em SIGs e ferramentas analíticas. Tomamos cuidado para garantir a maior variedade das características interpessoais, buscando testes mais robustos e validos.
 
-**Espaço para foto** — Protótipo de média fidelidade.
-*Legenda:* Ajuste de rótulos e hierarquia visual antes da alta fidelidade.
+## Primeiro teste
 
-### Decisões de UX e conteúdo
+No primeiro teste (31 participantes), a tarefa de "Selecionar o município" foi avaliada com **dificuldade média de 1,6** em uma escala de 1 (fácil) a 5 (difícil).
 
-Aplicamos **Heurísticas de Nielsen**, **Gestalt** (proximidade/similaridade), **Lei de Hick** (redução de escolhas) e **Lei de Fitts** (alvos e distâncias). Adotamos **linguagem simples** e **humanismo de dados** para evitar fadiga de crise, alternando alertas com ações práticas.
+### • 88% dos usuários consideraram a interface clara
+Apesar da boa avaliação inicial, os participantes identificaram a necessidade de **melhorias na orientação visual para facilitar a navegação.**
 
----
+## Segundo teste
 
-# Testes
+O segundo teste (27 participantes), foi realizado após ajustes de hierarquia visual e clareza nos textos, com três tarefas principais para os usuários.
 
-Conduzimos **dois testes de usabilidade** na Maze.co com **58 participantes** (18–65 anos, maioria sem experiência em SIG).
+### • 100% de sucesso nas tarefas principais
+Todos os usuários conseguiram completar as tarefas de seleção de município e camadas, demonstrando a eficácia das melhorias implementadas.
 
-## Teste 1 (n=31)
+### • 88,9% adicionaram camadas sem dificuldades
+Uma funcionalidade complexa em outros SIGs foi dominada pela maioria dos usuários, evidenciando a usabilidade do sistema.
 
-Objetivo: validar compreensão inicial do fluxo. **Dificuldade média 1,6/5** para “selecionar município”; **88%** avaliaram a interface como clara; **23%** pediram dicas visuais.
+### • 100% exportaram dados corretamente
+A funcionalidade de exportação, essencial para o workflow dos usuários, foi executada com sucesso por todos os participantes.
 
->> “Seria mais intuitivo navegar por botões dentro do mapa.” — participante (Teste 1)
-
-**Espaço para foto** — Gráficos do Teste 1 (dificuldade e cliques).
-*Legenda:* Concentração de cliques e necessidade de dicas iniciais.
-
-## Teste 2 (n=27)
-
-Após ajustes de hierarquia, microcopy e dicas guiadas: **100%** concluíram seleção de município; **dificuldade 1,3/5**. **88,9%** adicionaram nova camada sem dificuldade; **100%** exportaram o mapa como imagem.
-
-> “A interface está amigável, intuitiva e simples de uso.” — participante (Teste 2)
-
-**Espaço para foto** — Heatmap e métricas do Teste 2.
-*Legenda:* Melhora da eficácia após reorganização de CTAs.
-
-**Por que esses testes?** Medir aprendizado do fluxo, validar nomenclaturas e confirmar que um único CTA principal bastaria para download, reduzindo ruído no header.
-
----
+### Principais feedbacks:
+>> *"A interface está amigável, intuitiva e simples de uso."* – feedback qualitativo de participante
+>> *"Se for para ser comunicativo e de facil entendimento e direcionamento para o usuario final, conseguiram."* – feedback qualitativo de participante
 
 # Desenvolvendo a ideia
 
@@ -177,7 +175,7 @@ No código, **liderei o time de TI** e **contribuí com >900 commits** em front�
 **Espaço para foto** — Guia de estilos e biblioteca de componentes.
 *Legenda:* Tokens e padrões que sustentam a expansão nacional.
 
----
+
 
 # Impacto
 
