@@ -83,6 +83,12 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 720px) {
+  .main-content {
+    flex-direction: column;
+  }
+}
+
 .project-info {
   flex: 1;
   display: flex;
@@ -160,7 +166,6 @@ body {
 .project-image-container {
   width: 100%;
   height: auto;
-  max-height: 300px;
   flex: 1;
   display: flex;
   flex-direction: column;
