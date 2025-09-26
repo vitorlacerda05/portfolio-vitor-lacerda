@@ -117,17 +117,17 @@ Partimos de um **wireframe inicial** aproveitando os padrões já estabelecidos 
 ![Wireframe inicial do painel de políticas públicas](../assets/images/projects/policies/wireframe.png) *Wireframe inicial do painel de políticas públicas.*
 > Passo importante para todos estarem alinhados com a arquitetura da informação do sistema.
 
-## Benchmarking
+## Pesquisa secundária
 
 Analisamos **PLACs de São Paulo, Belo Horizonte, João Pessoa, Salvador, Fortaleza, Rio de Janeiro e Curitiba.** 
 
-![Exemplo do benchmarking dos PLACs](../assets/images/projects/policies/benchmarking.png) *Benchmarking dos planos climáticos locais.*
+![Exemplo do benchmarking dos PLACs](../assets/images/projects/policies/benchmarking.png) *Pesquisa secundária dos planos climáticos locais.*
 
 > Todos apresentavam estrutura de informações semelhante de **eixos, ações, indicadores, metas e ODS relacionados**, linguagem que deveríamos abordar no painel.
 
 ## Dinâmica “How Might We?”
 
-A dinâmica, por meio de perguntas, alinhou a equipe sobre **como deveriamos disponibilizar as informações no painel**.
+A dinâmica, por meio de perguntas, alinhou a equipe sobre **como deveriamos disponibilizar as informações no painel**, depois foram agrupadas e convergidas, considerando as que **entregam mais resultado com menos esforço de desenvolvimento**.
 
 ![Foto da dinâmica "How Might We?"](../assets/images/projects/policies/how-might-we.png) *Dinâmica "How Might We? realizada no FigJam".*
 
@@ -147,31 +147,49 @@ O feedback foi **extremamente positivo**, elogiando a **linguagem alinhada aos P
 
 > Solicitaram a criação de um **panorama geral que resuma todas as informações** para uma consulta rápida.
 
-# Decisões de design
+# Principais decisões de design
+
+## Adoção de uma linguagem comum para os gestores no painel.
+
+A linguagem dos PLACs (Planos de Ação Climática) utiliza termos específicos como **eixos temáticos, ações, indicadores, metas e ODS relacionados** - vocabulário já familiar aos gestores municipais. Isso se tornou algo natural e mais fácil de entender todo o painel de forma rápida. 
+Um desafio concretizado com sucesso também foi adicionar isso **internamente na plataforma com a arquitetura das informações da UrbVerde**.
 
 ## Reutilização dos **tokens, fontes e componentes da UrbVerde** para manter a consistência.
 
 ## Criação de um **botão de alternância entre painéis** no menu lateral.
 
-![Botão de alternância entre painéis](../assets/images/projects/policies/button.png) *O botão no menu lateral facilitou a navegação entre os painéis.*
+O botão no menu lateral facilitou a navegação entre os painéis.
+
+![Botão de alternância entre painéis](../assets/images/projects/policies/button.png) *Interface do menu lateral com botão de alternância.*
 
 ## Inclusão do **Panorama Geral solicitado pelos gestores**.
 
-![Panorama geral dos indicadores](../assets/images/projects/policies/panorama-geral.png) *O panorama trouxe uma visão geral das informações, facilitando a compreensão rápida do gestor.*
+O panorama trouxe uma visão geral das informações, facilitando a compreensão rápida do gestor.
+
+![Panorama geral dos indicadores](../assets/images/projects/policies/panorama-geral.png) *Visão geral dos indicadores do painel.*
 
 ## Desenvolvimento **selos gamificados** vetoriais para os eixos temáticos.
-![Selos gamificados](../assets/images/projects/policies/selos.png) *Os selos engajam os gestores e incentivam o cumprimento das metas.*
+
+Os selos engajam os gestores e incentivam o cumprimento das metas.
+
+![Selos gamificados](../assets/images/projects/policies/selos.png) *Selos gamificados para os eixos temáticos.*
 
 ## Inserção da **Mari, mascote da UrbVerde** no painel.
 
-![Mari, mascote da UrbVerde](../assets/images/projects/policies/mari.png) *A Mari trouxe uma identidade visual única e marcante para o painel.*
+A Mari trouxe uma identidade visual única e marcante para o painel.
 
-# Protótipo de alta fidelidade
+![Mari, mascote da UrbVerde](../assets/images/projects/policies/mari.png) *Mascote Mari integrada ao painel.*
+
+# Desenvolvendo a ideia
+
+## Protótipo de alta fidelidade
+
+Com base nas decisões de design e nos insumos obtidos no discovery, foi desenvolvido o protótipo de alta fidelidade, reutilizando componentes do design system e tokens para **garantir consistência visual e facilitar o desenvolvimento do código futuro**.
 
 ![Protótipo final do painel de indicadores](../assets/images/projects/policies/inicio.png) *Protótipo do panorama de indicadores, solicitado pelos gestores.*
 ![Protótipo final de eixos temáticos](../assets/images/projects/policies/inicio-2.png) *Protótipo dos eixos temáticos.*
 
-# Desenvolvimento do código
+## Desenvolvimento do código
 
 O desenvolvimento do código foi acelerado pela **reutilização de componentes do design system e tokens**, concluído em cerca de um mês. Coordenei o time de desenvolvedores, além de contribuir diretamente no código do [GitHub](https://github.com/UrbVerde/urbverde-ui).
 

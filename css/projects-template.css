@@ -78,12 +78,12 @@ body {
   display: flex;
   gap: 40px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   max-width: 1200px;
   width: 100%;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1080px) {
   .main-content {
     flex-direction: column;
   }
@@ -99,6 +99,7 @@ body {
   padding: 40px 0 40px 12px;
   min-height: 0;
   min-width: 0;
+  max-width: 600px;
 }
 
 .project-header {
@@ -164,23 +165,23 @@ body {
 }
 
 .project-image-container {
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
+  max-height: 600px;
   height: auto;
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  min-height: 0;
-  min-width: 0;
   position: relative;
   border: 2px solid var(--blue-200);
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 .image-wrapper {
-  width: 100%;
-  height: 100%;
+  width: fit-content;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -188,9 +189,11 @@ body {
 }
 
 .project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: contain;
   object-position: center;
 }
 

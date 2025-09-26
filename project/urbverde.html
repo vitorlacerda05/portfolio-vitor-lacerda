@@ -165,25 +165,39 @@ A funcionalidade de exportação, essencial para o workflow dos usuários, foi e
 
 # Desenvolvendo a ideia
 
-## Protótipo de alta fidelidade
+## Principais decisões de design
 
-A partir do protótipo validado, criamos um **style guide completo com tokenização**, incluindo cores, tipografia, espaçamentos e ícones.
+- **Utilização de componentes e styles reutilizáveis**, garantindo consistência visual e escalabilidade do design a longo prazo.
+- **Separação clara de responsabilidades dos componentes** no layout da tela, facilitando manutenção e evolução do sistema.
+- **Busca simplificada inspirada no Google Maps**, permitindo encontrar rapidamente qualquer município do Brasil sem sobrecarregar o usuário.
+- **Centralização de todas as funcionalidades do mapa em uma legenda/toolbar**, que organiza camadas, filtros e ferramentas em um só lugar e possibilita futuras adições sem comprometer a interface.
+- Para usuários leigos, aplicamos **linguagem simples e acessível** em todos os pontos de interação.
+- Uso de **cards explicativos**, detalhando de forma clara como o dado foi gerado, como analisá-lo e como transformá-lo em ações práticas.
+- Para usuários experientes, incluímos **botões dedicados para visualizar metodologias e gráficos avançados**, sem poluir a experiência de quem tem menor conhecimento técnico.
+- **Design moderno de dashboard**, planejado para suportar novos painéis e camadas com escalabilidade, evitando retrabalho em futuras expansões.
+- **Estrutura padrão de camadas**: mapa na parte superior + cards estatísticos na parte inferior, complementados pelo menu lateral para explorar outras informações.
+- O design do fluxo foi pensado como um **storytelling visual**, permitindo que o usuário siga uma narrativa natural ao explorar os dados.
+
+
+## Estilos e componentes reutilizáveis
+
+A partir do wireframe validado, criamos um **style guide completo com tokenização**, incluindo cores, tipografia, espaçamentos e ícones.
 
 ![Style guide completo com tokenização](../assets/images/projects/urbverde/style-guide.png) *Style guide completo com tokenização.*
 
 > Isso garantiu **consistência visual**, identidade da marca e acelerou a implementação futura.
 
-Aplicamos a metodologia **CDD – Component Driven Development**, criando cada componente no Figma já com propriedades, estados e tokens **correspondentes ao código**. O processo ocorreu em paralelo ao desenvolvimento, com handoffs claros para o time de tecnologia.
+Além disso, aplicamos a metodologia **CDD – Component Driven Development**, criando cada componente no Figma já com propriedades, estados e tokens **correspondentes ao código**. O processo ocorreu em paralelo ao desenvolvimento, com handoffs claros para o time de tecnologia.
 
-![Componentes no Figma que comunicaram diretamente com o código](../assets/images/projects/urbverde/documentation.png) *Exemplo da documentação componentes no Figma que comunicaram diretamente com o código.*
+## Protótipo de alta fidelidade
 
 O resultado foi um **protótipo de alta fidelidade totalmente responsivo**, estruturado para desktop e mobile, acompanhado também do design final da homepage.
 
 ![Protótipo de alta fidelidade da página inicial](../assets/images/projects/urbverde/hi-fi-homepage.png) *Protótipo da página inicial.*
 
-![Protótipo de alta fidelidade do dashboard](../assets/images/projects/urbverde/hi-fi.png) *Protótipo do mapa da categoria de Temperatura do dashboard.*
+![Protótipo de alta fidelidade do dashboard](../assets/images/projects/urbverde/hi-fi.png) *Protótipo do dashboard, navegando por meio do menu lateral e visualizando "Temperatura" no mapa.*
 
-![Protótipo de alta fidelidade do dashboard](../assets/images/projects/urbverde/hi-fi-dashboard.png) *Protótipo das estatísticas da categoria de Temperatura do dashboard.*
+![Protótipo de alta fidelidade do dashboard](../assets/images/projects/urbverde/hi-fi-dashboard.png) *Protótipo das estatísticas da categoria de Temperatura do dashboard, visualizadas ao rolar a tela.*
 
 ![Protótipo de alta fidelidade do dashboard em mobile](../assets/images/projects/urbverde/hi-fi-mobile.png) *Protótipo do dashboard versão mobile.*
 
@@ -228,7 +242,8 @@ O projeto ganhou destaque nacional com mais de **20 reportagens** em veículos d
 
 ## Artigos e eventos científicos
 
-Apresentei o projeto em dois grandes eventos científicos: o **Simpósio de Interação Humano-Computador**, em Brasília, e o **Simpósio Brasileiro de Sensoriamento Remoto**, em Salvador. Além disso, atuei como **autor principal** dos artigos científicos *“SIG Social: fundamentos humanos-computacionais para a democratização de dados da Plataforma UrbVerde”* e *“Expansão da plataforma UrbVerde: monitoramento socioambiental inteligente para todas as cidades brasileiras”*.
+Apresentei o projeto em dois grandes eventos científicos: o **Simpósio de Interação Humano-Computador**, em Brasília, e o **Simpósio Brasileiro de Sensoriamento Remoto**, em Salvador. 
+Além disso, atuei como **autor principal** dos artigos científicos *“SIG Social: fundamentos humanos-computacionais para a democratização de dados da Plataforma UrbVerde”* e *“Expansão da plataforma UrbVerde: monitoramento socioambiental inteligente para todas as cidades brasileiras”*, demonstrando todo o **processo de design na construção de Sistemas de Informação Geográfica (SIG)**.
 
 ![Apresentação no Simpósio Brasileiro de Sensoriamento Remoto, em Salvador](../assets/images/projects/urbverde/salvador.png) *Apresentação no Simpósio Brasileiro de Sensoriamento Remoto, em Salvador.*
 
