@@ -42,6 +42,18 @@
     width: 100%;
 }
 
+@media screen and (max-width: 601px) {
+    .contact-cards {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .contact-ctt {
+        min-width: 0;
+        flex: none;
+    }
+}
+
 .contact-ctt {
     display: flex;
     flex: 1;
@@ -104,5 +116,6 @@
 .contact-ctt-info {
     text-align: left;
     min-width: 100%;
-    word-break: break-all;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }

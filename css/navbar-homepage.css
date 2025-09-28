@@ -119,7 +119,8 @@
 }
 
 .navbar-link span {
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
   line-height: 1.5;
 }
 

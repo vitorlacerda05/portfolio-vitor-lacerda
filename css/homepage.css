@@ -2,6 +2,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 .page-white-container {
@@ -12,7 +17,6 @@ body {
         linear-gradient(180deg, #F7F9FB 0%, #F7F9FB 100%);
     background-size: 48px 48px, 100% 100%;
     background-position: 0 0, 0 0;
-    overflow: hidden;
     position: relative;
 }
 
@@ -120,5 +124,10 @@ body {
     .main-top{
         padding: 10vh 16px 14vh 16px;
         gap: 16vh;
+    }
+    
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
     }
   } 

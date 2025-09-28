@@ -14,6 +14,7 @@
   transition: all 0.3s ease;
   text-decoration: none;
   max-width: 240px;
+  width: 100%;
 }
 
 .button-primary:hover {
