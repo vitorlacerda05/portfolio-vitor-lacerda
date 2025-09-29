@@ -218,6 +218,32 @@
   color: var(--blue-gray-500);
 }
 
+.project-title-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.project-year-badge {
+  background-color: var(--blue-100);
+  border: 1px solid var(--blue-50);
+  border-radius: 4px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-year {
+  color: var(--blue-gray-900);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
 .projects {
   flex-basis: 0;
   background-color: var(--blue-300);

@@ -152,7 +152,7 @@ Para adicionar um novo projeto na página principal, use a seguinte estrutura:
 
 ### 2. Como Criar uma Página de Projeto
 
-Use o template base fornecido em `project/template.html` como referência. A estrutura inclui:
+Use o template base fornecido em `project/example.html` como referência. A estrutura inclui:
 
 - **Cabeçalho**: Meta tags, favicon, tokens CSS e bibliotecas externas
 - **Botão de Volta**: Navegação para a página principal
