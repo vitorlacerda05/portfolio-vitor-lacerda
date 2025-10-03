@@ -23,6 +23,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8YR8WFL8C"></script>
     <script src="analytics.js"></script>
     
+    <!-- SEO Configuration -->
+    <script src="js/seo-config.js"></script>
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/navbar-homepage.css" />
     <link rel="stylesheet" href="css/button.css" />
@@ -525,6 +528,14 @@
     
     <!-- Scroll animations -->
     <script src="js/scroll-animations.js"></script>
+    
+    <!-- Initialize SEO -->
+    <script>
+      // Initialize SEO when DOM is loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        initSEO('home');
+      });
+    </script>
     
     <!-- Reset Button -->
     <div id="reset-button" class="reset-button" style="display: none;">

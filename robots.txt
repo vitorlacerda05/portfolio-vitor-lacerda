@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://vitorlacerda.com/sitemap.xml
+
+# Crawl-delay (opcional, para não sobrecarregar o servidor)
+Crawl-delay: 1
+
+# Permitir acesso a recursos importantes
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /project/
+
+# Bloquear arquivos desnecessários
+Disallow: /analytics.js
+Disallow: /.git/
+Disallow: /README.md
+Disallow: /MARKDOWN_SYSTEM.md
