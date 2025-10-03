@@ -14,7 +14,5 @@ Allow: /js/
 Allow: /project/
 
 # Bloquear arquivos desnecessários
-Disallow: /analytics.js
 Disallow: /.git/
 Disallow: /README.md
-Disallow: /MARKDOWN_SYSTEM.md
