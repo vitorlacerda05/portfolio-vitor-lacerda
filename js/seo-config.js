@@ -24,8 +24,8 @@ const SEO_CONFIG = {
   pages: {
     home: {
       title: "Vitor Lacerda - Product Designer",
-      description: "Vitor Lacerda é Product Designer e pesquisador na USP. Cofundador da UrbVerde, com experiência em gestão de produtos e desenvolvimento. Especialista em UX/UI Design com projetos premiados.",
-      keywords: "product designer, ux designer, ui designer, vitor lacerda, usp, urbverde, design thinking, portfolio, experiência do usuário",
+      description: "Vitor Lacerda é Product Designer e pesquisador na USP. Cofundador da UrbVerde, com experiência em gestão de produtos e desenvolvimento. Especialista em UX/UI Design com portfolio de projetos premiados. Freelance UX UI Designer disponível para novos projetos.",
+      keywords: "product designer, ux designer, ui designer, portfolio ux, portfolio ui, ux ui designer, designer junior, freelance ux, freelance ui, vitor lacerda, usp, urbverde, design thinking, experiência do usuário, interface design, user experience, user interface",
       url: "/",
       image: "https://vitorlacerda.com/assets/favicon/android-chrome-512x512.png",
       schema: {
@@ -56,8 +56,8 @@ const SEO_CONFIG = {
 
     urbverde: {
       title: "UrbVerde - Dashboard Socioambiental | Vitor Lacerda",
-      description: "UrbVerde é uma plataforma digital que democratiza dados socioambientais urbanos. Projeto premiado pela Sociedade Brasileira de Computação e Nações Unidas, desenvolvido por Vitor Lacerda como cofundador e UX Lead.",
-      keywords: "urbverde, dashboard socioambiental, dados urbanos, cobertura vegetal, temperatura, sig, sistema informação geográfica, vitor lacerda, ux design, protótipo, prêmio usp",
+      description: "UrbVerde é uma plataforma digital que democratiza dados socioambientais urbanos. Projeto premiado pela Sociedade Brasileira de Computação e Nações Unidas, desenvolvido por Vitor Lacerda como cofundador e UX Lead. Case study completo de UX/UI Design.",
+      keywords: "urbverde, dashboard socioambiental, dados urbanos, cobertura vegetal, temperatura, sig, sistema informação geográfica, vitor lacerda, ux design, ui design, portfolio ux, prêmio usp, projeto ux, case study ux, protótipo",
       url: "/project/urbverde.html",
       image: "https://vitorlacerda.com/assets/images/homepage/projects/urbverde.png",
       schema: {
@@ -86,8 +86,8 @@ const SEO_CONFIG = {
 
     policies: {
       title: "Painel Políticas Públicas - ABC Paulista | Vitor Lacerda",
-      description: "Painel para auxiliar gestores municipais do ABC Paulista na construção de planos climáticos locais. Desenvolvido por Vitor Lacerda como UX Lead e coordenador técnico da UrbVerde.",
-      keywords: "políticas públicas, abc paulista, planos climáticos, plac, gestão municipal, urbverde, vitor lacerda, ux design, painel gestão",
+      description: "Painel para auxiliar gestores municipais do ABC Paulista na construção de planos climáticos locais. Desenvolvido por Vitor Lacerda como UX Lead e coordenador técnico da UrbVerde. Case study de UX Design para gestão pública.",
+      keywords: "políticas públicas, abc paulista, planos climáticos, plac, gestão municipal, urbverde, vitor lacerda, ux design, ui design, portfolio ux, painel gestão, case study ux, projeto ux",
       url: "/project/policies.html",
       image: "https://vitorlacerda.com/assets/images/homepage/projects/policies.png",
       schema: {
@@ -111,8 +111,8 @@ const SEO_CONFIG = {
 
     pacepro: {
       title: "PacePro - App Gamificado para Corredores | Vitor Lacerda",
-      description: "PacePro é um protótipo de aplicativo mobile gamificado para corredores que combina contador de passos, monitoramento de desempenho e comunidade. Desenvolvido por Vitor Lacerda usando Design Thinking.",
-      keywords: "pacepro, app corrida, aplicativo corrida, gamificação, contador passos, vitor lacerda, ux design, design thinking, protótipo mobile",
+      description: "PacePro é um protótipo de aplicativo mobile gamificado para corredores que combina contador de passos, monitoramento de desempenho e comunidade. Desenvolvido por Vitor Lacerda usando Design Thinking. Case study de UX/UI Design para mobile.",
+      keywords: "pacepro, app corrida, aplicativo corrida, gamificação, contador passos, vitor lacerda, ux design, ui design, portfolio ux, design thinking, protótipo mobile, case study ux, projeto ux, mobile ux",
       url: "/project/pacepro.html",
       image: "https://vitorlacerda.com/assets/images/homepage/projects/pacepro_1.png",
       schema: {
@@ -136,8 +136,8 @@ const SEO_CONFIG = {
 
     siga: {
       title: "SIGa - Dashboard Agronegócio | Vitor Lacerda",
-      description: "SIGa é um dashboard de gerenciamento de compras, vendas e estoques agrários desenvolvido por Vitor Lacerda. Projeto de UI/UX Design voltado ao agronegócio com base em sistemas ERP.",
-      keywords: "siga, dashboard agronegócio, gestão estoques, sistema agrário, erp agronegócio, vitor lacerda, ui design, ux design, icmc usp",
+      description: "SIGa é um dashboard de gerenciamento de compras, vendas e estoques agrários desenvolvido por Vitor Lacerda. Projeto de UI/UX Design voltado ao agronegócio com base em sistemas ERP. Case study de dashboard UX Design.",
+      keywords: "siga, dashboard agronegócio, gestão estoques, sistema agrário, erp agronegócio, vitor lacerda, ui design, ux design, portfolio ux, icmc usp, case study ux, projeto ux, dashboard ux",
       url: "/project/siga.html",
       image: "https://vitorlacerda.com/assets/images/projects/siga/hi-fi-1.png",
       schema: {
