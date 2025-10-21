@@ -109,9 +109,11 @@ class ScrollAnimations {
   }
 
   animateCounter(element) {
-    const text = element.textContent;
-    const hasPlus = text.includes('+');
-    const targetNumber = parseInt(text.replace('+', ''));
+    const targetText = element.getAttribute('data-target');
+    if (!targetText) return;
+    
+    const hasPlus = targetText.includes('+');
+    const targetNumber = parseInt(targetText.replace('+', ''));
     
     if (isNaN(targetNumber)) return;
 
@@ -129,7 +131,7 @@ class ScrollAnimations {
         clearInterval(timer);
       }
       
-      // Mantém o + se estava presente no HTML original
+      // Mantém o + se estava presente no target original
       element.textContent = hasPlus ? '+' + Math.floor(currentNumber) : Math.floor(currentNumber);
     }, stepTime);
   }
