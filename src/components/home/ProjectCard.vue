@@ -125,7 +125,7 @@ const rootProps = computed(() =>
   color: var(--blue-gray-900);
   font-family: 'Karla', sans-serif;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
   line-height: normal;
   margin: 0;
 }

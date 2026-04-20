@@ -7,41 +7,90 @@ const highlights = [
   { target: '+25', label: 'Projetos de desenvolvimento' },
   { target: '7', label: 'Prêmios nacionais e internacionais' }
 ]
+
+const awards = [
+  'Menção honrosa na Competição Nacional de UX Design da Sociedade Brasileira de Computação (SBC)',
+  'Prêmio USP de Impacto Social para Cidades e Comunidades Sustentáveis',
+  'Projeto destaque da região de São Paulo no Google Startup In School',
+  'Prêmio no Eixo IV, de Técnicas e Tecnologias para Promoção de Justiça Climática',
+  'Menção Honrosa no Hackathon Beta da Semana Acadêmica de Computação'
+]
 </script>
 
 <template>
   <div id="about-section" class="about-section">
-    <div class="about-top" data-animate="animate__fadeIn" data-delay="animate__delay">
-      <div class="about-title-section">
-        <div class="about-title title-md">
-          <span>
-            Além de designer, Vitor é
-            <span class="text-highlight">cofundador da UrbVerde</span>,
-            com experiência em gestão de produtos e desenvolvimento
-          </span>
-        </div>
-        <div class="about-description regular-lg">
-          <p data-animate="animate__fadeIn" data-delay="animate__delay">
-            Cursa Sistemas de Informação na USP, onde conduz pesquisas em Interação Humano-Computador,
-            explorando como o design pode gerar impacto social e inovação tecnológica.
-            Suas entregas já foram reconhecidas por prêmios nacionais e internacionais,
-            incluindo a menção honrosa na Competição de UX Design da Sociedade Brasileira de Computação.
+    <div class="about-intro-group">
+      <div class="about-block" data-animate="animate__fadeIn" data-delay="animate__delay">
+        <div class="about-block-text">
+          <h3 class="about-block-title title-md">
+            Product Manager com experiência sólida em
+            <span class="text-highlight">design e desenvolvimento</span>
+          </h3>
+          <p class="about-block-description regular-lg">
+            Hoje Vitor atua como Product Manager na Visio.ai, mas chegou até aqui por um caminho
+            pouco comum. Antes de liderar produto, passou anos desenhando telas e escrevendo código.
+            Foi Product Designer na Ploomes e, por mais de quatro anos, à frente do produto da
+            UrbVerde, sempre circulando entre Figma, front-end e decisões estratégicas.
           </p>
         </div>
+        <div class="about-image">
+          <img src="/assets/images/homepage/vitor-lacerda-image.png" alt="Vitor Lacerda" />
+        </div>
       </div>
-      <div class="about-image">
-        <img src="/assets/images/homepage/vitor-lacerda-image.png" alt="Vitor Lacerda" />
+      <div class="highlight" data-animate="animate__fadeIn" data-delay="animate__delay">
+        <div class="highlight-content">
+          <HighlightSquare
+            v-for="h in highlights"
+            :key="h.label"
+            :target="h.target"
+            :label="h.label"
+          />
+        </div>
       </div>
     </div>
 
-    <div class="highlight" data-animate="animate__fadeIn" data-delay="animate__delay">
-      <div class="highlight-content">
-        <HighlightSquare
-          v-for="h in highlights"
-          :key="h.label"
-          :target="h.target"
-          :label="h.label"
-        />
+
+    <div class="about-block reverse" data-animate="animate__fadeIn" data-delay="animate__delay">
+      <div class="about-block-text">
+        <h3 class="about-block-title title-md">
+          Foi <span class="text-highlight">cofundador da UrbVerde</span>, levando a solução para 20 mil usuários em todo o mundo
+        </h3>
+        <p class="about-block-description regular-lg">
+          A UrbVerde é a primeira plataforma SIG que leva dados sociais e ambientais urbanos
+          para todos os municípios do Brasil. Vitor coordenou o time de tecnologia, desenhou
+          as telas e participou do front-end. Ao lado de mais de 50 pesquisadores, ajudou a
+          construir uma iniciativa presente em 800+ municípios brasileiros e 50+ países.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="/assets/images/homepage/about-urbverde.png" alt="UrbVerde" />
+      </div>
+      
+    </div>
+
+    <div class="research-group" data-animate="animate__fadeIn" data-delay="animate__delay">
+      <div class="about-block">
+        <div class="about-block-text">
+          <h3 class="about-block-title title-md">
+            <span class="text-highlight">Graduando e pesquisador na USP</span>, na área de Interação Humano-Computador
+          </h3>
+          <p class="about-block-description regular-lg">
+            Estudante de Sistemas de Informação na USP, Vitor se dedica à pesquisa em Interação
+            Humano-Computador e gestão de projetos, sempre explorando como o design pode gerar
+            impacto social. Já participou de mais de cinco iniciações científicas e publicou em
+            revistas acadêmicas. Esse trabalho, somado aos projetos de produto, rendeu alguns
+            reconhecimentos:
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="/assets/images/homepage/about-research.png" alt="Pesquisa científica" />
+        </div>
+      </div>
+
+      <div class="awards-container">
+        <ul class="about-awards project-h3">
+          <li v-for="award in awards" :key="award">{{ award }}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -52,37 +101,72 @@ const highlights = [
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 240px;
   position: relative;
 }
 
-.about-top {
+.about-intro-group {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.about-block {
   display: flex;
   flex-direction: row;
   gap: 72px;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
-.about-title-section {
+.about-block.reverse {
+  flex-direction: row-reverse;
+}
+
+.about-block-text {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
   color: var(--white);
 }
 
-.about-title {
+.about-block-title {
   text-align: left;
-  min-width: 100%;
   color: var(--white);
 }
 
-.about-description {
+.about-block-description {
   color: var(--blue-50);
-  height: auto;
-  width: 100%;
   font-weight: 300;
+  margin: 0;
+}
+
+.research-group {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+.awards-container {
+  width: 100%;
+}
+
+.about-awards {
+  color: var(--blue-50);
+  font-weight: 300;
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 500
+}
+
+.about-awards li {
+  line-height: 1.5;
 }
 
 .about-image {
@@ -136,10 +220,14 @@ const highlights = [
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
   }
+  .about-section {
+    gap: 120px;
+  }
 }
 
 @media screen and (max-width: 601px) {
-  .about-top {
+  .about-block,
+  .about-block.reverse {
     flex-direction: column;
   }
   .about-image {

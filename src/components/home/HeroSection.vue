@@ -26,8 +26,7 @@
           <p class="title-md">
             <span class="dash">— </span>
             <span>
-              Sou Product Designer e pesquisador na USP. Orquestro estratégia,
-              prototipagem e código para resolver problemas reais.
+               Sou Product Manager e pesquisador na USP. Orquestro estratégia, prototipagem e código para resolver problemas reais.
             </span>
           </p>
         </div>

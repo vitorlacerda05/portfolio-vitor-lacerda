@@ -86,7 +86,7 @@ export const PROJECTS = [
     id: 'siga',
     title: 'SIGa',
     image: {
-      src: '/assets/images/projects/siga/hi-fi-1.png',
+      src: '/assets/images/homepage/projects/siga.png',
       alt: 'Projeto SIGa'
     },
     cardBg: 'bg-blue',
