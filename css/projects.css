@@ -49,8 +49,8 @@
 
 .project-frame-container {
   position: absolute;
-  top: -32px;
-  left: 57px;
+  top: -40px;
+  left: 274px;
   transform: translateX(-50%);
   display: flex;
   align-items: center;
@@ -61,7 +61,7 @@
   height: auto;
   text-align: center;
   position: relative;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -80,6 +80,38 @@
   color: var(--purple);
   font-size: 16px;
   white-space: nowrap;
+}
+
+.project-filters {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.project-filter-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: var(--blue-gray-700);
+  font-size: 16px;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+}
+
+.project-filter-btn:hover {
+  background: var(--blue-50);
+}
+
+.project-filter-btn.active {
+  color: var(--blue-gray-900);
+  background: var(--blue-100);
+}
+
+.projects-section.draggable:not(.draggable-disabled) .project-filter-btn {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 /* Project Card */
@@ -243,8 +275,7 @@
   justify-content: center;
   padding: 4px 8px;
   border-radius: 4px;
-  border: 1px solid var(--blue-50);
-  color: var(--blue-gray-900);
+  color: var(--blue-gray-700);
 }
 
 .card-date {

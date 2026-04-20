@@ -8,7 +8,7 @@ const PROJECTS = [
       alt: 'UrbVerde Dashboard'
     },
     cardBg: 'bg-blue',
-    badges: ['Cofounder', 'UX Lead', 'Tech Coordinator'],
+    badges: ['UX Design', 'Development'],
     description: 'Dashboard com dados sociais e ambientais urbanos que ganhou prêmios da Sociedade Brasileira de Computação e das Nações Unidas',
     date: 'set, 2024 - jun, 2025'
   },
@@ -21,7 +21,7 @@ const PROJECTS = [
       alt: 'Painel Políticas Públicas'
     },
     cardBg: 'bg-blue',
-    badges: ['Cofounder', 'UX Lead', 'Tech Coordinator'],
+    badges: ['UX Design', 'All'],
     description: 'Construção de um painel para auxiliar a gestão pública dos municípios do ABC Paulista',
     date: 'jun, 2025 - ago, 2025'
   },
@@ -34,7 +34,7 @@ const PROJECTS = [
       alt: 'PacePro'
     },
     cardBg: 'bg-blue',
-    badges: ['UX Researcher', 'UX/UI Designer'],
+    badges: ['UX Design'],
     description: 'Protótipo de aplicativo mobile gamificado para corredores',
     date: 'mai, 2023 - mai, 2023'
   },
@@ -47,7 +47,7 @@ const PROJECTS = [
       alt: 'Projeto SIGa'
     },
     cardBg: 'bg-blue',
-    badges: ['UI/UX Designer', 'UX Researcher'],
+    badges: ['UX Design'],
     description: 'Dashboard de gerenciamento de compras, vendas e estoques agrários',
     date: 'abr, 2023'
   }

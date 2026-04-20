@@ -1,3 +1,11 @@
+function toSlug(str) {
+  return str.toLowerCase().replace(/\s+/g, '-')
+}
+
+function fromSlug(slug) {
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+}
+
 function renderProjectCards() {
   const grid = document.getElementById('projects-grid')
   if (!grid) return
@@ -11,7 +19,7 @@ function renderProjectCards() {
       <div class="corner-square bottom-right"></div>`
 
     return `
-      <a href="${project.url}" class="project-card ${project.cardBg}">
+      <a href="${project.url}" class="project-card ${project.cardBg}" data-badges="${project.badges.join(',')}">
         <div class="project-image-container">
           <div class="project-image-single">
             <img src="${project.image.src}" alt="${project.image.alt}">
@@ -36,4 +44,42 @@ function renderProjectCards() {
   }).join('')
 }
 
+function initProjectFilters() {
+  const buttons = document.querySelectorAll('.project-filter-btn')
+  if (!buttons.length) return
+
+  function applyFilter(filter) {
+    const showAll = filter === 'All'
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      const badges = card.dataset.badges ? card.dataset.badges.split(',') : []
+      card.style.display = showAll || badges.includes(filter) ? '' : 'none'
+    })
+
+    buttons.forEach(b => {
+      b.classList.toggle('active', b.dataset.filter === filter)
+    })
+
+    const params = new URLSearchParams(window.location.search)
+    params.set('filter', toSlug(filter))
+    history.replaceState(null, '', '?' + params.toString())
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter))
+  })
+
+  const params = new URLSearchParams(window.location.search)
+  const slug = params.get('filter')
+  const filterFromUrl = slug ? fromSlug(slug) : null
+  const matched = filterFromUrl && [...buttons].find(b => b.dataset.filter === filterFromUrl)
+
+  if (matched) {
+    applyFilter(matched.dataset.filter)
+  } else {
+    applyFilter('UX Design') // Default filter
+  }
+}
+
 renderProjectCards()
+initProjectFilters()

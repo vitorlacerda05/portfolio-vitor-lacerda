@@ -82,7 +82,7 @@
   word-wrap: break-word;
   top: -30px;
   transform: translateX(-50%);
-  display: flex;
+  display: none;
   align-items: center;
   gap: 4px;
 }
