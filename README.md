@@ -32,49 +32,30 @@ Portfólio pessoal desenvolvido em HTML, CSS e JavaScript com design baseado no 
 portfolio-vitor-lacerda/
 ├── assets/
 │   ├── images/
-│   │   ├── favicon.svg
 │   │   ├── homepage/
-│   │   │   ├── background.svg
-│   │   │   ├── hero-image.png
-│   │   │   ├── logo.svg
-│   │   │   ├── navbar/
-│   │   │   ├── projects/
+│   │   │   ├── projects/        ← imagens dos cards
 │   │   │   ├── social/
 │   │   │   ├── social-proof/
 │   │   │   └── vector/
-│   │   └── projects/
+│   │   └── projects/            ← imagens internas dos projetos
 │   └── tokens/
 │       ├── breakpoints.css
 │       ├── colors.css
 │       └── fonts.css
 ├── css/
-│   ├── button.css
-│   ├── cta-section.css
-│   ├── footer.css
-│   ├── hero-section.css
-│   ├── homepage.css
-│   ├── main-bottom.css
-│   ├── navbar-homepage.css
-│   ├── project-numbering.css
-│   ├── projects-styles.css
-│   ├── projects-template.css
-│   ├── projects.css
-│   └── social-proof.css
+│   ├── projects.css             ← estilos dos cards da homepage
+│   ├── projects-template.css    ← estilos das páginas de projeto
+│   └── (outros arquivos css)
 ├── js/
+│   ├── projects/                ← fonte da verdade dos projetos
+│   │   ├── projects-data.js     ← dados de todos os projetos
+│   │   ├── render-projects.js   ← renderiza cards na homepage
+│   │   └── render-project-info.js ← renderiza header nas páginas
 │   ├── edit-mode/
-│   │   ├── drag-core.js
-│   │   ├── drag.js
-│   │   ├── paint-system.js
-│   │   └── ui-controls.js
-│   ├── mobile-menu.js
-│   ├── navbar.js
-│   ├── project-numbering.js
-│   ├── scroll-animations.js
-│   └── markdown-to-html.js
+│   └── (outros arquivos js)
 ├── project/
-│   └── template.html
-│   └── urbverde.html
-│   └── (outros projetos)
+│   ├── example.html             ← template de referência
+│   └── (páginas de projeto)
 └── index.html
 ```
 ## 🎨 Style guide
@@ -95,41 +76,37 @@ O projeto é totalmente responsivo com breakpoints definidos em:
 
 ## 📖 Documentação de Uso
 
-### 1. Como Adicionar um Novo Projeto no index.html
+### 1. Como Adicionar um Novo Projeto
 
-Para adicionar um novo projeto na página principal, use a seguinte estrutura:
+Os cards da homepage e o header de cada página de projeto são gerados automaticamente a partir de um único arquivo: **`js/projects/projects-data.js`**.
 
-```html
-<a href="caminho/para/projeto.html" class="project-card bg-[cor]">
-  <div class="project-image-container">
-    <div class="project-image-single">
-      <img src="caminho/para/imagem.png" alt="Descrição da imagem">
-    </div>
-  </div>
-  <div class="project-content">
-    <div class="project-title-container">
-      <h3 class="project-title">Título do Projeto</h3>
-      <div class="project-year-badge">
-        <span class="project-year">2025</span>
-      </div>
-    </div>
-    <p class="project-description regular-sm">Descrição do projeto aqui...</p>
-  </div>
-</a>
+Para adicionar um novo projeto, basta incluir uma entrada no array `PROJECTS`:
+
+```js
+// js/projects/projects-data.js
+{
+  id: 'meu-projeto',                              // identificador único
+  title: 'Meu Projeto',                           // título exibido
+  url: 'project/meu-projeto.html',                // caminho da página
+  image: {
+    src: 'assets/images/homepage/projects/meu-projeto.png', // relativo à raiz
+    alt: 'Descrição da imagem'
+  },
+  cardBg: 'bg-blue',                              // cor de fundo do card
+  badges: ['UX Lead', 'UX Researcher'],           // papéis no projeto
+  description: 'Descrição curta do projeto',      // texto do card
+  date: 'jan, 2025 - mar, 2025'                   // período
+}
 ```
+
+O card aparece automaticamente na homepage e o header da página de projeto é populado ao usar `data-project="meu-projeto"` no `main-content` (ver passo 2).
 
 **Resolução recomendada para a imagem do card: `864 × 560px`**
 
 > A imagem é exibida com `object-fit: cover` e altura fixa de 280px. O tamanho 864×560 corresponde ao dobro (2×) da área de exibição real, garantindo nitidez em telas Retina. Mantenha o conteúdo principal centralizado ou no topo da imagem para evitar cortes indesejados.
 
-Cores disponíveis para `bg-[cor]`:
-- `bg-green`
-- `bg-yellow`
-- `bg-blue`
-- `bg-purple`
-- `bg-red`
-- `bg-pink`
-- `bg-brown`
+Cores disponíveis para `cardBg`:
+- `bg-green` / `bg-yellow` / `bg-blue` / `bg-purple` / `bg-red` / `bg-pink` / `bg-brown`
 
 ### 2. Como Criar uma Página de Projeto
 
@@ -137,13 +114,29 @@ Use o template base fornecido em `project/example.html` como referência. A estr
 
 - **Cabeçalho**: Meta tags, favicon, tokens CSS e bibliotecas externas
 - **Botão de Volta**: Navegação para a página principal
-- **Informações do Projeto**: Título, badges, descrição e data
-- **Imagem Principal**: Com cantos decorativos
-- **Conteúdo do Projeto**: Seções organizadas com títulos e parágrafos
+- **Header do Projeto**: Renderizado automaticamente via JS — basta definir `data-project` no container
+- **Conteúdo do Projeto**: Seções organizadas com títulos e parágrafos (via markdown)
 - **Seção de Contato**: Cards com links para LinkedIn e Email
 - **Rodapé**: Informações de copyright
 
-**Importante**: Para usar o sistema markdown, certifique-se de incluir o script `markdown-to-html.js` e adicionar o atributo `data-markdown` ao elemento que contém o conteúdo.
+O header (título, badges, descrição, data e imagem) é injetado automaticamente pelo script. Configure assim:
+
+```html
+<!-- Na página do projeto -->
+<div class="main-content" id="project-main-content" data-project="meu-projeto">
+  <!-- Renderizado por js/projects/render-project-info.js -->
+</div>
+```
+
+E inclua os scripts antes do fechamento do `</body>`:
+
+```html
+<script src="../js/projects/projects-data.js"></script>
+<script src="../js/projects/render-project-info.js"></script>
+<script src="../js/markdown-to-html.js"></script>
+```
+
+**Importante**: O valor de `data-project` deve corresponder ao `id` cadastrado em `js/projects/projects-data.js`.
 
 ### 3. Sistema de Markdown para Páginas de Projeto
 
