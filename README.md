@@ -4,7 +4,7 @@ Portfólio pessoal desenvolvido em HTML, CSS e JavaScript com design baseado no 
 
 ## 🌐 Links
 
-**Link de acesso:** [https://vitorlacerda05.github.io/portfolio-vitor-lacerda/](https://vitorlacerda05.github.io/portfolio-vitor-lacerda/)
+**Link de acesso:** [https://vitorlacerda.com/](https://vitorlacerda.com/)
 
 **Link do Figma:** [https://www.figma.com/design/1EPHxMr80QnAGkYDsx7IyC/Portf%C3%B3lio---Vitor-Lacerda?node-id=13-40&t=KbCRG0CI9mvsaduV-1](https://www.figma.com/design/1EPHxMr80QnAGkYDsx7IyC/Portf%C3%B3lio---Vitor-Lacerda?node-id=13-40&t=KbCRG0CI9mvsaduV-1)
 
