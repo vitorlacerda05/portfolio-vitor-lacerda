@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(tee /tmp/preview.log)",
+      "Bash(curl -s -o /dev/null -w \"home:%{http_code}\\\\n\" http://localhost:4173/)",
+      "Bash(curl -s -o /dev/null -w \"project:%{http_code}\\\\n\" http://localhost:4173/project/urbverde)",
+      "Bash(curl -s -o /dev/null -w \"legacy:%{http_code}\\\\n\" http://localhost:4173/project/urbverde.html)",
+      "Bash(curl -s http://localhost:4173/)",
+      "Bash(curl -s http://localhost:4173/assets/images/homepage/vector/vector-1.svg -o /dev/null -w \"vec1:%{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:4173/assets/images/homepage/projects/urbverde.png -o /dev/null -w \"urb-img:%{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:4173/assets/favicon/favicon.ico -o /dev/null -w \"favicon:%{http_code}\\\\n\")"
+    ]
+  }
+}

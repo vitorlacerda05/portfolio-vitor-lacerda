@@ -1,6 +1,6 @@
 # Portfolio Vitor Lacerda
 
-Portfólio pessoal desenvolvido em HTML, CSS e JavaScript com design baseado no Figma. O projeto inclui funcionalidades interativas de edição, permitindo arrastar elementos e usar ferramentas de pintura para uma experiência única.
+Portfólio pessoal construído em **Vue 3 + Vite + Vue Router**, com design baseado no Figma. Inclui modo de edição interativo (arrastar elementos + pincel), animações, páginas de projeto geradas a partir de markdown e um sistema de componentes reutilizáveis.
 
 ## 🌐 Links
 
@@ -8,238 +8,171 @@ Portfólio pessoal desenvolvido em HTML, CSS e JavaScript com design baseado no 
 
 **Link do Figma:** [https://www.figma.com/design/1EPHxMr80QnAGkYDsx7IyC/Portf%C3%B3lio---Vitor-Lacerda?node-id=13-40&t=KbCRG0CI9mvsaduV-1](https://www.figma.com/design/1EPHxMr80QnAGkYDsx7IyC/Portf%C3%B3lio---Vitor-Lacerda?node-id=13-40&t=KbCRG0CI9mvsaduV-1)
 
-## 🚀 Funcionalidades
+## 🛠️ Stack
 
-- **Design Responsivo**: Interface adaptável para diferentes dispositivos
-- **Modo de Edição Interativo**: Sistema de arrastar elementos e ferramenta de pincel
-- **Animações Suaves**: Transições e efeitos visuais com Animate.css
-- **Sistema de Projetos**: Estrutura reutilizável para adicionar novos projetos
-- **Páginas de Projeto**: Templates padronizados para detalhamento de projetos
-- **Sistema Markdown**: Conversão automática de markdown para HTML com classes CSS
+- **Vue 3** (Composition API, `<script setup>`)
+- **Vite** (bundler + dev server)
+- **Vue Router** (SPA com history mode)
+- **@unhead/vue** (meta tags dinâmicas por rota — SEO)
+- **Interact.js** (drag & drop no edit mode)
+- **Animate.css** + **Font Awesome** (via CDN)
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Rodando localmente
 
-- **HTML5**: Estrutura semântica
-- **CSS3**: Estilização e responsividade
-- **JavaScript**: Interatividade e funcionalidades dinâmicas
-- **Font Awesome**: Ícones
-- **Animate.css**: Animações
-- **Interact.js**: Funcionalidades de arrastar e soltar
+```bash
+npm install
+npm run dev       # servidor de desenvolvimento em http://localhost:5173
+npm run build     # gera /dist pronto pra deploy
+npm run preview   # serve o /dist localmente pra teste
+```
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura
 
 ```
 portfolio-vitor-lacerda/
-├── assets/
-│   ├── images/
-│   │   ├── homepage/
-│   │   │   ├── projects/        ← imagens dos cards
-│   │   │   ├── social/
-│   │   │   ├── social-proof/
-│   │   │   └── vector/
-│   │   └── projects/            ← imagens internas dos projetos
-│   └── tokens/
-│       ├── breakpoints.css
-│       ├── colors.css
-│       └── fonts.css
-├── css/
-│   ├── projects.css             ← estilos dos cards da homepage
-│   ├── projects-template.css    ← estilos das páginas de projeto
-│   └── (outros arquivos css)
-├── js/
-│   ├── projects/                ← fonte da verdade dos projetos
-│   │   ├── projects-data.js     ← dados de todos os projetos
-│   │   ├── render-projects.js   ← renderiza cards na homepage
-│   │   └── render-project-info.js ← renderiza header nas páginas
-│   ├── edit-mode/
-│   └── (outros arquivos js)
-├── project/
-│   ├── example.html             ← template de referência
-│   └── (páginas de projeto)
-└── index.html
+├── index.html                    ← entry do Vite
+├── vite.config.js
+├── package.json
+├── public/                       ← assets estáticos servidos na raiz
+│   ├── assets/images/...
+│   ├── assets/favicon/...
+│   ├── CNAME
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── 404.html                  ← fallback SPA do GitHub Pages
+└── src/
+    ├── main.js                   ← boot da app
+    ├── App.vue
+    ├── router.js                 ← rotas (/, /project/:id, legados .html)
+    ├── views/
+    │   ├── Home.vue
+    │   ├── Project.vue
+    │   └── NotFound.vue
+    ├── components/
+    │   ├── base/                 ← primitivos reutilizáveis
+    │   │   ├── BaseButton.vue    (primary / secondary)
+    │   │   ├── Badge.vue         (card / project)
+    │   │   ├── CornerSquares.vue
+    │   │   ├── Toaster.vue
+    │   │   └── ResetButton.vue
+    │   ├── layout/               ← chrome da aplicação
+    │   │   ├── Navbar.vue
+    │   │   ├── MobileMenu.vue
+    │   │   ├── AppFooter.vue
+    │   │   └── BackButton.vue
+    │   ├── home/                 ← seções da home
+    │   │   ├── HeroSection.vue
+    │   │   ├── ProjectsSection.vue
+    │   │   ├── ProjectCard.vue
+    │   │   ├── MainBottom.vue
+    │   │   ├── AboutSection.vue
+    │   │   ├── HighlightSquare.vue
+    │   │   ├── SocialProofSection.vue
+    │   │   ├── CommentCard.vue
+    │   │   ├── ContactSection.vue
+    │   │   └── ContactCard.vue
+    │   └── project/              ← páginas de projeto
+    │       ├── ProjectHeader.vue
+    │       └── ProjectContent.vue (renderiza markdown)
+    ├── composables/
+    │   ├── useEditMode.js        ← mão vs pincel, canvas, reset
+    │   ├── useScrollAnimations.js
+    │   ├── useProjectNumbering.js ← numera h1/h2 do projeto
+    │   └── useSeo.js             ← meta tags por rota
+    ├── lib/
+    │   ├── markdown.js           ← parser MD → HTML com classes do projeto
+    │   └── edit-mode/
+    │       ├── drag-core.js      ← interact.js + handlers de drag
+    │       └── paint-system.js   ← canvas de pincel
+    ├── data/
+    │   └── projects.js           ← lista + SEO por projeto
+    ├── content/
+    │   ├── index.js              ← lookup slug → markdown
+    │   ├── urbverde.md
+    │   ├── policies.md
+    │   ├── pacepro.md
+    │   └── siga.md
+    └── styles/
+        ├── global.css            ← reset + container base
+        ├── project-numbering.css
+        └── tokens/
+            ├── colors.css
+            ├── fonts.css
+            └── breakpoints.css
 ```
-## 🎨 Style guide
 
-O projeto utiliza um sistema de design tokens centralizado em `assets/tokens/`:
-- **colors.css**: Paleta de cores padronizada
-- **fonts.css**: Tipografia e hierarquia de fontes
-- **breakpoints.css**: Pontos de quebra responsivos
+## 🎨 Style guide e design tokens
 
-Todos estes designs seguiram o style guide disponível no Figma
+Tokens ficam em `src/styles/tokens/`:
+- **colors.css** — paleta Material Blue + Blue Gray + off-whites por categoria de card
+- **fonts.css** — Inter / Karla + classes utilitárias (`title-md`, `regular-base`, `medium-lg`, etc.)
+- **breakpoints.css** — tokens de media query
 
 ## 📱 Responsividade
 
-O projeto é totalmente responsivo com breakpoints definidos em:
 - **Desktop**: > 1026px
-- **Tablet**: 601px - 1026px  
+- **Tablet**: 601px – 1026px
 - **Mobile**: < 601px
 
-## 📖 Documentação de Uso
+## 📖 Como adicionar um novo projeto
 
-### 1. Como Adicionar um Novo Projeto
+1. Adicione os metadados em `src/data/projects.js`:
 
-Os cards da homepage e o header de cada página de projeto são gerados automaticamente a partir de um único arquivo: **`js/projects/projects-data.js`**.
+   ```js
+   {
+     id: 'meu-projeto',
+     title: 'Meu Projeto',
+     image: { src: '/assets/images/homepage/projects/meu-projeto.png', alt: '...' },
+     cardBg: 'bg-blue',                    // bg-green | bg-yellow | bg-blue | bg-purple | bg-red | bg-pink | bg-brown
+     badges: ['UX Design'],
+     description: 'Descrição curta',
+     date: 'jan, 2025 - mar, 2025',
+     seo: {
+       title: 'Meu Projeto | Vitor Lacerda',
+       description: '...',
+       keywords: '...',
+       ogType: 'article',
+       schema: { /* JSON-LD opcional */ }
+     }
+   }
+   ```
 
-Para adicionar um novo projeto, basta incluir uma entrada no array `PROJECTS`:
+2. Crie `src/content/meu-projeto.md` com o conteúdo.
+3. Registre o import em `src/content/index.js`:
 
-```js
-// js/projects/projects-data.js
-{
-  id: 'meu-projeto',                              // identificador único
-  title: 'Meu Projeto',                           // título exibido
-  url: 'project/meu-projeto.html',                // caminho da página
-  image: {
-    src: 'assets/images/homepage/projects/meu-projeto.png', // relativo à raiz
-    alt: 'Descrição da imagem'
-  },
-  cardBg: 'bg-blue',                              // cor de fundo do card
-  badges: ['UX Lead', 'UX Researcher'],           // papéis no projeto
-  description: 'Descrição curta do projeto',      // texto do card
-  date: 'jan, 2025 - mar, 2025'                   // período
-}
-```
+   ```js
+   import meuProjeto from './meu-projeto.md?raw'
+   export const PROJECT_MARKDOWN = { ..., 'meu-projeto': meuProjeto }
+   ```
 
-O card aparece automaticamente na homepage e o header da página de projeto é populado ao usar `data-project="meu-projeto"` no `main-content` (ver passo 2).
+Pronto — a card aparece na home e a rota `/project/meu-projeto` fica viva.
 
-**Resolução recomendada para a imagem do card: `864 × 560px`**
+**Resolução recomendada para a imagem do card:** `864 × 560px` (2× da área exibida).
 
-> A imagem é exibida com `object-fit: cover` e altura fixa de 280px. O tamanho 864×560 corresponde ao dobro (2×) da área de exibição real, garantindo nitidez em telas Retina. Mantenha o conteúdo principal centralizado ou no topo da imagem para evitar cortes indesejados.
+## ✍️ Sintaxe markdown suportada
 
-Cores disponíveis para `cardBg`:
-- `bg-green` / `bg-yellow` / `bg-blue` / `bg-purple` / `bg-red` / `bg-pink` / `bg-brown`
+Processada em `src/lib/markdown.js` com as classes do projeto:
 
-### 2. Como Criar uma Página de Projeto
+| Markdown | HTML gerado |
+|---|---|
+| `# Título` | `<h1 class="project-h1">` |
+| `## Subtítulo` | `<h2 class="project-h2">` |
+| `### Subtítulo menor` | `<h3 class="project-h3">` |
+| `**bold**` / `*itálico*` | `<strong>` / `<em>` |
+| `[texto](url)` | `<a target="_blank" rel="noopener noreferrer">` |
+| `> linha` | callout (parágrafo com fundo) |
+| `>> linha` | quote (borda lateral azul) |
+| `- item` | `<li class="regular-base">` agrupado em `<ul class="features-list">` |
+| `![alt](src) *legenda*` | imagem em wrapper + legenda |
+| `---` | `<hr>` |
 
-Use o template base fornecido em `project/example.html` como referência. A estrutura inclui:
+Numeração automática de `h1` e `h2` é injetada pelo composable `useProjectNumbering`.
 
-- **Cabeçalho**: Meta tags, favicon, tokens CSS e bibliotecas externas
-- **Botão de Volta**: Navegação para a página principal
-- **Header do Projeto**: Renderizado automaticamente via JS — basta definir `data-project` no container
-- **Conteúdo do Projeto**: Seções organizadas com títulos e parágrafos (via markdown)
-- **Seção de Contato**: Cards com links para LinkedIn e Email
-- **Rodapé**: Informações de copyright
+## 🚀 Deploy (GitHub Pages)
 
-O header (título, badges, descrição, data e imagem) é injetado automaticamente pelo script. Configure assim:
-
-```html
-<!-- Na página do projeto -->
-<div class="main-content" id="project-main-content" data-project="meu-projeto">
-  <!-- Renderizado por js/projects/render-project-info.js -->
-</div>
-```
-
-E inclua os scripts antes do fechamento do `</body>`:
-
-```html
-<script src="../js/projects/projects-data.js"></script>
-<script src="../js/projects/render-project-info.js"></script>
-<script src="../js/markdown-to-html.js"></script>
-```
-
-**Importante**: O valor de `data-project` deve corresponder ao `id` cadastrado em `js/projects/projects-data.js`.
-
-### 3. Sistema de Markdown para Páginas de Projeto
-
-O projeto inclui um sistema de markdown customizado que converte automaticamente texto markdown para HTML com as classes CSS corretas. Use o atributo `data-markdown` em qualquer elemento para ativar a conversão.
-
-#### Como Usar
-
-```html
-<div data-markdown>
-# Título Principal
-## Subtítulo
-### Subtítulo Menor
-
-Este é um parágrafo normal com **texto em negrito** e *texto em itálico*.
-
-> Este é um callout importante.
-
->> Esta é uma citação.
-
----
-
-## Lista de Funcionalidades
-- Item da lista 1
-- Item da lista 2
-- Item da lista 3
-
-![Imagem](caminho/para/imagem.jpg) *Legenda da imagem*
-
-[Link para GitHub](https://github.com/usuario/repositorio)
-</div>
-```
-
-#### Sintaxe Markdown Suportada
-
-**Títulos:**
-- `# Título Principal` → `<h1 class="project-h1">`
-- `## Subtítulo` → `<h2 class="project-h2">`
-- `### Subtítulo Menor` → `<h3 class="project-h3">`
-
-**Formatação de Texto:**
-- `**texto**` → `<strong>texto</strong>` (negrito)
-- `*texto*` → `<em>texto</em>` (itálico)
-- `[texto](url)` → `<a href="url" target="_blank" rel="noopener noreferrer">texto</a>` (link)
-
-**Elementos Especiais:**
-- `> texto` → `<p class="project-paragraph callout">texto</p>` (callout)
-- `>> texto` → `<p class="project-paragraph quote">texto</p>` (citação)
-- `---` → `<hr>` (linha horizontal)
-
-**Listas:**
-- `- item` → `<li class="regular-base">item</li>` (lista não ordenada)
-
-**Imagens com Legenda:**
-- `![alt](src) *legenda*` → `<img src="src" alt="alt" class="project-img"><p class="project-img-caption">legenda</p>`
-
-**Parágrafos:**
-- Texto normal → `<p class="project-paragraph">texto</p>`
-
-#### Classes CSS Aplicadas Automaticamente
-
-O sistema markdown aplica automaticamente as seguintes classes:
-- `.project-h1`, `.project-h2`, `.project-h3`: Títulos
-- `.project-paragraph`: Parágrafos normais
-- `.project-paragraph.callout`: Callouts
-- `.project-paragraph.quote`: Citações
-- `.project-img`: Imagens
-- `.project-img-caption`: Legendas
-- `.features-list`: Listas
-- `.regular-base`: Itens de lista
-
-#### Exemplo Prático de Uso
-
-```html
-<!-- Em uma página de projeto -->
-<div class="project-content" data-markdown>
-# Resumo do Projeto
-
-Este é um **projeto incrível** que resolve problemas reais com *soluções inovadoras*.
-
-> "A melhor ferramenta que já usei!" — Cliente satisfeito
-
-## Principais Funcionalidades
-- Interface intuitiva
-- Performance otimizada
-- Código limpo e documentado
-
-![Screenshot do projeto](images/projeto.png) *Interface principal do sistema*
-
-Acesse o [repositório no GitHub](https://github.com/usuario/projeto) para ver o código.
-
----
-</div>
-```
-
-**Resultado**: O sistema converterá automaticamente todo o markdown para HTML com as classes CSS corretas, mantendo a consistência visual do projeto.
-
-## 🚀 Deploy
-
-O projeto está configurado para deploy no GitHub Pages. Para fazer deploy:
-
-1. Faça commit das alterações
-2. Push para a branch `main`
-3. O GitHub Pages automaticamente fará o deploy
+1. `npm run build` — gera `/dist`.
+2. Publique o conteúdo de `/dist` na branch do Pages (ou configure um workflow).
+3. `public/CNAME` mantém o domínio custom, `public/404.html` habilita reload em rotas profundas (`/project/xxx`) e redireciona URLs legados `.html`.
 
 ## 📄 Licença
 

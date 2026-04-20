@@ -1,0 +1,168 @@
+![Interface do projeto UrbVerde, que mostra a cidade de São Paulo com temperatura de superfície terrestre](/assets/images/projects/urbverde/urbverde-inicio.png) *Interface do dashboard da UrbVerde mostrando a temperatura da cidade de São Paulo.*
+![Interface do projeto UrbVerde, que mostra a gráficos da cidade de São Paulo com temperatura de superfície terrestre](/assets/images/projects/urbverde/urbverde-inicio-dashboard.png) *Gráficos de temperatura da cidade de São Paulo.*
+
+# Contextualização
+
+A UrbVerde é uma plataforma digital que democratiza e **mapeia dados socioambientais** (vegetação, clima, parques e praças) para apoiar decisões públicas e empoderar a sociedade. Como um dos **cofundadores**, tive como principal foco ser **UX Lead e coordenador do time de tecnologia**, conduzindo discovery e delivery para reestruturar arquitetura de informação, design system e front‑end.
+Fiz parte de um time com pessoas maravilhosas, inteligentes e engajadas. Com a ajuda de todos, transformamos a plataforma de um **MVP para um produto consolidado**, com diversos reconhecimentos:
+> Conquistamos menção honrosa na Competição Nacional de Design pela Sociedade Brasileira de Computação, reconhecimento pela **Conferência das Nações Unidas** e o projeto virou matéria em mais de 20 jornais como Record News, Estadão, Jornal da USP, etc.
+
+# Identificação do problema
+
+O primeiro MVP da UrbVerde apresentava **arquitetura de informação confusa, além de componentes não reutilizáveis e sem guia de estilo da marca**. Isso dificultava a navegação, confundia usuários leigos e até mesmo as próprias equipes internas, além de inviabilizar a escalabilidade de novos painéis e funcionalidades.
+Para dificultar ainda mais, a versão anterior tinha código frágil e desorganizado, sendo necessário uma **refatoração completa**.
+
+>> "A gente se perde logo no início. Parece bonito, mas é confuso de usar." — gestor público
+
+![Conversa da UrbVerde com José Renato Nalini](/assets/images/projects/urbverde/nalini.jfif) *Conversa com Nalini, ex-secretário de São Paulo, sobre pontos de melhoria da plataforma.*
+
+# Metodologia utilizada
+
+Adotamos **Double Diamond** para organizar o ciclo que vai do discovery ao delivery e incorporando o design e o desenvolvimento do produto. Acoplamos o **Design Thinking** nas etapas iniciais do Double Diamond, pelos processos de empatia, ideação e validação iterativa.
+
+![Metodologia Double Diamond utilizada no desenvolvimento da plataforma UrbVerde](/assets/images/projects/urbverde/double-diamond.png) *Metodologia Double Diamond. Na etapa de Discovery foi acoplado o Design Thinking.*
+
+> Essa combinação foi essencial para alinhar necessidades técnicas dos **designers, desenvolvedores e stakeholders** em um projeto robusto e centrado no usuário.
+
+# Discovery
+
+## Características dos usuários
+- **Gestores públicos municipais (usuário final):** Pouca experiência com Sistemas de Informação Geográfica (SIG) e dashboards, com alto interesse em indicadores socioambientais para embasar diagnósticos, PLACs e políticas locais.
+- **Sociedade civil (usuário secundário):** Pessoas leigas em SIG e ferramentas analíticas, motivadas por entender o território onde vivem e se empoderar em debates públicos.
+
+> Um estudo realizado pela UrbVerde mostrou que mais de **60% dos gestores municipais** do Estado de São Paulo não possuem conhecimento aprofundado de temas ambientais e ferramentas analíticas.
+
+## Objetivo principal
+
+> Construir uma plataforma **escalável, acessível e intuitiva** que auxilie **gestores públicos e a sociedade** a compreender e enfrentar a crise climática, democratizando dados socioambientais em todo o Brasil.
+
+## Benchmarking
+
+Realizamos benchmarking em concorrentes diretos e indiretos como o GeoNode, Carto, Global Forest Watch e Google Maps para **mapear padrões de uso** de mapas, legendas, comparações de dados e padrões de uso.
+
+![Benchmarking das plataformas de referência](/assets/images/projects/urbverde/benchmarking.png) *Benchmarking de concorrentes diretos e indiretos*
+
+## Arquitetura das informações
+Realizamos um **Diagrama de Casos de Uso (da UML)** a fim de compreender os possíveis casos de uso da futura plataforma, e, principalmente, **para auxiliar na criação de uma arquitetura da informação eficiente**, que garanta escalabilidade e padronização dos fluxos principais.
+![Arquitetura das informações da plataforma UrbVerde](/assets/images/projects/urbverde/fluxos.png) *Arquitetura das informações da plataforma UrbVerde (simplificada).*
+
+## Wireframes
+Com base nesses insumos, desenvolvemos wireframes de baixa fidelidade em papel, depois no Figma, focando na hierarquia da informação e navegação. Esses protótipos iniciais foram **validados em reuniões com gestores e membros da equipe**, passando por mais de sete iterações.
+![Wireframe inicial em papel, utilizado para validação rápida do layout principal](/assets/images/projects/urbverde/wireframe-1.png) *Wireframe em papel, utilizado para validação rápida do layout principal.*
+![Wireframe no Figma, utilizado para validar principais componentes em reuniões com gestores](/assets/images/projects/urbverde/wireframe-2.png) *Wireframe no Figma, utilizado para validar principais usos da plataforma em reuniões com gestores.*
+> Foi extremamente importante para **validação rápida e de baixo custo das ideias**, ainda em uma etapa inicial.
+
+# Testes de usabilidade
+Agora com um avanço maior na arquitetura das informações e nos wireframes, realizamos um protótipo de média fidelidade para conduzir testes de usabilidade, a fim de **identificar as principais dificuldades dos usuários** antes mesmo de desenvolver o produto final, de forma **rápida e de baixo custo**.
+
+Foram conduzidos **dois testes de usabilidade** na plataforma Maze.co, totalizando **58 participantes entre 18 e 65 anos**, com pouca ou nenhuma experiência em SIGs e ferramentas analíticas. Tomamos cuidado para garantir a maior variedade das características interpessoais, buscando testes mais robustos e válidos.
+
+## Primeiro teste
+
+No primeiro teste (31 participantes), a tarefa de "Selecionar o município" foi avaliada com **dificuldade média de 1,6** em uma escala de 1 (fácil) a 5 (difícil).
+
+### • 88% dos usuários consideraram a interface clara
+Apesar da boa avaliação inicial, os participantes identificaram a necessidade de **melhorias na orientação visual para facilitar a navegação.**
+
+## Segundo teste
+
+O segundo teste (27 participantes), foi realizado após ajustes de hierarquia visual e clareza nos textos, com três tarefas principais para os usuários.
+
+![Pergunta qualitativa do segundo teste de usabilidade](/assets/images/projects/urbverde/waze.png) *Pergunta qualitativa do segundo teste de usabilidade.*
+
+### • 100% de sucesso nas tarefas principais
+Todos os usuários conseguiram completar as tarefas de seleção de município e camadas, demonstrando a eficácia das melhorias implementadas.
+
+### • 88,9% adicionaram camadas sem dificuldades
+Uma funcionalidade complexa em outros SIGs foi dominada pela maioria dos usuários, evidenciando a usabilidade do sistema.
+
+### • 100% exportaram dados corretamente
+A funcionalidade de exportação, essencial para o workflow dos usuários, foi executada com sucesso por todos os participantes.
+
+### Principais feedbacks:
+>> *"A interface está amigável, intuitiva e simples de uso."* – feedback qualitativo de participante
+>> *"Se for para ser comunicativo e de fácil entendimento e direcionamento para o usuário final, conseguiram."* – feedback qualitativo de participante
+
+# Desenvolvendo a ideia
+
+## Principais decisões de design
+
+- **Utilização de componentes e styles reutilizáveis**, garantindo consistência visual e escalabilidade do design a longo prazo.
+- **Separação clara de responsabilidades dos componentes** no layout da tela, facilitando manutenção e evolução do sistema.
+- **Busca simplificada inspirada no Google Maps**, permitindo encontrar rapidamente qualquer município do Brasil sem sobrecarregar o usuário.
+- **Centralização de todas as funcionalidades do mapa em uma legenda/toolbar**, que organiza camadas, filtros e ferramentas em um só lugar e possibilita futuras adições sem comprometer a interface.
+- Para usuários leigos, aplicamos **linguagem simples e acessível** em todos os pontos de interação.
+- Uso de **cards explicativos**, detalhando de forma clara como o dado foi gerado, como analisá-lo e como transformá-lo em ações práticas.
+- Para usuários experientes, incluímos **botões dedicados para visualizar metodologias e gráficos avançados**, sem poluir a experiência de quem tem menor conhecimento técnico.
+- **Design moderno de dashboard**, planejado para suportar novos painéis e camadas com escalabilidade, evitando retrabalho em futuras expansões.
+- **Estrutura padrão de camadas**: mapa na parte superior + cards estatísticos na parte inferior, complementados pelo menu lateral para explorar outras informações.
+- O design do fluxo foi pensado como um **storytelling visual**, permitindo que o usuário siga uma narrativa natural ao explorar os dados.
+
+
+## Estilos e componentes reutilizáveis
+
+A partir do wireframe validado, criamos um **style guide completo com tokenização**, incluindo cores, tipografia, espaçamentos e ícones.
+
+![Style guide completo com tokenização](/assets/images/projects/urbverde/style-guide.png) *Style guide completo com tokenização.*
+
+> Isso garantiu **consistência visual**, identidade da marca e acelerou a implementação futura.
+
+Além disso, aplicamos a metodologia **CDD – Component Driven Development** e **Atomic Design**, criando cada componente no Figma já com propriedades, estados e tokens **correspondentes ao código**. O processo ocorreu em paralelo ao desenvolvimento, com handoffs claros para o time de tecnologia.
+
+## Protótipo de alta fidelidade
+
+O resultado foi um **protótipo de alta fidelidade totalmente responsivo**, estruturado para desktop e mobile, acompanhado também do design final da homepage.
+
+![Protótipo de alta fidelidade da página inicial](/assets/images/projects/urbverde/hi-fi-homepage.png) *Protótipo da página inicial.*
+
+![Protótipo de alta fidelidade do dashboard](/assets/images/projects/urbverde/hi-fi.png) *Protótipo do dashboard, navegando por meio do menu lateral e visualizando "Temperatura" no mapa.*
+
+![Protótipo de alta fidelidade do dashboard](/assets/images/projects/urbverde/hi-fi-dashboard.png) *Protótipo das estatísticas da categoria de Temperatura do dashboard, visualizadas ao rolar a tela.*
+
+![Protótipo de alta fidelidade do dashboard em mobile](/assets/images/projects/urbverde/hi-fi-mobile.png) *Protótipo do dashboard versão mobile.*
+
+## Desenvolvimento do código
+
+Durante o desenvolvimento do código, **coordenei o time de desenvolvedores** durante toda a fase de desenvolvimento, estruturando o **Gráfico de Gantt e o kanban no Jira** para integrar o fluxo do design com as entregas de código ágeis.
+
+![Gráfico de Gantt do desenvolvimento do código](/assets/images/projects/urbverde/jira.png) *Estruturação do gráfico de Gantt na plataforma Jira.*
+
+Além da gestão e design, **contribuí com mais de 900 commits no GitHub do front-end**, além de ajustes no banco de dados e API.
+
+![Kanban do desenvolvimento do código](/assets/images/projects/urbverde/gif-platform.gif) *Plataforma UrbVerde no ar. Acesse em [www.urbverde.com.br](https://www.urbverde.com.br)*
+
+# Impacto
+
+Registramos um aumento de **1,4x nos acessos** após o lançamento, com uma grande **melhoria de usabilidade e escalabilidade de design e código**, atingindo os objetivos traçados inicialmente.
+Além disso, o **Evento de Lançamento da Plataforma reuniu mais de 200 pessoas presenciais e 1.000 on‑line**.
+
+>> *"**Nunca foi tão simples de visualizar esses dados** para planejar políticas públicas."* — Rodrigo Romão, vereador de Mogi das Cruzes
+
+>> *"Fiquei encantado com as possibilidades que a plataforma abre para o desenvolvimento de planos municipais **de uma forma tão intuitiva**."* — Mário Reali, ex‑prefeito de Diadema
+
+## Prêmios nacionais e internacionais deste projeto
+
+### Menção honrosa e finalista na "Competição Nacional de Design" pela Sociedade Brasileira de Computação
+
+![Menção honrosa e finalista na "Competição Nacional de Design" pela Sociedade Brasileira de Computação](/assets/images/projects/urbverde/ihc.png) *Apresentação da plataforma no Simpósio de Interação Humano-Computador em Brasília*
+
+### "Mapeamento de Iniciativas Climáticas rumo à COP30" pela Organização das Nações Unidas
+
+### Prêmio USP de Impacto Social
+
+![Prêmio USP de Impacto Social](/assets/images/projects/urbverde/premio-usp.jfif) *Prêmio USP de Impacto Social.*
+
+### "Selo Enfrentamento às Mudanças Climáticas" e "Prêmio Justiça Climática" pelo Instituto de Arquitetos do Brasil
+
+## Cobertura de mídia (seleção)
+
+O projeto ganhou destaque nacional com mais de **20 reportagens** em veículos de grande alcance. Foi notícia na **Record News**, **Estadão**, **Jornal da USP**, além de rádios e portais como **Correio Braziliense** e **CBN Campinas**. As reportagens destacaram principalmente a democratização e facilidade do acesso aos dados socioambientais.
+
+![Cobertura de mídia deste projeto](/assets/images/projects/urbverde/estadao.png) *Projeto UrbVerde sendo destaque no Estadão.*
+
+## Artigos e eventos científicos
+
+Apresentei o projeto em dois grandes eventos científicos: o **Simpósio de Interação Humano-Computador**, em Brasília, e o **Simpósio Brasileiro de Sensoriamento Remoto**, em Salvador.
+Além disso, atuei como **autor principal** dos artigos científicos *"SIG Social: fundamentos humanos-computacionais para a democratização de dados da Plataforma UrbVerde"* e *"Expansão da plataforma UrbVerde: monitoramento socioambiental inteligente para todas as cidades brasileiras"*, demonstrando todo o **processo de design na construção de Sistemas de Informação Geográfica (SIG)**.
+
+![Apresentação no Simpósio Brasileiro de Sensoriamento Remoto, em Salvador](/assets/images/projects/urbverde/salvador.png) *Apresentação no Simpósio Brasileiro de Sensoriamento Remoto, em Salvador.*
