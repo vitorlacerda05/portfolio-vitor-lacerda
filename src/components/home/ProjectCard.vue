@@ -1,21 +1,34 @@
 <script setup>
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import Badge from '../base/Badge.vue'
 import CornerSquares from '../base/CornerSquares.vue'
 
-defineProps({
+const props = defineProps({
   project: { type: Object, required: true },
   titleTag: { type: String, default: 'h3' }
 })
+
+const isExternal = computed(() => Boolean(props.project.url))
+const hasImage = computed(() => Boolean(props.project.image?.src))
+const hasDescription = computed(() => Boolean(props.project.description))
+
+const rootTag = computed(() => (isExternal.value ? 'a' : RouterLink))
+const rootProps = computed(() =>
+  isExternal.value
+    ? { href: props.project.url, target: '_blank', rel: 'noopener noreferrer' }
+    : { to: { name: 'project', params: { id: props.project.id } } }
+)
 </script>
 
 <template>
-  <RouterLink
-    :to="{ name: 'project', params: { id: project.id } }"
-    :class="['project-card', project.cardBg]"
+  <component
+    :is="rootTag"
+    v-bind="rootProps"
+    :class="['project-card', project.cardBg, { 'no-image': !hasImage }]"
     :data-badges="project.badges.join(',')"
   >
-    <div class="project-image-container">
+    <div v-if="hasImage" class="project-image-container">
       <div class="project-image-single">
         <img :src="project.image.src" :alt="project.image.alt" />
         <CornerSquares />
@@ -31,11 +44,11 @@ defineProps({
         </div>
       </div>
       <div class="project-content-bottom">
-        <p class="project-description regular-sm">{{ project.description }}</p>
+        <p v-if="hasDescription" class="project-description regular-sm">{{ project.description }}</p>
         <span class="card-date regular-sm">{{ project.date }}</span>
       </div>
     </div>
-  </RouterLink>
+  </component>
 </template>
 
 <style scoped>

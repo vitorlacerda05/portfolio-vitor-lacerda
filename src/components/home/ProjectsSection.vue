@@ -1,11 +1,15 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { PROJECTS } from '../../data/projects.js'
+import { PROJECTS as CURATED_PROJECTS } from '../../data/projects.js'
+import { PROJECTS as EXTERNAL_PROJECTS } from '../../data/projects-data-github-lattes.js'
+import { CATEGORY_BADGES, DEFAULT_CATEGORY } from '../../data/categories.js'
 import ProjectCard from './ProjectCard.vue'
 
-const FILTERS = ['UX Design', 'Product Manager', 'Development', 'Scientific Research']
-const DEFAULT_FILTER = 'UX Design'
+const PROJECTS = [...CURATED_PROJECTS, ...EXTERNAL_PROJECTS]
+
+const FILTERS = Object.keys(CATEGORY_BADGES)
+const DEFAULT_FILTER = DEFAULT_CATEGORY
 
 const route = useRoute()
 const router = useRouter()
@@ -21,7 +25,8 @@ function fromSlug(s) {
 
 const visibleProjects = computed(() => {
   if (activeFilter.value === 'All') return PROJECTS
-  return PROJECTS.filter(p => p.badges.includes(activeFilter.value))
+  const allowed = CATEGORY_BADGES[activeFilter.value] || []
+  return PROJECTS.filter(p => p.badges.some(b => allowed.includes(b)))
 })
 
 function applyFilter(filter) {
@@ -124,7 +129,7 @@ onMounted(() => {
 .project-frame-container {
   position: absolute;
   top: -40px;
-  left: 274px;
+  left: 220px;
   transform: translateX(-50%);
   display: flex;
   align-items: center;

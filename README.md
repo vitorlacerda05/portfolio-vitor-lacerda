@@ -85,7 +85,9 @@ portfolio-vitor-lacerda/
     │       ├── drag-core.js      ← interact.js + handlers de drag
     │       └── paint-system.js   ← canvas de pincel
     ├── data/
-    │   └── projects.js           ← lista + SEO por projeto
+    │   ├── projects.js                      ← projetos curados (com MD + SEO)
+    │   ├── projects-data-github-lattes.js   ← projetos externos (GitHub/Lattes)
+    │   └── categories.js                    ← map de filtros → sub-badges + default
     ├── content/
     │   ├── index.js              ← lookup slug → markdown
     │   ├── urbverde.md
@@ -123,8 +125,8 @@ Tokens ficam em `src/styles/tokens/`:
      id: 'meu-projeto',
      title: 'Meu Projeto',
      image: { src: '/assets/images/homepage/projects/meu-projeto.png', alt: '...' },
-     cardBg: 'bg-blue',                    // bg-green | bg-yellow | bg-blue | bg-purple | bg-red | bg-pink | bg-brown
-     badges: ['UX Design'],
+     cardBg: 'bg-blue', // bg-green | bg-yellow | bg-blue | bg-purple | bg-red | bg-pink | bg-brown
+     badges: ['UX Lead', 'Design Thinking'], // sub-badges de src/data/categories.js
      description: 'Descrição curta',
      date: 'jan, 2025 - mar, 2025',
      seo: {
@@ -148,6 +150,22 @@ Tokens ficam em `src/styles/tokens/`:
 Pronto — a card aparece na home e a rota `/project/meu-projeto` fica viva.
 
 **Resolução recomendada para a imagem do card:** `864 × 560px` (2× da área exibida).
+
+## 🏷️ Categorias e filtros
+
+Os filtros da home (`UX Design`, `Development`, `Scientific Research`) vivem em `src/data/categories.js`:
+
+```js
+export const DEFAULT_CATEGORY = 'UX Design'   // filtro inicial ao abrir a home
+
+export const CATEGORY_BADGES = {
+  'UX Design': ['UX Lead', 'Design Thinking', 'Co-founder', ...],
+  'Development': ['HTML', 'JavaScript', 'Python', ...],
+  'Scientific Research': ['Iniciação Científica', 'Artigo em Conferência', ...]
+}
+```
+
+Cada projeto guarda apenas as **sub-badges** (ex: `['Java']` ou `['UX Lead', 'Design Thinking']`). O filtro pega as chaves do map e mostra todo projeto que tenha pelo menos uma badge pertencente à categoria ativa. Para adicionar uma nova categoria ou sub-badge, edite `categories.js` — `ProjectsSection.vue` deriva os botões automaticamente.
 
 ## ✍️ Sintaxe markdown suportada
 
