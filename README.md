@@ -100,55 +100,36 @@ O projeto é totalmente responsivo com breakpoints definidos em:
 Para adicionar um novo projeto na página principal, use a seguinte estrutura:
 
 ```html
-<!-- 
-  SISTEMA DE PROJETOS REUTILIZÁVEL
-  
-  Para adicionar um novo projeto, use a seguinte estrutura:
-  
-  <a href="caminho/para/projeto.html" class="project-card bg-[cor]">
-    <div class="project-image-container">
-      
-  Para uma imagem:
-  <div class="project-image-single">
-    <img src="caminho/para/imagem.jpg" alt="Descrição da imagem">
-    <div class="corner-square top-left"></div>
-    <div class="corner-square bottom-left"></div>
-  </div>
-  
-  OU para duas imagens separadas:
-  <div class="project-images-double">
-    <div class="project-image-double">
-      <img src="imagem1.jpg" alt="Descrição da imagem 1">
-      <div class="corner-square top-left"></div>
-      <div class="corner-square top-right"></div>
-      <div class="corner-square bottom-left"></div>
-      <div class="corner-square bottom-right"></div>
-    </div>
-    <div class="project-image-double">
-      <img src="imagem2.jpg" alt="Descrição da imagem 2">
-      <div class="corner-square top-left"></div>
-      <div class="corner-square top-right"></div>
-      <div class="corner-square bottom-left"></div>
-      <div class="corner-square bottom-right"></div>
+<a href="caminho/para/projeto.html" class="project-card bg-[cor]">
+  <div class="project-image-container">
+    <div class="project-image-single">
+      <img src="caminho/para/imagem.png" alt="Descrição da imagem">
     </div>
   </div>
-    </div>
-    <div class="project-content">
+  <div class="project-content">
+    <div class="project-title-container">
       <h3 class="project-title">Título do Projeto</h3>
-      <p class="project-description">Descrição do projeto aqui...</p>
+      <div class="project-year-badge">
+        <span class="project-year">2025</span>
+      </div>
     </div>
-  </a>
-  
-  Cores disponíveis: 
-  - bg-green
-  - bg-yellow
-  - bg-blue
-  - bg-purple
-  - bg-red
-  - bg-pink
-  - bg-brown
--->
+    <p class="project-description regular-sm">Descrição do projeto aqui...</p>
+  </div>
+</a>
 ```
+
+**Resolução recomendada para a imagem do card: `864 × 560px`**
+
+> A imagem é exibida com `object-fit: cover` e altura fixa de 280px. O tamanho 864×560 corresponde ao dobro (2×) da área de exibição real, garantindo nitidez em telas Retina. Mantenha o conteúdo principal centralizado ou no topo da imagem para evitar cortes indesejados.
+
+Cores disponíveis para `bg-[cor]`:
+- `bg-green`
+- `bg-yellow`
+- `bg-blue`
+- `bg-purple`
+- `bg-red`
+- `bg-pink`
+- `bg-brown`
 
 ### 2. Como Criar uma Página de Projeto
 

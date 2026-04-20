@@ -90,8 +90,8 @@
   border: 2px solid var(--blue-gray-50);
   outline: 2px solid transparent;
   flex-direction: column;
-  gap: 40px;
-  padding: 48px 0 40px 40px;
+  gap: 0;
+  padding: 0;
   position: relative;
   overflow: hidden;
   height: auto;
@@ -131,9 +131,8 @@
 
 .project-image-container {
   position: relative;
-  width: auto;
+  width: 100%;
   height: auto;
-  max-height: 320px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -142,27 +141,20 @@
 
 .project-image-single {
   position: relative;
-  width: auto;
-  max-height: 320px;
-  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.08);
+  width: 100%;
   flex-shrink: 0;
 }
 
 .project-image-single img {
-  width: auto;
-  height: 100%;
-  max-height: 320px;
-  object-fit: contain;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
   display: block;
 }
 
 .project-image-single::before {
-  content: '';
-  position: absolute;
-  border: 2px solid var(--blue-200);
-  inset: -2px;
-  pointer-events: none;
-  z-index: 1;
+  display: none;
 }
 
 .project-images-double {
@@ -200,9 +192,21 @@
 .project-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding-right: 32px;
+  gap: 24px;
+  padding: 24px 32px 32px;
   width: auto;
+}
+
+.project-content-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-content-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .project-title {
@@ -225,24 +229,28 @@
   flex-wrap: wrap;
 }
 
-.project-year-badge {
-  background-color: var(--blue-100);
-  border: 1px solid var(--blue-50);
-  border-radius: 4px;
-  padding: 4px 8px;
+.card-badges-wrapper {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.card-badge {
+  background: var(--blue-100);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--blue-50);
+  color: var(--blue-gray-900);
 }
 
-.project-year {
-  color: var(--blue-gray-900);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.25;
-  white-space: nowrap;
+.card-date {
+  color: var(--blue-gray-400);
 }
+
 
 .projects {
   flex-basis: 0;
@@ -260,6 +268,10 @@
 
 .projects:hover {
   border: 4px solid var(--purple);
+}
+
+.project-image-single .corner-square {
+  display: none;
 }
 
 /* Corner Squares for Project Images */
@@ -705,12 +717,12 @@
 /* Responsive */
 @media screen and (max-width: 1026px) {
   .project-card {
-    padding: 32px 0 24px 24px;
-    gap: 32px;
+    padding: 0;
+    gap: 0;
   }
-  
+
   .project-image-single img {
-    max-height: 280px;
+    height: 240px;
   }
   
   .project-image-double img {
@@ -726,7 +738,7 @@
   }
   
   .project-content {
-    padding-right: 24px;
+    padding: 20px 24px 24px;
   }
   
   .others-project-item {

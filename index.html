@@ -198,104 +198,8 @@
                 ux-projects
               </span>
             </div>
-            <div class="works">
-
-              <!-- UrbVerde Project -->
-              <a href="project/urbverde.html" class="project-card bg-blue">
-                <div class="project-image-container">
-                  <div class="project-image-single">
-                    <img src="assets/images/homepage/projects/urbverde.png" alt="UrbVerde Dashboard">
-                    <div class="corner-square top-left"></div>
-                    <div class="corner-square top-right"></div>
-                    <div class="corner-square bottom-left"></div>
-                    <div class="corner-square bottom-right"></div>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <div class="project-title-container">
-                    <h1 class="project-title">UrbVerde</h1>
-                    <div class="project-year-badge">
-                      <span class="project-year">2025</span>
-                    </div>
-                  </div>
-                  <p class="project-description regular-sm">Dashboard com dados sociais e ambientais urbanos que ganhou prêmios da Sociedade Brasileira de Computação e das Nações Unidas</p>
-                </div>
-              </a>
-
-              <!-- Painel Políticas Públicas Project -->
-              <a href="project/policies.html" class="project-card bg-blue">
-                <div class="project-image-container">
-                  <div class="project-image-single">
-                    <img src="assets/images/homepage/projects/policies.png" alt="Painel Políticas Públicas">
-                    <div class="corner-square top-left"></div>
-                    <div class="corner-square top-right"></div>
-                    <div class="corner-square bottom-left"></div>
-                    <div class="corner-square bottom-right"></div>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <div class="project-title-container">
-                    <h3 class="project-title">Painel políticas públicas</h3>
-                    <div class="project-year-badge">
-                      <span class="project-year">2025</span>
-                    </div>
-                  </div>
-                  <p class="project-description regular-sm">Construção de um painel para auxiliar a gestão pública dos municípios do ABC Paulista</p>
-                </div>
-              </a>
-
-              <!-- PacePro Project -->
-              <a href="project/pacepro.html" class="project-card bg-blue">
-                <div class="project-image-container">
-                  <div class="project-images-double">
-                    <div class="project-image-double">
-                      <img src="assets/images/homepage/projects/pacepro_1.png" alt="PacePro Dashboard 1">
-                      <div class="corner-square top-left"></div>
-                      <div class="corner-square top-right"></div>
-                      <div class="corner-square bottom-left"></div>
-                      <div class="corner-square bottom-right"></div>
-                    </div>
-                    <div class="project-image-double">
-                      <img src="assets/images/homepage/projects/pacepro_2.png" alt="PacePro Dashboard 2">
-                      <div class="corner-square top-left"></div>
-                      <div class="corner-square top-right"></div>
-                      <div class="corner-square bottom-left"></div>
-                      <div class="corner-square bottom-right"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <div class="project-title-container">
-                    <h3 class="project-title">PacePro</h3>
-                    <div class="project-year-badge">
-                      <span class="project-year">2023</span>
-                    </div>
-                  </div>
-                  <p class="project-description regular-sm">Protótipo de aplicativo mobile gamificado para corredores</p>
-                </div>
-              </a>
-
-              <!-- SIGa -->
-              <a href="project/siga.html" class="project-card bg-blue">
-                <div class="project-image-container">
-                  <div class="project-image-single">
-                    <img src="assets/images/projects/siga/hi-fi-1.png" alt="Projeto SIGa">
-                    <div class="corner-square top-left"></div>
-                    <div class="corner-square top-right"></div>
-                    <div class="corner-square bottom-left"></div>
-                    <div class="corner-square bottom-right"></div>
-                  </div>
-                </div>
-                <div class="project-content">
-                  <div class="project-title-container">
-                    <h3 class="project-title">SIGa</h3>
-                    <div class="project-year-badge">
-                      <span class="project-year">2023</span>
-                    </div>
-                  </div>
-                  <p class="project-description regular-sm">Dashboard de gerenciamento de compras, vendas e estoques agrários</p>
-                </div>
-              </a>
+            <div class="works" id="projects-grid">
+              <!-- Rendered by js/projects-data.js + js/render-projects.js -->
             </div>
           </div>
         </div>
@@ -563,6 +467,10 @@
       <p class="regular-base">&copy 2025 Vitor Lacerda. Todos os direitos reservados.</p>
     </footer> 
     
+    <!-- Project data & cards -->
+    <script src="js/projects/projects-data.js"></script>
+    <script src="js/projects/render-projects.js"></script>
+
     <!-- Interact.js library -->
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
     
