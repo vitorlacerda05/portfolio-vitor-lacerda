@@ -2,11 +2,22 @@ export const DEFAULT_CATEGORY = 'UX Design'
 
 export const CATEGORY_BADGES = {
   'UX Design': [
+    'Liderança de produto',
+    'Discovery e Delivery',
+    'Cofundador',
+    'Design inclusivo',
+    'Double Diamond',
+    'Discovery',
+    'Pesquisa com usuários',
+    'Mobile',
+    'Produto de dados',
+    'Dashboard',
+    'Priorização',
+    // Legados (badges antigos, mantidos para compatibilidade)
     'UX Lead',
     'Design Thinking',
     'Co-founder',
     'Inclusive Design',
-    'Double Diamond',
     'Mobile first Design',
     'UX Research',
     'UX Dashboard',

@@ -1,10 +1,16 @@
 ![Painel Políticas Públicas](/assets/images/projects/policies/inicio.png) *Protótipo do Painel Políticas Públicas.*
 
+# Resumo
+
+- **O problema:** os planos de ação climática (PLACs) eram documentos densos e difíceis de navegar, e os gestores do ABC Paulista precisavam acompanhar metas, indicadores e ações sem dominar ferramentas de SIG.
+- **Minha aposta:** como líder de produto e coordenador, conduzi um discovery enxuto com Double Diamond, reaproveitei o design system da UrbVerde e priorizei as funcionalidades que entregavam mais resultado com menos esforço de desenvolvimento.
+- **O impacto:** painel entregue e no ar em cerca de um mês, validado com cerca de 30 gestores do ABC Paulista e com feedback muito positivo pela linguagem alinhada aos PLACs.
+
 # Contextualização
 
 A **UrbVerde** é uma plataforma digital que reúne e democratiza dados socioambientais para apoiar a formulação de políticas públicas e ampliar o acesso da sociedade a informações ambientais de qualidade. O **Painel Políticas Públicas** é um painel adicional da plataforma UrbVerde, construído em parceria com os gestores municipais do ABC Paulista, desenvolvido especificamente para **apoiar gestores municipais na construção de planos climáticos locais**.
 
-Como **UX Lead** e coordenador do time de tecnologia, conduzi o **discovery com o objetivo de ser rápido e eficiente**, garantindo consistência com a UrbVerde já refatorada.
+Como **líder de produto** e coordenador do time de tecnologia, conduzi o **discovery com o objetivo de ser rápido e eficiente**, garantindo consistência com a UrbVerde já refatorada.
 
 # Problema identificado
 
@@ -67,7 +73,7 @@ O feedback foi **extremamente positivo**, elogiando a **linguagem alinhada aos P
 
 > Solicitaram a criação de um **panorama geral que resuma todas as informações** para uma consulta rápida.
 
-# Principais decisões de design
+# Principais decisões de produto e design
 
 ## Adoção de uma linguagem comum para os gestores no painel.
 

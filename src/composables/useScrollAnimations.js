@@ -37,12 +37,16 @@ export function useScrollAnimations() {
     const targetText = element.getAttribute('data-target')
     if (!targetText) return
 
-    const hasPlus = targetText.includes('+')
-    const targetNumber = parseInt(targetText.replace('+', ''))
+    // Preserva prefixo (ex: "+") e sufixo (ex: "k") ao redor do numero
+    const match = targetText.match(/^(\D*)(\d[\d.,]*)(\D*)$/)
+    if (!match) return
+    const prefix = match[1]
+    const suffix = match[3]
+    const targetNumber = parseInt(match[2].replace(/[.,]/g, ''), 10)
     if (isNaN(targetNumber)) return
 
     let currentNumber = 0
-    const duration = Math.max(800, (targetNumber / 15) * 1500)
+    const duration = Math.min(2000, Math.max(800, (targetNumber / 15) * 1500))
     const increment = targetNumber / 60
     const stepTime = duration / 60
 
@@ -54,9 +58,7 @@ export function useScrollAnimations() {
         clearInterval(timer)
       }
 
-      element.textContent = hasPlus
-        ? '+' + Math.floor(currentNumber)
-        : Math.floor(currentNumber)
+      element.textContent = prefix + Math.floor(currentNumber) + suffix
     }, stepTime)
 
     counterTimers.push(timer)

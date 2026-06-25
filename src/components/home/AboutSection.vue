@@ -2,9 +2,9 @@
 import HighlightSquare from './HighlightSquare.vue'
 
 const highlights = [
-  { target: '3', label: 'Anos de experiência' },
-  { target: '+15', label: 'Projetos de Product Design' },
-  { target: '+25', label: 'Projetos de desenvolvimento' },
+  { target: '+3', label: 'Anos de experiência' },
+  { target: '+20k', label: 'Usuários impactados' },
+  { target: '+50', label: 'Países alcançados' },
   { target: '7', label: 'Prêmios nacionais e internacionais' }
 ]
 

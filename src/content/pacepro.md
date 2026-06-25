@@ -1,5 +1,11 @@
 ![Interface do projeto PacePro, que mostra a tela principal do aplicativo](/assets/images/projects/pacepro/inicio.webp) *Protótipo de alta fidelidade do projeto PacePro.*
 
+# Resumo
+
+- **O problema:** apesar de existirem muitos apps de corrida, os usuários têm dificuldade de manter a motivação e acompanhar o progresso de forma clara e intuitiva.
+- **Minha aposta:** parti de um discovery com Design Thinking, persona, How Might We e benchmarking de Strava, Nike Run Club e Google Fit para desenhar um app que une estatísticas claras, gamificação e comunidade.
+- **O resultado:** um protótipo de alta fidelidade com cinco seções (Principal, Feed, Comunidade, Progresso e Perfil), com um diferencial competitivo mapeado a partir das referências.
+
 # Contextualização
 O **PacePro** é um protótipo de aplicativo mobile para corredores que combina **contador de passos, monitoramento de desempenho e comunidade gamificada**.
 O resultado foi um protótipo que alia **motivação, estatísticas claras e interação social** para engajar pessoas em hábitos mais saudáveis.
@@ -74,7 +80,7 @@ Criei um **style guide completo**, definindo tipografia, cores, ícones e compon
 
 ## Protótipo de alta fidelidade
 
-As telas finais foram estruturadas em cinco principais seções: **Principal, Feed, Comunidade, Progresso e Perfil**, sendo as principais decisões de design:
+As telas finais foram estruturadas em cinco principais seções: **Principal, Feed, Comunidade, Progresso e Perfil**, sendo as principais decisões de produto e design:
 
 - Na **tela principal**, priorizei mapas e estatísticas de passos em destaque, garantindo fácil acesso às informações mais relevantes e integração direta com opções de publicação e compartilhamento.
 - No **feed**, adotei rolagem infinita inspirada nas redes sociais mais populares, para reduzir curva de aprendizado e incentivar engajamento com publicações, medalhas e interações entre usuários.

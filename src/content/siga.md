@@ -1,5 +1,11 @@
 ![Protótipos do Dashboard SIGA, desenvolvido no Figma.](/assets/images/projects/siga/top.webp) *Protótipos do Dashboard SIGA.*
 
+# Resumo
+
+- **O problema:** como exibir uma grande quantidade de informações sobre insumos, estoques, compras e vendas de forma organizada, padronizada e acessível para o usuário final.
+- **Minha aposta:** defini a arquitetura da informação por abas, pesquisei referências de dashboards e construí uma biblioteca de componentes reutilizáveis com Atomic Design para padronizar e escalar a interface.
+- **O resultado:** um protótipo de alta fidelidade de dashboard ERP agrário, com tabelas padronizadas, tela detalhada por insumo e visão geral com insights.
+
 # Contextualização
 
 O **Dashboard SIGA (Sistemas de Informação Gerencial Agrário)** é um projeto de **UI Design** voltado à **gestão de estoques e insumos no contexto do agronegócio**, com base em sistemas ERP.

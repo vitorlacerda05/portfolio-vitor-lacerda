@@ -1,9 +1,15 @@
 ![Interface do projeto UrbVerde, que mostra a cidade de São Paulo com temperatura de superfície terrestre](/assets/images/projects/urbverde/urbverde-inicio.png) *Interface do dashboard da UrbVerde mostrando a temperatura da cidade de São Paulo.*
 ![Interface do projeto UrbVerde, que mostra a gráficos da cidade de São Paulo com temperatura de superfície terrestre](/assets/images/projects/urbverde/urbverde-inicio-dashboard.png) *Gráficos de temperatura da cidade de São Paulo.*
 
+# Resumo
+
+- **O problema:** o primeiro MVP era confuso, com arquitetura de informação desorganizada, componentes sem padrão e código frágil, o que afastava gestores públicos leigos e travava a escala.
+- **Minha aposta:** como cofundador e líder de produto, conduzi discovery e delivery para reestruturar a arquitetura de informação, criar um design system tokenizado e coordenar a refatoração do front-end, transformando o MVP num produto consolidado.
+- **O impacto:** 1,4x mais acessos após o lançamento, 100% de sucesso nas tarefas nos testes de usabilidade, presença em mais de 800 municípios e 50 países, além de prêmios da SBC, da ONU e da USP.
+
 # Contextualização
 
-A UrbVerde é uma plataforma digital que democratiza e **mapeia dados socioambientais** (vegetação, clima, parques e praças) para apoiar decisões públicas e empoderar a sociedade. Como um dos **cofundadores**, tive como principal foco ser **UX Lead e coordenador do time de tecnologia**, conduzindo discovery e delivery para reestruturar arquitetura de informação, design system e front‑end.
+A UrbVerde é uma plataforma digital que democratiza e **mapeia dados socioambientais** (vegetação, clima, parques e praças) para apoiar decisões públicas e empoderar a sociedade. Como um dos **cofundadores**, atuei como **líder de produto e coordenador do time de tecnologia**, conduzindo discovery e delivery para reestruturar arquitetura de informação, design system e front‑end.
 Fiz parte de um time com pessoas maravilhosas, inteligentes e engajadas. Com a ajuda de todos, transformamos a plataforma de um **MVP para um produto consolidado**, com diversos reconhecimentos:
 > Conquistamos menção honrosa na Competição Nacional de Design pela Sociedade Brasileira de Computação, reconhecimento pela **Conferência das Nações Unidas** e o projeto virou matéria em mais de 20 jornais como Record News, Estadão, Jornal da USP, etc.
 
@@ -85,7 +91,9 @@ A funcionalidade de exportação, essencial para o workflow dos usuários, foi e
 
 # Desenvolvendo a ideia
 
-## Principais decisões de design
+## Principais decisões de produto e design
+
+Priorizei cada decisão equilibrando valor para o usuário e esforço de desenvolvimento, focando no que destravava a escala do produto a longo prazo.
 
 - **Utilização de componentes e styles reutilizáveis**, garantindo consistência visual e escalabilidade do design a longo prazo.
 - **Separação clara de responsabilidades dos componentes** no layout da tela, facilitando manutenção e evolução do sistema.
