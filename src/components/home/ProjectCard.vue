@@ -53,10 +53,10 @@ const rootProps = computed(() =>
 
 <style scoped>
 .project-card {
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
   display: flex;
-  border: 2px solid var(--blue-gray-50);
+  border: 2px solid var(--blue-gray-200);
   outline: 2px solid transparent;
   flex-direction: column;
   gap: 0;
@@ -66,10 +66,31 @@ const rootProps = computed(() =>
   height: auto;
   text-decoration: none;
   color: inherit;
+  box-shadow: 4px 5px 0 rgba(38, 50, 56, 0.06);
+  transform: none;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
 }
 
-.project-card:hover {
-  outline: 2px solid var(--purple);
+.project-card:hover,
+.project-card:focus-visible {
+  transform: rotate(var(--rot, 0deg)) translateY(-2px);
+  box-shadow: 5px 7px 0 rgba(170, 105, 255, 0.16);
+  border-color: var(--purple);
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--blue-700);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+  .project-card:hover,
+  .project-card:focus-visible {
+    transform: none;
+  }
 }
 
 .project-card.bg-green { background-color: var(--off-white-green); }
@@ -149,7 +170,7 @@ const rootProps = computed(() =>
 }
 
 .card-date {
-  color: var(--blue-gray-400);
+  color: var(--blue-gray-500);
 }
 
 @media screen and (max-width: 1026px) {

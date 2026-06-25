@@ -66,7 +66,27 @@ export function useScrollAnimations() {
 
   async function setup() {
     await nextTick()
+
+    const reduceMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     animatedElements = Array.from(document.querySelectorAll('[data-animate]'))
+
+    // Acessibilidade: sem movimento, mostra tudo no estado final de imediato.
+    if (reduceMotion) {
+      animatedElements.forEach(el => {
+        el.style.opacity = '1'
+        el.style.filter = 'none'
+      })
+      document.querySelectorAll('.highlight-number p').forEach(el => {
+        const target = el.getAttribute('data-target')
+        if (target) el.textContent = target
+      })
+      return
+    }
+
     initializeElements(animatedElements)
 
     observer = new IntersectionObserver(

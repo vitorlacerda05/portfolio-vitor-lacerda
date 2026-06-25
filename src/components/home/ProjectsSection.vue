@@ -10,6 +10,7 @@ const PROJECTS = [...CURATED_PROJECTS, ...EXTERNAL_PROJECTS]
 
 const FILTERS = Object.keys(CATEGORY_BADGES)
 const DEFAULT_FILTER = DEFAULT_CATEGORY
+const cardRotations = ['-1.1deg', '0.8deg', '-0.7deg', '1deg']
 
 const route = useRoute()
 const router = useRouter()
@@ -72,6 +73,7 @@ onMounted(() => {
           :key="project.id"
           :project="project"
           :title-tag="i === 0 ? 'h1' : 'h3'"
+          :style="{ '--rot': cardRotations[i % cardRotations.length] }"
         />
       </div>
     </div>
@@ -95,30 +97,20 @@ onMounted(() => {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 40px;
+  padding: 0;
   position: relative;
-  border-radius: 8px;
   width: 100%;
   height: 100%;
   pointer-events: auto;
 }
 
-.work-wrapper::before {
-  content: '';
-  position: absolute;
-  border: 2px dashed var(--purple);
-  inset: 0;
-  pointer-events: none;
-  border-radius: 8px;
-}
-
 .works {
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   padding: 0;
   position: relative;
@@ -127,10 +119,7 @@ onMounted(() => {
 }
 
 .project-frame-container {
-  position: absolute;
-  top: -40px;
-  left: 220px;
-  transform: translateX(-50%);
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -160,7 +149,7 @@ onMounted(() => {
   color: var(--blue-gray-700);
   font-size: 16px;
   white-space: nowrap;
-  transition: color 0.15s, background 0.15s;
+  transition: color 0.2s ease-out, background 0.2s ease-out;
 }
 
 .project-filter-btn:hover {
@@ -224,13 +213,15 @@ onMounted(() => {
   user-select: auto;
 }
 
-.projects-section.draggable :deep(.project-card:hover:not(:active)) {
+.projects-section.draggable:not(.draggable-disabled) :deep(.project-card:hover:not(:active)) {
   outline: 2px solid transparent !important;
+  transform: none !important;
+  box-shadow: 4px 5px 0 rgba(38, 50, 56, 0.06) !important;
   cursor: grab !important;
 }
 
 .projects-section.draggable-disabled :deep(.project-card:hover:not(:active)) {
-  outline: 2px solid var(--purple) !important;
+  outline: 2px solid transparent !important;
   cursor: pointer !important;
 }
 
@@ -240,14 +231,11 @@ onMounted(() => {
 }
 
 .projects-section.draggable-disabled :deep(.project-card:active) {
-  outline: 2px solid var(--purple);
+  outline: 2px solid transparent;
   cursor: pointer !important;
 }
 
 @media screen and (max-width: 725px) {
-  .work-wrapper {
-    padding: 32px;
-  }
   .works {
     gap: 24px;
   }
