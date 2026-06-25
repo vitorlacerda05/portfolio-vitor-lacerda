@@ -12,7 +12,7 @@ export const PROJECTS = [
     date: 'set, 2024 - jun, 2025',
     seo: {
       title: 'UrbVerde - Dashboard Socioambiental | Vitor Lacerda',
-      description: 'UrbVerde é uma plataforma digital que democratiza dados socioambientais urbanos. Projeto premiado pela SBC e ONU, desenvolvido por Vitor Lacerda como cofundador e UX Lead.',
+      description: 'UrbVerde é uma plataforma digital que democratiza dados socioambientais urbanos. Projeto premiado pela SBC e ONU, desenvolvido por Vitor Lacerda como cofundador e Product Manager.',
       keywords: 'urbverde, dashboard socioambiental, dados urbanos, cobertura vegetal, temperatura, sig, sistema informação geográfica, vitor lacerda, ux design, ui design, portfolio ux, prêmio usp, projeto ux, case study ux, protótipo',
       ogType: 'article',
       schema: {
@@ -20,7 +20,7 @@ export const PROJECTS = [
         '@type': 'CreativeWork',
         name: 'UrbVerde',
         description: 'Plataforma digital que democratiza dados socioambientais urbanos para apoiar decisões públicas e empoderar a sociedade.',
-        creator: { '@type': 'Person', name: 'Vitor Lacerda', jobTitle: 'Cofounder & UX Lead' },
+        creator: { '@type': 'Person', name: 'Vitor Lacerda', jobTitle: 'Cofounder & Product Manager' },
         url: 'https://vitorlacerda.com/project/urbverde',
         image: 'https://vitorlacerda.com/assets/images/homepage/projects/urbverde.png',
         dateCreated: '2024-09',
@@ -73,7 +73,7 @@ export const PROJECTS = [
         '@type': 'MobileApplication',
         name: 'PacePro',
         description: 'Protótipo de aplicativo mobile gamificado para corredores que combina contador de passos, monitoramento de desempenho e comunidade.',
-        creator: { '@type': 'Person', name: 'Vitor Lacerda', jobTitle: 'UX/UI Designer' },
+        creator: { '@type': 'Person', name: 'Vitor Lacerda', jobTitle: 'Product Manager' },
         url: 'https://vitorlacerda.com/project/pacepro',
         image: 'https://vitorlacerda.com/assets/images/homepage/projects/pacepro_1.png',
         dateCreated: '2023-05',

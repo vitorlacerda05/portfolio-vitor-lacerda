@@ -14,17 +14,17 @@ import { useScrollAnimations } from '../composables/useScrollAnimations.js'
 import { useSeo } from '../composables/useSeo.js'
 
 useSeo({
-  title: 'Vitor Lacerda - Product Designer',
-  description: 'Vitor Lacerda é Product Designer e pesquisador na USP. Cofundador da UrbVerde com projetos premiados. Especialista em UX/UI Design.',
-  keywords: 'product designer, ux designer, ui designer, portfolio ux, portfolio ui, ux ui designer, designer junior, freelance ux, freelance ui, vitor lacerda, usp, urbverde, design thinking, experiência do usuário, interface design, user experience, user interface',
+  title: 'Vitor Lacerda - Product Manager',
+  description: 'Vitor Lacerda é Product Manager e pesquisador na USP. Cofundador da UrbVerde com projetos premiados. Experiência sólida em design e desenvolvimento.',
+  keywords: 'product manager, gestão de produtos, product owner, pm, portfolio product manager, gerente de produto, vitor lacerda, usp, urbverde, design thinking, estratégia de produto, descoberta de produto, product discovery, user experience',
   url: 'https://vitorlacerda.com/',
   ogType: 'website',
   schema: {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Vitor Lacerda',
-    jobTitle: 'Product Designer',
-    description: 'Product Designer e pesquisador na USP. Cofundador da UrbVerde, com experiência em gestão de produtos e desenvolvimento.',
+    jobTitle: 'Product Manager',
+    description: 'Product Manager e pesquisador na USP. Cofundador da UrbVerde, com experiência em gestão de produtos, design e desenvolvimento.',
     url: 'https://vitorlacerda.com',
     image: 'https://vitorlacerda.com/assets/images/homepage/vitor-lacerda-image.png',
     sameAs: [

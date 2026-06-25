@@ -53,7 +53,7 @@ const awards = [
     <div class="about-block reverse" data-animate="animate__fadeIn" data-delay="animate__delay">
       <div class="about-block-text">
         <h3 class="about-block-title title-md">
-          Foi <span class="text-highlight">cofundador da UrbVerde</span>, levando a solução para 20 mil usuários em todo o mundo
+          Foi <span class="text-highlight">cofundador da UrbVerde</span>, levando a solução para 20 mil usuários em 50 países
         </h3>
         <p class="about-block-description regular-lg">
           A UrbVerde é a primeira plataforma SIG que leva dados sociais e ambientais urbanos
@@ -72,7 +72,7 @@ const awards = [
       <div class="about-block">
         <div class="about-block-text">
           <h3 class="about-block-title title-md">
-            <span class="text-highlight">Graduando e pesquisador na USP</span>, na área de Interação Humano-Computador
+            <span class="text-highlight">Graduando e pesquisador na USP</span>, na área de Interação Humano-Computador e Dados
           </h3>
           <p class="about-block-description regular-lg">
             Estudante de Sistemas de Informação na USP, Vitor se dedica à pesquisa em Interação
