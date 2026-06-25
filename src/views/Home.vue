@@ -3,6 +3,7 @@ import Navbar from '../components/layout/Navbar.vue'
 import MobileMenu from '../components/layout/MobileMenu.vue'
 import AppFooter from '../components/layout/AppFooter.vue'
 import HeroSection from '../components/home/HeroSection.vue'
+import HowIWorkSection from '../components/home/HowIWorkSection.vue'
 import ProjectsSection from '../components/home/ProjectsSection.vue'
 import MainBottom from '../components/home/MainBottom.vue'
 import BaseButton from '../components/base/BaseButton.vue'
@@ -56,6 +57,7 @@ const mobileMenuOpen = ref(false)
     <main class="main-top">
       <HeroSection />
       <ProjectsSection />
+      <HowIWorkSection />
       <BaseButton href="#contact-section" variant="primary">
         Como posso te ajudar?
       </BaseButton>
