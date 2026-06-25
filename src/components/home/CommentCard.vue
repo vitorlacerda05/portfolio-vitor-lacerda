@@ -59,33 +59,12 @@ defineProps({
   pointer-events: none;
 }
 
-/* Aspa decorativa de fundo — personalidade sem texto novo */
-.comment-content::before {
-  content: '\201C';
-  position: absolute;
-  top: 8px;
-  left: 28px;
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  font-size: 120px;
-  line-height: 1;
-  color: var(--white);
-  opacity: 0.1;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .comment-content {
   flex: 1;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
-}
-
-.comment-quote {
-  position: relative;
-  z-index: 1;
 }
 
 .comment-quote {

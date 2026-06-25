@@ -89,23 +89,17 @@
   flex-shrink: 0;
   width: 100%;
   z-index: 2;
-  outline: 2px solid var(--blue-gray-100);
+  border-radius: 14px;
+  outline: 2px solid var(--blue-gray-200);
+  box-shadow: 4px 5px 0 rgba(38, 50, 56, 0.06);
+  transform: rotate(-1.2deg);
 }
 
-.title:hover {
-  outline: 2px solid var(--blue-500);
-}
-
-.title.draggable.draggable-disabled:hover:not(:active) {
-  outline: 2px solid var(--blue-gray-100) !important;
-}
-
-.title.draggable:not(.draggable-disabled):hover:not(:active) {
-  outline: 2px solid var(--blue-500) !important;
-}
-
+.title:hover,
+.title.draggable.draggable-disabled:hover:not(:active),
+.title.draggable:not(.draggable-disabled):hover:not(:active),
 .draggable:active {
-  outline: 2px solid var(--blue-500);
+  outline: 2px solid var(--blue-gray-200);
 }
 
 .comment-label {
@@ -179,6 +173,7 @@
   height: 147px;
   flex-shrink: 0;
   object-fit: cover;
+  border-radius: 12px;
 }
 
 @media screen and (max-width: 1026px) {

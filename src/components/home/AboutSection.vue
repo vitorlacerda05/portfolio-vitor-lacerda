@@ -33,6 +33,9 @@ const awards = [
     subtitle: 'Menção honrosa na Semana Acadêmica de Computação'
   }
 ]
+
+// Leve rotação "à mão livre", no mesmo espírito da seção "Como eu trabalho".
+const awardRotations = ['-1.2deg', '0.9deg', '-0.8deg', '1.1deg', '-0.6deg']
 </script>
 
 <template>
@@ -107,7 +110,12 @@ const awards = [
 
       <div class="awards-container">
         <ul class="about-awards">
-          <li v-for="award in awards" :key="award.subtitle" class="award-item">
+          <li
+            v-for="(award, i) in awards"
+            :key="award.subtitle"
+            class="award-item"
+            :style="{ '--rot': awardRotations[i % awardRotations.length] }"
+          >
             <span class="award-icon" v-html="TROPHY"></span>
             <span class="award-body">
               <span class="award-title">{{ award.title }}</span>
@@ -180,16 +188,18 @@ const awards = [
 
 .about-awards {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  max-width: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 24px;
+  max-width: 760px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
   width: 100%;
 }
 
 .award-item {
+  flex: 0 1 calc(50% - 12px);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -198,11 +208,12 @@ const awards = [
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
+  transform: rotate(var(--rot));
   transition: transform 0.2s ease-out, background 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .award-item:hover {
-  transform: translateY(-2px);
+  transform: rotate(0deg) translateY(-2px);
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.28);
 }
@@ -316,9 +327,9 @@ const awards = [
   }
 }
 
-@media screen and (max-width: 768px) {
-  .about-awards {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 520px) {
+  .award-item {
+    flex: 1 1 100%;
   }
 }
 
@@ -326,7 +337,7 @@ const awards = [
   .award-item,
   .award-item:hover {
     transition: none;
-    transform: none;
+    transform: rotate(var(--rot));
   }
   .about-image {
     transition: none;
