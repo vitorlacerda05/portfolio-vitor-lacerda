@@ -18,9 +18,11 @@ defineProps({
 
 <style scoped>
 .highlight-square {
-  background-color: var(--blue-700);
-  box-shadow: 0 0 50px 0 rgba(25, 118, 210, 0.75);
-  border-radius: 8px;
+  /* Tratado como "bloco de dado": elevação sólida e sutil, borda nítida — sem o glow pesado */
+  background: linear-gradient(180deg, var(--blue-600) 0%, var(--blue-700) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 28px -10px rgba(13, 71, 161, 0.6);
+  border-radius: 12px;
   padding: 24px 16px 8px 16px;
   display: flex;
   flex-direction: column;
@@ -31,28 +33,31 @@ defineProps({
   color: var(--white);
   min-height: 140px;
   position: relative;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
 }
 
-.highlight-square::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(180deg, #1E88E5 0%, #1976D2 100%);
-  border-radius: 8px;
-  padding: 1px;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: xor;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  pointer-events: none;
+.highlight-square:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px -10px rgba(13, 71, 161, 0.7);
+  border-color: var(--purple);
 }
 
 .highlight-number {
   white-space: normal;
   word-wrap: break-word;
+  color: var(--white);
+}
+
+/* Acento sutil de marca sob o número */
+.highlight-number::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: var(--white);
+  opacity: 0.9;
 }
 
 .highlight-text {
@@ -84,6 +89,14 @@ defineProps({
     padding: 24px 20px;
     min-height: 110px;
     justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .highlight-square,
+  .highlight-square:hover {
+    transition: none;
+    transform: none;
   }
 }
 </style>

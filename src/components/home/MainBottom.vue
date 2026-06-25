@@ -9,7 +9,7 @@ import ContactSection from './ContactSection.vue'
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
       <defs>
         <linearGradient id="waveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color: var(--blue-700); stop-opacity: 1" />
+          <stop offset="0%" style="stop-color: var(--blue-500); stop-opacity: 1" />
           <stop offset="100%" style="stop-color: var(--blue-600); stop-opacity: 1" />
         </linearGradient>
       </defs>
@@ -62,8 +62,11 @@ import ContactSection from './ContactSection.vue'
 }
 
 .main-bottom {
-  background: linear-gradient(180deg, var(--blue-600) 0%, var(--blue-700) 100%);
-  padding: 22vh 24px 22vh 24px;
+  position: relative;
+  background:
+    radial-gradient(130% 220px at 50% 280px, rgba(66, 165, 245, 0.45) 0%, rgba(66, 165, 245, 0) 100%),
+    linear-gradient(180deg, var(--blue-600) 0%, var(--blue-700) 58%, var(--blue-800) 100%);
+  padding: clamp(96px, 16vh, 200px) 24px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -72,14 +75,26 @@ import ContactSection from './ContactSection.vue'
   overflow: hidden;
 }
 
+/* Vignette sutil nas bordas para dar profundidade sem poluir */
+.main-bottom::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 80% at 50% 45%, rgba(13, 71, 161, 0) 55%, rgba(13, 71, 161, 0.35) 100%);
+  z-index: 0;
+}
+
 .section {
   max-width: 976px;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22vh;
+  gap: clamp(120px, 18vh, 240px);
   overflow: visible;
+  position: relative;
+  z-index: 1;
 }
 
 .rectangle-1,
@@ -113,17 +128,15 @@ import ContactSection from './ContactSection.vue'
 }
 
 @media screen and (max-width: 601px) {
-  .main-bottom {
-    padding: 16vh 24px 16vh 24px;
-    gap: 26px;
-  }
-  .section {
-    gap: 16vh;
-  }
   .rectangle-1,
-  .rectangle-2,
-  .rectangle-3 {
+  .rectangle-2 {
     display: none;
+  }
+  /* Mantém um elemento decorativo no mobile para preservar a identidade */
+  .rectangle-3 {
+    opacity: 0.35;
+    max-width: 60%;
+    height: auto;
   }
 }
 

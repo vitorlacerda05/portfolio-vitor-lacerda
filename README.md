@@ -153,13 +153,13 @@ Pronto — a card aparece na home e a rota `/project/meu-projeto` fica viva.
 
 ## 🏷️ Categorias e filtros
 
-Os filtros da home (`UX Design`, `Development`, `Scientific Research`) vivem em `src/data/categories.js`:
+Os filtros da home (`Product Manager`, `Development`, `Scientific Research`) vivem em `src/data/categories.js`:
 
 ```js
-export const DEFAULT_CATEGORY = 'UX Design'   // filtro inicial ao abrir a home
+export const DEFAULT_CATEGORY = 'Product Manager'   // filtro inicial ao abrir a home
 
 export const CATEGORY_BADGES = {
-  'UX Design': ['UX Lead', 'Design Thinking', 'Co-founder', ...],
+  'Product Manager': ['UX Lead', 'Design Thinking', 'Co-founder', ...],
   'Development': ['HTML', 'JavaScript', 'Python', ...],
   'Scientific Research': ['Iniciação Científica', 'Artigo em Conferência', ...]
 }

@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="comment" data-animate="animate__fadeIn" data-delay="animate__delay">
+  <div class="comment">
     <div class="comment-content">
       <p class="comment-quote">{{ quote }}</p>
     </div>
@@ -27,13 +27,19 @@ defineProps({
 <style scoped>
 .comment {
   background-color: var(--blue-700);
-  box-shadow: 0 0 50px 0 rgba(25, 118, 210, 0.75);
-  border-radius: 32px;
+  box-shadow: 0 0 50px 0 rgba(25, 118, 210, 0.55);
+  border-radius: 24px;
   padding: 40px 40px 32px 40px;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 32px;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.comment:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 60px 0 rgba(25, 118, 210, 0.7);
 }
 
 .comment::before {
@@ -44,7 +50,7 @@ defineProps({
   right: 0;
   bottom: 0;
   background: linear-gradient(180deg, #1E88E5 0%, #1976D2 100%);
-  border-radius: 32px;
+  border-radius: 24px;
   padding: 1px;
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: xor;
@@ -53,17 +59,39 @@ defineProps({
   pointer-events: none;
 }
 
+/* Aspa decorativa de fundo — personalidade sem texto novo */
+.comment-content::before {
+  content: '\201C';
+  position: absolute;
+  top: 8px;
+  left: 28px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--white);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .comment-content {
   flex: 1;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  position: relative;
+}
+
+.comment-quote {
+  position: relative;
+  z-index: 1;
 }
 
 .comment-quote {
   font-family: 'Karla', sans-serif;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 18px;
   line-height: 150%;
   color: var(--white);
@@ -106,8 +134,12 @@ defineProps({
   width: 100%;
 }
 
+.comment-name {
+  color: var(--white);
+}
+
 .comment-position {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 1026px) {
@@ -127,6 +159,14 @@ defineProps({
   }
   .comment-quote {
     font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .comment,
+  .comment:hover {
+    transition: none;
+    transform: none;
   }
 }
 </style>

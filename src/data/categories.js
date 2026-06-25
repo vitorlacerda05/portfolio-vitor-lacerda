@@ -1,7 +1,7 @@
-export const DEFAULT_CATEGORY = 'UX Design'
+export const DEFAULT_CATEGORY = 'Product Manager'
 
 export const CATEGORY_BADGES = {
-  'UX Design': [
+  'Product Manager': [
     'Liderança de produto',
     'Discovery e Delivery',
     'Cofundador',

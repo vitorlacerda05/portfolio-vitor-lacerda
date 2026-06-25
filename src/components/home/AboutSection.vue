@@ -1,6 +1,9 @@
 <script setup>
 import HighlightSquare from './HighlightSquare.vue'
 
+// Ícone de troféu desenhado "a mão livre", no mesmo estilo da seção "Como eu trabalho".
+const TROPHY = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v4a5 5 0 0 1-10 0z"/><path d="M7 6H4v1a3 3 0 0 0 3 3"/><path d="M17 6h3v1a3 3 0 0 1-3 3"/><path d="M12 13v3"/><path d="M9 20h6"/><path d="M9.5 20c0-1.5.7-2.4 2.5-2.4s2.5.9 2.5 2.4"/></svg>`
+
 const highlights = [
   { target: '+3', label: 'Anos de experiência' },
   { target: '+20k', label: 'Usuários impactados' },
@@ -9,11 +12,26 @@ const highlights = [
 ]
 
 const awards = [
-  'Menção honrosa na Competição Nacional de UX Design da Sociedade Brasileira de Computação (SBC)',
-  'Prêmio USP de Impacto Social para Cidades e Comunidades Sustentáveis',
-  'Projeto destaque da região de São Paulo no Google Startup In School',
-  'Prêmio no Eixo IV, de Técnicas e Tecnologias para Promoção de Justiça Climática',
-  'Menção Honrosa no Hackathon Beta da Semana Acadêmica de Computação'
+  {
+    title: 'Prêmio Sociedade Brasileira de Computação',
+    subtitle: 'Competição Nacional de UX Design'
+  },
+  {
+    title: 'Prêmio USP',
+    subtitle: 'Impacto Social para Cidades e Comunidades Sustentáveis'
+  },
+  {
+    title: 'Google Startup in School',
+    subtitle: 'Projeto destaque da região de São Paulo'
+  },
+  {
+    title: 'Prêmio da COP 30 — ONU',
+    subtitle: 'Técnicas e Tecnologias para Promoção de Justiça Climática'
+  },
+  {
+    title: 'Hackathon Beta',
+    subtitle: 'Menção honrosa na Semana Acadêmica de Computação'
+  }
 ]
 </script>
 
@@ -88,8 +106,14 @@ const awards = [
       </div>
 
       <div class="awards-container">
-        <ul class="about-awards project-h3">
-          <li v-for="award in awards" :key="award">{{ award }}</li>
+        <ul class="about-awards">
+          <li v-for="award in awards" :key="award.subtitle" class="award-item">
+            <span class="award-icon" v-html="TROPHY"></span>
+            <span class="award-body">
+              <span class="award-title">{{ award.title }}</span>
+              <span class="award-sub regular-sm">{{ award.subtitle }}</span>
+            </span>
+          </li>
         </ul>
       </div>
     </div>
@@ -139,7 +163,7 @@ const awards = [
 
 .about-block-description {
   color: var(--blue-50);
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
 }
 
@@ -155,18 +179,64 @@ const awards = [
 }
 
 .about-awards {
-  color: var(--blue-50);
-  font-weight: 300;
+  list-style: none;
   margin: 0;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-weight: 500
+  padding: 0;
+  max-width: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+  width: 100%;
 }
 
-.about-awards li {
-  line-height: 1.5;
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 92px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s ease-out, background 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.award-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.award-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--blue-300) 0%, var(--blue-500) 100%);
+  color: var(--white);
+  box-shadow: 0 4px 12px -4px rgba(13, 71, 161, 0.7);
+}
+
+.award-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.award-title {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--white);
+}
+
+.award-sub {
+  color: var(--blue-50);
+  line-height: 1.45;
 }
 
 .about-image {
@@ -180,16 +250,37 @@ const awards = [
   max-width: 400px;
   aspect-ratio: 513/380;
   background: var(--white);
+  border: 3px solid rgba(255, 255, 255, 0.85);
   border-radius: 16px;
+  box-shadow: 6px 7px 0 rgba(13, 71, 161, 0.45);
   position: relative;
   overflow: hidden;
+  transform: rotate(var(--img-rot, -1.4deg));
+  transition: transform 0.25s ease-out;
+}
+
+/* Rotações alternadas, no mesmo espírito das cards "Como eu trabalho" */
+.about-intro-group .about-image {
+  --img-rot: -1.6deg;
+}
+
+.about-block.reverse .about-image {
+  --img-rot: 1.6deg;
+}
+
+.research-group .about-image {
+  --img-rot: -1.1deg;
+}
+
+.about-image:hover {
+  transform: rotate(0deg);
 }
 
 .about-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 13px;
 }
 
 .highlight {
@@ -222,6 +313,26 @@ const awards = [
   }
   .about-section {
     gap: 120px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-awards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .award-item,
+  .award-item:hover {
+    transition: none;
+    transform: none;
+  }
+  .about-image {
+    transition: none;
+  }
+  .about-image:hover {
+    transform: rotate(var(--img-rot, -1.4deg));
   }
 }
 

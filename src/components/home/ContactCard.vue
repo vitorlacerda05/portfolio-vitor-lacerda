@@ -46,13 +46,20 @@ defineProps({
 .contact-ctt {
   display: flex;
   flex: 1;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
-  border: 2px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: transform 0.2s ease-out, background 0.2s ease-out, border-color 0.2s ease-out;
 }
 
 .contact-ctt--home {
-  background: linear-gradient(90deg, rgba(230, 230, 230, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.07) 100%);
+}
+
+.contact-ctt--home:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-color: rgba(255, 255, 255, 0.28);
 }
 
 .contact-ctt--project {
@@ -107,5 +114,13 @@ defineProps({
   min-width: 100%;
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-ctt,
+  .contact-ctt--home:hover {
+    transition: none;
+    transform: none;
+  }
 }
 </style>
