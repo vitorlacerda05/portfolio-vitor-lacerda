@@ -13,6 +13,8 @@ export const CATEGORY_BADGES = {
     'Produto de dados',
     'Dashboard',
     'Priorização',
+    'Gamification',
+    'Prototipagem com IA',
     // Legados (badges antigos, mantidos para compatibilidade)
     'UX Lead',
     'Design Thinking',

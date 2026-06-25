@@ -9,24 +9,49 @@ const props = defineProps({
   titleTag: { type: String, default: 'h3' }
 })
 
-const isExternal = computed(() => Boolean(props.project.url))
+const emit = defineEmits(['lock-click'])
+
+const isLocked = computed(() => Boolean(props.project.locked))
+const isExternal = computed(() => !isLocked.value && Boolean(props.project.url))
 const hasImage = computed(() => Boolean(props.project.image?.src))
 const hasDescription = computed(() => Boolean(props.project.description))
 
-const rootTag = computed(() => (isExternal.value ? 'a' : RouterLink))
-const rootProps = computed(() =>
-  isExternal.value
+const rootTag = computed(() => {
+  if (isLocked.value) return 'div'
+  return isExternal.value ? 'a' : RouterLink
+})
+const rootProps = computed(() => {
+  if (isLocked.value) {
+    return { role: 'button', tabindex: '0', 'aria-haspopup': 'dialog' }
+  }
+  return isExternal.value
     ? { href: props.project.url, target: '_blank', rel: 'noopener noreferrer' }
     : { to: { name: 'project', params: { id: props.project.id } } }
-)
+})
+
+function handleClick(event) {
+  if (!isLocked.value) return
+  event.preventDefault()
+  emit('lock-click', props.project)
+}
+
+function handleKeydown(event) {
+  if (!isLocked.value) return
+  if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
+    event.preventDefault()
+    emit('lock-click', props.project)
+  }
+}
 </script>
 
 <template>
   <component
     :is="rootTag"
     v-bind="rootProps"
-    :class="['project-card', project.cardBg, { 'no-image': !hasImage }]"
+    :class="['project-card', project.cardBg, { 'no-image': !hasImage, locked: isLocked }]"
     :data-badges="project.badges.join(',')"
+    @click="handleClick"
+    @keydown="handleKeydown"
   >
     <div v-if="hasImage" class="project-image-container">
       <div class="project-image-single">
@@ -37,7 +62,14 @@ const rootProps = computed(() =>
     <div class="project-content">
       <div class="project-content-top">
         <div class="project-title-container">
-          <component :is="titleTag" class="project-title">{{ project.title }}</component>
+          <component :is="titleTag" class="project-title">
+            <i
+              v-if="isLocked"
+              class="fas fa-lock project-lock-icon"
+              aria-hidden="true"
+            ></i>
+            <span v-if="isLocked" class="sr-only">Projeto confidencial: </span>{{ project.title }}
+          </component>
         </div>
         <div class="card-badges-wrapper">
           <Badge v-for="b in project.badges" :key="b">{{ b }}</Badge>
@@ -149,6 +181,30 @@ const rootProps = computed(() =>
   font-size: 20px;
   line-height: normal;
   margin: 0;
+}
+
+.project-lock-icon {
+  font-size: 0.85em;
+  color: var(--blue-gray-500);
+  margin-right: 8px;
+  transition: color 0.2s ease-out;
+}
+
+.project-card.locked:hover .project-lock-icon,
+.project-card.locked:focus-visible .project-lock-icon {
+  color: var(--purple);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .project-description {

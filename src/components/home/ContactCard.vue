@@ -75,7 +75,7 @@ defineProps({
   flex-direction: column;
   gap: 24px;
   padding: 24px;
-  width: 100%;
+  width: 88%;
   min-width: 200px;
   height: auto;
 }

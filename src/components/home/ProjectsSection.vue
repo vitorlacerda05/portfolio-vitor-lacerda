@@ -1,10 +1,11 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, reactive, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { PROJECTS as CURATED_PROJECTS } from '../../data/projects.js'
 import { PROJECTS as EXTERNAL_PROJECTS } from '../../data/projects-data-github-lattes.js'
 import { CATEGORY_BADGES, DEFAULT_CATEGORY } from '../../data/categories.js'
 import ProjectCard from './ProjectCard.vue'
+import LockedProjectModal from '../base/LockedProjectModal.vue'
 
 const PROJECTS = [...CURATED_PROJECTS, ...EXTERNAL_PROJECTS]
 
@@ -16,6 +17,17 @@ const route = useRoute()
 const router = useRouter()
 
 const activeFilter = ref(DEFAULT_FILTER)
+
+const lockedModal = reactive({ show: false, project: null })
+
+function openLockedModal(project) {
+  lockedModal.project = project
+  lockedModal.show = true
+}
+
+function closeLockedModal() {
+  lockedModal.show = false
+}
 
 function toSlug(s) {
   return s.toLowerCase().replace(/\s+/g, '-')
@@ -74,9 +86,16 @@ onMounted(() => {
           :project="project"
           :title-tag="i === 0 ? 'h1' : 'h3'"
           :style="{ '--rot': cardRotations[i % cardRotations.length] }"
+          @lock-click="openLockedModal"
         />
       </div>
     </div>
+
+    <LockedProjectModal
+      :show="lockedModal.show"
+      :project="lockedModal.project"
+      @close="closeLockedModal"
+    />
   </div>
 </template>
 

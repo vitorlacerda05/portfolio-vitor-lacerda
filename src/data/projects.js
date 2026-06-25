@@ -99,6 +99,24 @@ export const PROJECTS = [
       keywords: 'siga, dashboard agrário, ui design, erp, atomic design, vitor lacerda, portfolio ux',
       ogType: 'article'
     }
+  },
+  {
+    id: 'visio-gamification',
+    title: 'Gamification em sistema de tasks',
+    locked: true,
+    cardBg: 'bg-blue',
+    badges: ['Liderança de produto', 'Gamification', 'Prototipagem com IA'],
+    description: 'Sistema de gamificação para aumentar o engajamento em fluxos de tarefas, conduzido como Product Manager principal — da estratégia à prototipação com agentes de IA.',
+    date: 'Visio AI · 2026'
+  },
+  {
+    id: 'visio-goals-dashboards',
+    title: 'Dashboards de metas',
+    locked: true,
+    cardBg: 'bg-blue',
+    badges: ['Liderança de produto', 'Produto de dados', 'Dashboard'],
+    description: 'Dashboards de acompanhamento de metas para times, liderando discovery, definição de métricas e prototipação com agentes de IA.',
+    date: 'Visio AI · 2026'
   }
 ]
 

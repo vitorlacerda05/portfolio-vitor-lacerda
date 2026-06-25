@@ -42,6 +42,7 @@ const rel = computed(() => (props.target === '_blank' ? 'noopener noreferrer' : 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   padding: 12px 32px;
   font-family: 'Inter', sans-serif;
   font-size: 16px;

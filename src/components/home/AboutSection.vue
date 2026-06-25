@@ -191,15 +191,20 @@ const awardRotations = ['-1.2deg', '0.9deg', '-0.8deg', '1.1deg', '-0.6deg']
   margin: 0 auto;
   padding: 0;
   max-width: 760px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px 24px;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+}
+
+/* 5º card (último, ímpar) ocupa as duas colunas mas fica centralizado e com metade da largura */
+.award-item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 12px);
 }
 
 .award-item {
-  flex: 0 1 calc(50% - 12px);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -328,8 +333,13 @@ const awardRotations = ['-1.2deg', '0.9deg', '-0.8deg', '1.1deg', '-0.6deg']
 }
 
 @media screen and (max-width: 520px) {
-  .award-item {
-    flex: 1 1 100%;
+  .about-awards {
+    grid-template-columns: 1fr;
+  }
+  .award-item:last-child:nth-child(odd) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
   }
 }
 
